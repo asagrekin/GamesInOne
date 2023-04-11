@@ -10,4 +10,4 @@
 #
 # Communication Channels:
 ## Slack (project11-gamesinone)
-### Team Chat: https://app.slack.com/client/T04TSBW2YKU/C052E10T80Z 
+## Team Chat: https://app.slack.com/client/T04TSBW2YKU/C052E10T80Z 
