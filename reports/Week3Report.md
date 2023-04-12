@@ -1,5 +1,5 @@
 # Weekly status reports (Week 3)
-# 
+#
 ### Team Report
 ### Backend:
 Successfully able to get apps to launch using C++.
@@ -10,6 +10,15 @@ Decided agaomst using a pre-built database API becuase they all use SQL which wo
 
 ## Contributions
 ### Leo & Kelby
+- created a c++ script which uses CreateProcess()
+- we were able to launch app through c++
+- some issues that we solved was figuring out how to deal with paths have spaces
+- at first we were going to use System to launch the apps but we learned that
+it was resource heavy, defeats security and that your program could get flagged as a virus.
+Therfore we used CreateProcess().
+
+- By April 19 we should be Anticipating and handling user errors.
+Begin setting up a larger system to function with the database and front end.
 
 ### Asa
 ### Steven
