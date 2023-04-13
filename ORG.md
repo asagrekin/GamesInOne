@@ -7,6 +7,7 @@
 # Artifacts:
 ## GitHub: https://github.com/asagrekin/GamesInOne
 ## Similar App: https://www.lenovo.com/us/en/software/gaming/legionarena/
+## Project Home (Living Document): https://docs.google.com/document/d/1T9vyjYnKA0G5BBfBlEL-Wbbsnr1rNJ76LiTqINM8CWs/edit?usp=sharing
 #
 # Communication Channels:
 ## Slack (project11-gamesinone)
