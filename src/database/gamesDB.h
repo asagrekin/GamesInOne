@@ -15,12 +15,14 @@ namespace gamesDB {
     // Stores the digital gaming platform and it's necessary information
     // as an object in the database. Also adds the platform name to the
     // list of available platforms in the database.
-    bool addPlatform(PlatformStruct);
+    // Returns true if succeeded, flase if not.
+    bool addPlatform(PlatformStruct newPlatform);
 
     // Stores the game and it's necessary information in the databsae
     // as an object. Also adds the name of the game to the list of
     // available games in the database.
-    bool addGame(GameStruct);
+    // Returns true if succeeded, flase if not.
+    bool addGame(GameStruct newGame);
 
     // Returns the list of available PlatformNameStructs. The user 
     // is responsible for cleaning up when they are done with it.
@@ -36,12 +38,12 @@ namespace gamesDB {
     // User is responsible for cleanup when they're done with it.
     // If it does not exist in the database, or if another error occurs,
     // will return nullptr.
-    PlatformStruct getPlatform(PlatformNameStruct);
+    PlatformStruct getPlatform(PlatformNameStruct platform);
 
     // Returns the GameStruct associated with the given GameNameStruct.
     // User is responsible for cleanup when they're done with it.
     // If it does not exist in the database, or if another error occurs,
     // will return nullptr.
-    GameStruct getGame(GameNameStruct);
+    GameStruct getGame(GameNameStruct game);
 }
 #endif
