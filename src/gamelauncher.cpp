@@ -1,19 +1,10 @@
 // Kelby S. & Leonardo O.
-// 4/11/2023
-#include <Windows.h>
-#include <iostream>
-#include <string>
-#include <sys/stat.h>
-#include <stdlib.h>
-#include <fstream>
-#include <algorithm>
+// File to Launch Games
 
 
+#include "gamelauncher.h"
 using namespace std;
 
-BOOL checkPath(std::string path) ;
-
-void EnhancePath(std::string& path) ;
 
 int main() {
 
@@ -33,32 +24,34 @@ int main() {
         return EXIT_FAILURE;
     }
 
+    // Create the process to launch game.
+    launchGame(full_path);
 
-    // Don't really need
+    return 0;
+}
+
+
+void launchGame(std::string& path){
     HANDLE hProcess;
     HANDLE hThread;
     DWORD dwProcessID =0;
     DWORD dwThreadId =0;
 
-    // Bare framework we need is lines 16-23 to complete what we want.
     STARTUPINFO startinfo;
 	PROCESS_INFORMATION processinfo;
     ZeroMemory(&startinfo, sizeof(startinfo));
     ZeroMemory(&processinfo, sizeof(processinfo));
 
-    char* path = &full_path[0];
-
-	BOOL bScucces = CreateProcess(NULL, path,
+    // Key components to creating process.
+    char* game_path = &path[0];
+	BOOL bScucces = CreateProcess(NULL, game_path,
 			NULL, NULL, FALSE, 0, NULL, NULL, &startinfo, &processinfo);
 
 
     // Error handling
-    if(bScucces == FALSE)
-    {
+    if(bScucces == FALSE) {
         cout<<"Create Process Failed & Error No - "<<GetLastError()<<endl;
     }
-
-    // We had success
     cout<<"Create Process Success"<<endl;
 
     // Terminal will help us track the proccess and thread
@@ -67,16 +60,13 @@ int main() {
     cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
     cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
 
-    // Wait for process to go down then closs when finished
+    // Wait for process to go down then close when finished
     WaitForSingleObject(processinfo.hProcess, INFINITE);
     CloseHandle(processinfo.hThread);
     CloseHandle(processinfo.hProcess);
-
-    // Instead of instantly finishing main this will hold until someone closes
-    // the game then this will resume the tasks in this main.
     system("PAUSE");
-    return 0;
 }
+
 
 BOOL checkPath(std::string dir) {
     std::ifstream file(dir);
@@ -90,10 +80,6 @@ BOOL checkPath(std::string dir) {
 }
 
 
-// Validates game is an exe file and fixes escape characters in the path.
-// Inputs: A string representing supposed game's path.
-// Outputs: A validated .exe string for the games with fixed exit characters.
-// EXIT_FAILURE: If the input string path is not a .exe file.
 void EnhancePath(std::string& path) {
     path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
     if (path.substr(path.length() - 4) == ".exe"){
