@@ -1,7 +1,15 @@
+/**
+ * This is a namespace to interace with the database for the GamesInOne app.
+ * Use the functions as described to add games and platforms. As well as retrieve
+ * the overall list of games and platforms, and retrieve specific games and platforms.
+ * DO NOT try to construct the game/platform NAME objects without going through the
+ * database interface.
+*/
 #ifndef _GAMESDB_H_
 #define _GAMESDB_H_
 
 #include <list>
+#include "example.h"
 
 namespace gamesDB {
     // Stores the digital gaming platform and it's necessary information
