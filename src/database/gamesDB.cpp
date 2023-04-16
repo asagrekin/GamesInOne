@@ -8,10 +8,10 @@
 #include <cstdlib>
 #include "gamesDB.h"
 
-#define PLATFORM_NAME_LIST "pltnmelst.dat"
-#define GAME_NAME_LIST     "gmenmelst.dat"
-#define PLATFORM_LIST      "pltlst.dat"
-#define GAME_LIST          "gmelst.dat"
+#define PLATFORM_NAME_LIST "dbFiles/pltnmelst.dat"
+#define GAME_NAME_LIST     "dbFiles/gmenmelst.dat"
+#define PLATFORM_LIST      "dbFiles/pltlst.dat"
+#define GAME_LIST          "dbFiles/gmelst.dat"
 
 namespace gamesDB {
     // Stores the digital gaming platform and it's necessary information
@@ -111,7 +111,7 @@ namespace gamesDB {
 	    }
 
         // Seek to the location of the desired platform.
-        file.seekg(sizeof(PlatformNameStruct) * (index - 1), std::ios::beg);
+        file.seekg(sizeof(PlatformStruct) * (index - 1), std::ios::beg);
 
         // Initiate blank PlatformNameStruct, read from the file onto it.
         PlatformStruct* result = new PlatformStruct();
@@ -120,6 +120,11 @@ namespace gamesDB {
             return nullptr;
         }
         file.close();
+
+        if (strcmp(name, result->getName()) != 0) {
+            // The platform recieved is not the desired one. Something went wrong.
+            return nullptr;
+        }
 
         return result;
     }

@@ -10,7 +10,7 @@ using namespace std;
 class PlatformNameStruct {
     public:
         // Creates a new object instance.
-        PlatformNameStruct(int index, char *name) : index_(index) {
+        PlatformNameStruct(int index, const char *name) : index_(index) {
             int i;
             for (i = 0; i < 16; i++) {
                 if (name[i] == '\0') {
@@ -35,7 +35,7 @@ class PlatformNameStruct {
 class GameNameStruct {
     public:
         // Creates a new object instance.
-        GameNameStruct(int index, char *name) : index_(index) {
+        GameNameStruct(int index, const char *name) : index_(index) {
             int i;
             for (i = 0; i < 16; i++) {
                 if (name[i] == '\0') {
@@ -63,7 +63,7 @@ class PlatformStruct {
         PlatformStruct() {}
 
         // Creates a new object instance with data.
-        PlatformStruct(char* name, char* username, char* password, char* path) {
+        PlatformStruct(const char* name, const char* username, const char* password, const char* path) {
             int i;
             for (i = 0; i < 16; i++) {
                 if (name[i] == '\0') {
@@ -116,7 +116,7 @@ class GameStruct {
         GameStruct() {}
 
         // Creates a new object instance.
-        GameStruct(char* name, char* path) {
+        GameStruct(const char* name, const char* path) {
             int i;
             for (i = 0; i < 16; i++) {
                 if (name[i] == '\0') {
