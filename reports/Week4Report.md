@@ -1,10 +1,10 @@
-# Weekly status reports (Week 3)
+# Weekly status reports (Week 4)
 #
 ## Team Report
 ### Backend:
-Successfully able to get apps to launch using C++.
+Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
 
-High Level Goal: Anticipating and handling user errors. Begin setting up a larger system to function with the database and front end.
+High Level Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Frontend:
 Created a simple window that contains a row for a game, containing an image-holder, text-holder, and a button. On click, the button will indicate the game is running.
@@ -24,21 +24,18 @@ High Level Goal: Initial database is working (can store games and platforms as s
 
 ## Contributions
 ### Leo & Kelby
-Last week's goal: N/A.
-
-Progress:
-- created a c++ script which uses CreateProcess()
-- we were able to launch app through c++
-
-Issue:
-- some issues that we solved was figuring out how to deal with paths have spaces
-- at first we were going to use System to launch the apps but we learned that
-it was resource heavy, defeats security and that your program could get flagged as a virus.
-Therfore we used CreateProcess().
-
-Goal for next week:
+Last week's goal: 
 - By April 19 we should be Anticipating and handling user errors.
 Begin setting up a larger system to function with the database and front end.
+
+Progress:
+- Created two new methods to handle poor user inputs. The method called checkPath checks to make sure the inputted path is a valid path to execute. The method EnhancePath checks that the file is of type .exe and if it is it fixes the path to account for needed escape characters. Additionally, we created a way to take in user input and store it which accompilshes our goal of setting up a larger system to function with database and front end.
+
+Issue:
+- Ran into some varaible type issues when factoring code out of main into seperate methods. Simple fix was being more cautious when using string and making sure to use addresses of the strings' starts when referencing.
+
+Goal for next week:
+- By April 26 we plan to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Asa
 Last week's goal: N/A.
