@@ -27,23 +27,23 @@ namespace gamesDB {
     // Returns the list of available PlatformNameStructs. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
-    std::list<PlatformNameStruct> getPlatformNames();
+    std::list<PlatformNameStruct>* getPlatformNames();
 
     // Returns the list of available GameNameStructs. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
-    std::list<GameNameStruct> getGameNames();
+    std::list<GameNameStruct>* getGameNames();
 
     // Returns the PlatformStruct associated with the given PlatformNameStruct.
     // User is responsible for cleanup when they're done with it.
     // If it does not exist in the database, or if another error occurs,
     // will return nullptr.
-    PlatformStruct getPlatform(PlatformNameStruct platform);
+    PlatformStruct* getPlatform(PlatformNameStruct platform);
 
     // Returns the GameStruct associated with the given GameNameStruct.
     // User is responsible for cleanup when they're done with it.
     // If it does not exist in the database, or if another error occurs,
     // will return nullptr.
-    GameStruct getGame(GameNameStruct game);
+    GameStruct* getGame(GameNameStruct game);
 }
 #endif

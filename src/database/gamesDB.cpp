@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <list>
+#include <cstdlib>
 #include "gamesDB.h"
 
 #define PLATFORM_NAME_LIST "pltnmelst.dat"
@@ -74,4 +75,58 @@ namespace gamesDB {
 
         return true;
     }
+
+    // Stores the game and it's necessary information in the databsae
+    // as an object. Also adds the name of the game to the list of
+    // available games in the database.
+    // Returns true if succeeded, flase if not.
+    bool addGame(GameStruct newGame) {return false;}
+
+    // Returns the list of available PlatformNameStructs. The user 
+    // is responsible for cleaning up when they are done with it.
+    // Returns nullptr if an error occurs.
+    std::list<PlatformNameStruct>* getPlatformNames() {return nullptr;}
+
+    // Returns the list of available GameNameStructs. The user 
+    // is responsible for cleaning up when they are done with it.
+    // Returns nullptr if an error occurs.
+    std::list<GameNameStruct>* getGameNames() {return nullptr;}
+
+    // Returns the PlatformStruct associated with the given PlatformNameStruct.
+    // User is responsible for cleanup when they're done with it.
+    // If it does not exist in the database, or if another error occurs,
+    // will return nullptr.
+    PlatformStruct* getPlatform(PlatformNameStruct platform) {
+        //GET INDEX AND NAME//
+        int index = platform.getIndex();
+        char* name = platform.getName();
+
+        //OPEN THE FILE, AND RETRIEVE THE OBJECT//
+        // Open the binary file to be read from.
+	    fstream file;
+	    file.open(PLATFORM_LIST, ios::in | ios::binary);
+	    if (!file) {
+            // Error opening file, return nullptr.
+	    	return nullptr;
+	    }
+
+        // Seek to the location of the desired platform.
+        file.seekg(sizeof(PlatformNameStruct) * (index - 1), std::ios::beg);
+
+        // Initiate blank PlatformNameStruct, read from the file onto it.
+        PlatformStruct* result = new PlatformStruct();
+        if (!file.read((char*) result, sizeof(result))) {
+            // Error reading file, return false.
+            return nullptr;
+        }
+        file.close();
+
+        return result;
+    }
+
+    // Returns the GameStruct associated with the given GameNameStruct.
+    // User is responsible for cleanup when they're done with it.
+    // If it does not exist in the database, or if another error occurs,
+    // will return nullptr.
+    GameStruct* getGame(GameNameStruct game) {return nullptr;}
 }

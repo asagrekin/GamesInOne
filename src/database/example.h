@@ -59,7 +59,10 @@ class GameNameStruct {
 // Object containing the information of a digital gaming platform.
 class PlatformStruct {
     public:
-        // Creates a new object instance.
+        // Creates a new object instance with blank fields.
+        PlatformStruct() {}
+
+        // Creates a new object instance with data.
         PlatformStruct(char* name, char* username, char* password, char* path) {
             int i;
             for (i = 0; i < 16; i++) {
@@ -109,6 +112,9 @@ class PlatformStruct {
 // Object containing the information of a game.
 class GameStruct {
     public:
+        // Creates a new object instance with blank fields.
+        GameStruct() {}
+
         // Creates a new object instance.
         GameStruct(char* name, char* path) {
             int i;
