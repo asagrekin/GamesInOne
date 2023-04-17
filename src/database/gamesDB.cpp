@@ -14,6 +14,11 @@
 #define PLATFORM_LIST      "dbFiles/pltlst.dat"
 #define GAME_LIST          "dbFiles/gmelst.dat"
 
+#define NAME_SIZE 17
+#define USERNAME_SIZE 17
+#define PASSWORD_SIZE 65
+#define PATH_SIZE 257
+
 namespace gamesDB {
     // Stores the digital gaming platform and it's necessary information
     // as an object in the database. Also adds the platform name to the
@@ -86,12 +91,51 @@ namespace gamesDB {
     // Returns the list of available PlatformNameStructs. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
-    std::list<PlatformNameStruct>* getPlatformNames() {return nullptr;}
+    std::list<PlatformNameStruct*>* getPlatformNames() {
+        //GET NUMBER OF PLATFORM NAMES//
+        // Open the binary file to be read from.
+	    fstream file;
+	    file.open(PLATFORM_NAME_LIST, ios::in | ios::binary);
+	    if (!file) {
+            // Error opening file, return nullptr.
+	    	return nullptr;
+	    }
+        
+        // Initiate int, and read the current number of platforms in the list.
+        int num;
+        if (!file.read((char*) &num, sizeof(num))) {
+            // Error reading file, return nullptr.
+            return nullptr;
+        }
+
+        //GET EVERY PLATFORM NAME, AND PUT THEM IN A LIST//
+        list<PlatformNameStruct*> *result = new list<PlatformNameStruct*>();
+
+        // Loop through binary file, and read each PlatformNameStruct.
+        for (int i = 0; i < num; i++) {
+            PlatformNameStruct* curr = new PlatformNameStruct();
+
+            // Seek to the location of the current PlatformNameStruct.
+            file.seekg(sizeof(int) + (sizeof(PlatformNameStruct) * i), std::ios::beg);
+
+            // Read the current PlatformnameStruct from the binary file.
+            if (!file.read((char*) curr, sizeof(PlatformNameStruct))) {
+                // Error reading file, return nullptr.
+                return nullptr;
+            }
+
+            // Add the current PlatformNameStruct to the list.
+            result->push_back(curr);
+        }
+        file.close();
+
+        return result;
+    }
 
     // Returns the list of available GameNameStructs. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
-    std::list<GameNameStruct>* getGameNames() {return nullptr;}
+    std::list<GameNameStruct*>* getGameNames() {return nullptr;}
 
     // Returns the PlatformStruct associated with the given PlatformNameStruct.
     // User is responsible for cleanup when they're done with it.
@@ -100,7 +144,6 @@ namespace gamesDB {
     PlatformStruct* getPlatform(PlatformNameStruct platform) {
         //GET INDEX AND NAME//
         int index = platform.getIndex();
-        char* name = platform.getName();
 
         //OPEN THE FILE, AND RETRIEVE THE OBJECT//
         // Open the binary file to be read from.
@@ -108,27 +151,43 @@ namespace gamesDB {
 	    file.open(PLATFORM_LIST, ios::in | ios::binary);
 	    if (!file) {
             // Error opening file, return nullptr.
-            cout << "Error opening file" << endl;
 	    	return nullptr;
 	    }
 
         // Seek to the location of the desired platform.
         file.seekg(sizeof(PlatformStruct) * (index - 1), std::ios::beg);
 
-        // Initiate blank PlatformNameStruct, read from the file onto it.
-        PlatformStruct* result = new PlatformStruct();
-        if (!file.read((char*) result, sizeof(result))) {
-            // Error reading file, return false.
-            cout << "Error reading file." << endl;
+        // Initiate blank PlatformNameStruct fields, read from the file onto it.
+        char name[17], username[17], password[65], path[257];
+        if (!file.read(name, NAME_SIZE)) {
+            // Error reading file, return nullptr.
+            return nullptr;
+        }
+
+        // Seek to the location of the username.
+        file.seekg((sizeof(PlatformStruct) * (index - 1)) + NAME_SIZE, std::ios::beg);
+        if (!file.read(username, USERNAME_SIZE)) {
+            // Error reading file, return nullptr.
+            return nullptr;
+        }
+
+        // Seek to the location of the password.
+        file.seekg((sizeof(PlatformStruct) * (index - 1)) + NAME_SIZE + USERNAME_SIZE, std::ios::beg);
+        if (!file.read(password, PASSWORD_SIZE)) {
+            // Error reading file, return nullptr.
+            return nullptr;
+        }
+
+        // Seek to the location of the path.
+        file.seekg((sizeof(PlatformStruct) * (index - 1)) + NAME_SIZE + USERNAME_SIZE + PASSWORD_SIZE, std::ios::beg);
+        if (!file.read(path, PATH_SIZE)) {
+            // Error reading file, return nullptr.
             return nullptr;
         }
         file.close();
 
-        // if (strcmp(name, result->getName()) != 0) {
-        //     // The platform recieved is not the desired one. Something went wrong.
-        //     cout << "Comparison failed." << endl;
-        //     return nullptr;
-        // }
+        // Create the resulting PlatformStruct with the variables from memory
+        PlatformStruct* result = new PlatformStruct(name, username, password, path);
 
         return result;
     }

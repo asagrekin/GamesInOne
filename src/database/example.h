@@ -9,6 +9,9 @@ using namespace std;
 // Object containing the name and index of a digital gaming platform.
 class PlatformNameStruct {
     public:
+        // Creates an empty object instance.
+        PlatformNameStruct() : index_(0) {}
+
         // Creates a new object instance.
         PlatformNameStruct(int index, const char *name) : index_(index) {
             int i;
@@ -34,6 +37,9 @@ class PlatformNameStruct {
 // Object containing the name and index of a game.
 class GameNameStruct {
     public:
+        // Creates an empty object instance.
+        GameNameStruct() : index_(0) {}
+        
         // Creates a new object instance.
         GameNameStruct(int index, const char *name) : index_(index) {
             int i;
