@@ -1,4 +1,6 @@
-// This is an example of how to use the database.
+/**
+ * This is an example use of the databse interface. Use for reference.
+*/
 
 #include <iostream>
 #include <fstream>

@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "list": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "cstdlib": "cpp"
     }
 }

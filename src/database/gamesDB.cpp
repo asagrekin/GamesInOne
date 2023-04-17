@@ -7,6 +7,7 @@
 #include <list>
 #include <cstdlib>
 #include "gamesDB.h"
+#include "example.h"
 
 #define PLATFORM_NAME_LIST "dbFiles/pltnmelst.dat"
 #define GAME_NAME_LIST     "dbFiles/gmenmelst.dat"
@@ -70,7 +71,7 @@ namespace gamesDB {
         file.seekg(sizeof(PlatformStruct) * (index - 1), std::ios::beg);
 
         // Write the new number PlatformStruct into the data file.
-        file.write((char*) &newPlatformName, sizeof(PlatformNameStruct));
+        file.write((char*) &newPlatform, sizeof(PlatformStruct));
         file.close();
 
         return true;
@@ -107,6 +108,7 @@ namespace gamesDB {
 	    file.open(PLATFORM_LIST, ios::in | ios::binary);
 	    if (!file) {
             // Error opening file, return nullptr.
+            cout << "Error opening file" << endl;
 	    	return nullptr;
 	    }
 
@@ -117,14 +119,16 @@ namespace gamesDB {
         PlatformStruct* result = new PlatformStruct();
         if (!file.read((char*) result, sizeof(result))) {
             // Error reading file, return false.
+            cout << "Error reading file." << endl;
             return nullptr;
         }
         file.close();
 
-        if (strcmp(name, result->getName()) != 0) {
-            // The platform recieved is not the desired one. Something went wrong.
-            return nullptr;
-        }
+        // if (strcmp(name, result->getName()) != 0) {
+        //     // The platform recieved is not the desired one. Something went wrong.
+        //     cout << "Comparison failed." << endl;
+        //     return nullptr;
+        // }
 
         return result;
     }

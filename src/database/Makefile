@@ -3,13 +3,13 @@ CPP = g++
 all : example
 
 example: example.o gamesDB.o
-	$(CPP) -o $@ $<
+	$(CPP) -o example example.o gamesDB.o
 
 example.o: example.cpp gamesDB.h example.h
-	$(CPP) -c $<
+	$(CPP) -c example.cpp
 
 gamesDB.o: gamesDB.cpp gamesDB.h example.h
-	$(CPP) -c $<
+	$(CPP) -c gamesDB.cpp
 
 clean:
-	rm example *.o *~.
+	rm example *.o
