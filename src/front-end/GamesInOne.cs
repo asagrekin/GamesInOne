@@ -19,19 +19,26 @@ namespace Games_In_One_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            addGameScreen.Visible = false;
         }
 
         private void AddGameButton_Click(object sender, EventArgs e)
         {
-            GameRow gameRow = new GameRow();
+            /*GameRow gameRow = new GameRow();
             gameRow.Dock = DockStyle.Fill;
             GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
-            GamesTable.RowCount++;
+            GamesTable.RowCount++;*/
+
+            addGameScreen.Visible = true;           
 
         }
 
         private void GamesTable_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void addGameScreen_Load(object sender, EventArgs e)
         {
 
         }

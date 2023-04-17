@@ -60,6 +60,12 @@
     <Compile Include="GameRow.Designer.cs">
       <DependentUpon>GameRow.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddGameScreen.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AddGameScreen.Designer.cs">
+      <DependentUpon>AddGameScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GamesInOne.resx">
       <DependentUpon>GamesInOne.cs</DependentUpon>
     </EmbeddedResource>
@@ -75,6 +81,9 @@
     </Compile>
     <EmbeddedResource Include="GameRow.resx">
       <DependentUpon>GameRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddGameScreen.resx">
+      <DependentUpon>AddGameScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
