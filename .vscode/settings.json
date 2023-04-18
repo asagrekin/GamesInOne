@@ -2,6 +2,7 @@
     "files.associations": {
         "list": "cpp",
         "ios": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "iosfwd": "cpp"
     }
 }

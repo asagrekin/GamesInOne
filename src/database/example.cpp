@@ -12,29 +12,6 @@
 using namespace std;
 
 int main(int argc, char **argv) {
-	//MANUALLY RESET THE DATABASE FILES. FOR DEMO PURPOSES ONLY. DON'T DO THIS!!!!//
-	// Platform list
-	fstream file;
-	int index = 0;
-    file.open("dbFiles/pltnmelst.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.write((char*) &index, sizeof(index));	
-	file.close();
-
-	// Game list
-	file.open("dbFiles/gmenmelst.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.write((char*) &index, sizeof(index));
-	file.close();
-
-
-
 	// Create a new PlatformStruct
 	string name, username, password, path;
 	name = "Steam";
@@ -85,22 +62,48 @@ int main(int argc, char **argv) {
 	delete platformsList;
 
 	//MANUALLY RESET THE DATABASE FILES. FOR DEMO PURPOSES ONLY. DON'T DO THIS!!!!//
-	// Platform list
-    file.open("dbFiles/pltnmelst.dat", ios::out | ios::binary);
+	// Platform file
+	fstream file;
+	int index = 0;
+    file.open("dbFiles/pltInd.dat", ios::out | ios::binary);
 	if (!file) {
 	    cout << "Error opening file" << endl;
 		return EXIT_FAILURE;
 	}
 	file.write((char*) &index, sizeof(index));	
 	file.close();
+	file.open("dbFiles/pltnmelst.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
+	file.close();
+	file.open("dbFiles/pltlst.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
+	file.close();
 
 	// Game list
-	file.open("dbFiles/gmenmelst.dat", ios::out | ios::binary);
+	file.open("dbFiles/gmeInd.dat", ios::out | ios::binary);
 	if (!file) {
 	    cout << "Error opening file" << endl;
 		return EXIT_FAILURE;
 	}
 	file.write((char*) &index, sizeof(index));
+	file.close();
+	file.open("dbFiles/gmenmelst.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
+	file.close();
+	file.open("dbFiles/gmelst.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
 	file.close();
 
 	return EXIT_SUCCESS;

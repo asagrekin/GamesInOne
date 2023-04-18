@@ -13,6 +13,8 @@
 #define GAME_NAME_LIST     "dbFiles/gmenmelst.dat"
 #define PLATFORM_LIST      "dbFiles/pltlst.dat"
 #define GAME_LIST          "dbFiles/gmelst.dat"
+#define PLATFORM_INDEX     "dbFiles/pltInd.dat"
+#define GAME_INDEX         "dbFiles/gmeInd.dat"
 
 #define NAME_SIZE 17
 #define USERNAME_SIZE 17
@@ -28,7 +30,7 @@ namespace gamesDB {
         //GET INDEX//
         // Open the binary file to be read from.
 	    fstream file;
-	    file.open(PLATFORM_NAME_LIST, ios::in | ios::binary);
+	    file.open(PLATFORM_INDEX, ios::in | ios::binary);
 	    if (!file) {
             // Error opening file, return false.
 	    	return false;
@@ -42,13 +44,13 @@ namespace gamesDB {
         }
         file.close();
 
-        //WRITE NEW INDEX AND PLATFORMNAMESTRUCT//
+        //WRITE NEW INDEX//
         // Initiate new PlatformNameStruct object.
         index++;
         PlatformNameStruct newPlatformName(index, newPlatform.getName());
 
         // Open the binary file to be written to.
-	    file.open(PLATFORM_NAME_LIST, ios::out | ios::binary);
+	    file.open(PLATFORM_INDEX, ios::out | ios::binary);
 	    if (!file) {
             // Error opening file, return false.
 	    	return false;
@@ -56,24 +58,27 @@ namespace gamesDB {
 
         // Write the new number of platforms into the start of the data file.
         file.write((char*) &index, sizeof(index));
-
-        // Jump to the location to write the new PlatformNameStruct into the file.
-        file.seekg(sizeof(index) + (sizeof(PlatformNameStruct) * (index - 1)), std::ios::beg);
-
-        // Write the new number PlatformNameStruct into the data file.
-        file.write((char*) &newPlatformName, sizeof(PlatformNameStruct));
         file.close();
 
-        //WRITE NEW PLATFORMSTRUCT//
+        //WRITE NEW PLATFORMNAMESTRUCT//
         // Open the binary file to be written to.
-	    file.open(PLATFORM_LIST, ios::out | ios::binary);
+	    file.open(PLATFORM_NAME_LIST, ios::app | ios::binary);
 	    if (!file) {
             // Error opening file, return false.
 	    	return false;
 	    }
 
-        // Jump to the location to write the new PlatformNameStruct into the file.
-        file.seekg(sizeof(PlatformStruct) * (index - 1), std::ios::beg);
+        // Write the new PlatformNameStruct into the data file.
+        file.write((char*) &newPlatformName, sizeof(PlatformNameStruct));
+        file.close();
+
+        //WRITE NEW PLATFORMSTRUCT//
+        // Open the binary file to be written to.
+	    file.open(PLATFORM_LIST, ios::app | ios::binary);
+	    if (!file) {
+            // Error opening file, return false.
+	    	return false;
+	    }
 
         // Write the new number PlatformStruct into the data file.
         file.write((char*) &newPlatform, sizeof(PlatformStruct));
@@ -95,7 +100,7 @@ namespace gamesDB {
         //GET NUMBER OF PLATFORM NAMES//
         // Open the binary file to be read from.
 	    fstream file;
-	    file.open(PLATFORM_NAME_LIST, ios::in | ios::binary);
+	    file.open(PLATFORM_INDEX, ios::in | ios::binary);
 	    if (!file) {
             // Error opening file, return nullptr.
 	    	return nullptr;
@@ -107,8 +112,16 @@ namespace gamesDB {
             // Error reading file, return nullptr.
             return nullptr;
         }
+        file.close();
 
         //GET EVERY PLATFORM NAME, AND PUT THEM IN A LIST//
+        // Open the binary file to be read from.
+	    file.open(PLATFORM_NAME_LIST, ios::in | ios::binary);
+	    if (!file) {
+            // Error opening file, return nullptr.
+	    	return nullptr;
+	    }
+
         list<PlatformNameStruct*> *result = new list<PlatformNameStruct*>();
 
         // Loop through binary file, and read each PlatformNameStruct.
@@ -116,7 +129,7 @@ namespace gamesDB {
             PlatformNameStruct* curr = new PlatformNameStruct();
 
             // Seek to the location of the current PlatformNameStruct.
-            file.seekg(sizeof(int) + (sizeof(PlatformNameStruct) * i), std::ios::beg);
+            file.seekg(sizeof(PlatformNameStruct) * i, std::ios::beg);
 
             // Read the current PlatformnameStruct from the binary file.
             if (!file.read((char*) curr, sizeof(PlatformNameStruct))) {
