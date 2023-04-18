@@ -29,7 +29,8 @@ namespace Games_In_One_App
             GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
             GamesTable.RowCount++;*/
 
-            addGameScreen.Visible = true;           
+            addGameScreen.Visible = true;
+            addGameScreen.BringToFront();
 
         }
 
@@ -40,7 +41,7 @@ namespace Games_In_One_App
 
         private void addGameScreen_Load(object sender, EventArgs e)
         {
-
+            addGameScreen.Visible = false;
         }
     }
 }

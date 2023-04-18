@@ -72,10 +72,10 @@ namespace Games_In_One_App
             this.GamesTable.TabIndex = 9;
             this.GamesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.GamesTable_Paint);
             // 
-            // addGameScreen1
+            // addGameScreen
             // 
             this.addGameScreen.Location = new System.Drawing.Point(262, 85);
-            this.addGameScreen.Name = "addGameScreen1";
+            this.addGameScreen.Name = "addGameScreen";
             this.addGameScreen.Size = new System.Drawing.Size(455, 421);
             this.addGameScreen.TabIndex = 10;
             this.addGameScreen.Load += new System.EventHandler(this.addGameScreen_Load);
