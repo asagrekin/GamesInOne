@@ -10,6 +10,9 @@ To retrieve the overall list of platforms: call gamesDB::getPlatformNames()\
 To retrieve the overall list of games: call gamesDB::getGameNames()\
 To retrieve the info of a specific platform: call gamesDB::getPlatform(associated PlatformNameStruct)\
 To retrieve the info of a specific game: call gamesDB::getGame(associated GameNameStruct)
+## Includes
+\#include example.h\
+\#include gamesDB.h
 # Example
 A working example of this SDK in use is implemented for you in example.cpp to be used as reference.\
 To compile, run make. This may not work on windows, if so, feel free to mess around with the Makefile, just don't push any changes to it.
