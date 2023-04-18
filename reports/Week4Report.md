@@ -7,9 +7,9 @@ Created a system to handle poor user inputs as well as a strong foundation to be
 High Level Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Frontend:
-Created a simple window that contains a row for a game, containing an image-holder, text-holder, and a button. On click, the button will indicate the game is running.
+Created an add game screen to the UI, it is displayed when the user click on the "Add game" button.
 
-High Level Goal: Application is able to handle user interaction, and perform changes when trying to add a new game
+High Level Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
 
 ### Database:
 Last Week's Goal: Initial database is working (can store platforms as objects in the database, and has a list of game and platform names).
@@ -60,14 +60,17 @@ Goal for next week:
 - Merge with back-end.
 
 ### Steven
-Last week's goal: N/A.
+Last week's goal: 
+- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
 
 Progress: 
-- Was into creating a windows application using C# through Visual Studio. Created a simple application for Games In One, which consists of title, add game button, and a row for game information.
+- Able to create multiple rows of game. Created an add game screen to the UI, looked into how to dispaly/remove new screen on the application based on button interactions. Look into how to communicate between C++ and C# code.
 
 
 Issue:
-- was figuring out how to populate multiple rows of game info. Currently, testing it out with creating a class, that contains the components of each row. Each time we add a new game, it will create that class and put those components into a new row.
+- Was encountering issue of the text box not reacting as expecting.
 
-Goal for next week: 
-- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. COmplete by April 19.
+Goal for next week: By April 26
+- Application is able to create new game rows based on the infromation entered by the user
+- Improve user interaction handling
+- Allow user to add an image path (for the image in a game row)
