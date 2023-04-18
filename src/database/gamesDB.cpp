@@ -39,8 +39,8 @@ namespace gamesDB {
         // Initiate int, and read the current number of platforms in the list.
         int index;
         if (!file.read((char*) &index, sizeof(index))) {
-            // Error reading file, return false.
-            return false;
+            // File is uninitialized, index is 0.
+            index = 0;
         }
         file.close();
 

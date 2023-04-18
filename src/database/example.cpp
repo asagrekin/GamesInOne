@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 	// Make call to get the list of Platform names/indexes.
 	list<PlatformNameStruct*> *platformsList = gamesDB::getPlatformNames();
 	cout << "Current number of games: " << platformsList->size() << endl;
-	PlatformNameStruct *platformName = platformsList->back();
+	PlatformNameStruct *platformName = platformsList->front();
 	cout << "Current index: " << platformName->getIndex() << endl;
 	cout << "Current name: " << platformName->getName() << endl;
 
@@ -58,6 +58,9 @@ int main(int argc, char **argv) {
 	cout << "Path from memory: " << fromMemory->getPath() << endl;
 
 	// Clean up the struct from memory. DO THIS EVERY TIME TO PREVENT DATA LEAKS.
+	for (auto it = platformsList->begin(); it != platformsList->end(); it++) {
+		delete *it;
+	}
 	delete fromMemory;
 	delete platformsList;
 
@@ -70,7 +73,6 @@ int main(int argc, char **argv) {
 	    cout << "Error opening file" << endl;
 		return EXIT_FAILURE;
 	}
-	file.write((char*) &index, sizeof(index));	
 	file.close();
 	file.open("dbFiles/pltnmelst.dat", ios::out | ios::binary);
 	if (!file) {
