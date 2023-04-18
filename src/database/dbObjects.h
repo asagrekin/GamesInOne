@@ -10,13 +10,13 @@
 #define _DBOBJECTS_H_
 
 namespace gamesDB{
-    class dbIndex {
+    class dbObject {
         public:
             // Creates an empty object instance.
-            dbIndex() : index_(0) {}
+            dbObject() : index_(0) {}
 
             // Creates a new object instance.
-            dbIndex(int index, char* name) : index_(index) {
+            dbObject(int index, char* name) : index_(index) {
                 int i;
                 for (i = 0; i < 16; i++) {
                     if (name[i] == '\0') {
@@ -28,18 +28,13 @@ namespace gamesDB{
             }
 
             // Deletes the object instance.
-            ~dbIndex() {}
+            ~dbObject() {}
 
             int getIndex() {return index_;} // Returns the index.
             char* getName() {return name_;} // Returns the stored name.
         private:
             int index_;
-            char name_[17];
-    };
-
-    class dbGame {
-        public:
-        private:
+            char name_[17], path_[257], image_path_[257];
     };
 }
 #endif
