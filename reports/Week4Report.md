@@ -12,15 +12,18 @@ Created a simple window that contains a row for a game, containing an image-hold
 High Level Goal: Application is able to handle user interaction, and perform changes when trying to add a new game
 
 ### Database:
-Decided agaomst using a pre-built database API becuase they all use SQL which would overcomplicate things. Approach taken will be a simple text file databse, which will be easier to use, and can be taylored directly to the app's needs.
+Last Week's Goal: Initial database is working (can store platforms as objects in the database, and has a list of game and platform names).
 
-High Level Goal: Initial database is working (can store games and platforms as structs/objects in the database, and has a list of game and platform names).
+Progress: Got databse working as a proof of concept. Issue is: I don't know what the backend and front end need stored in the databse, so I'm blocked on that, until I get more information.
+
+High Level Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
 
 ### Agenda for Project Meeting:
-- Discuss current porgress
+- Discuss current progress
 - Discuss individual contribution
 - Discuss about issues
 - Discuss goal for next week
+- Discuss revisions for Project Requirements (Living Doc) diliverable
 
 ## Contributions
 ### Leo & Kelby
@@ -38,19 +41,23 @@ Goal for next week:
 - By April 26 we plan to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Asa
-Last week's goal: N/A.
-
-Progress:
-- Created git repo.
-- Decided on route to take for implementing database.
-- Started playing aroun with txt file databases/reading writing to files in c++.
-
-Issues:
-- Going to have to figure out how best to store data/not much experience with this.
-
-Goal for next week:
+Last week's goal:
 - Keep up with the deadlines.
 - Get initial txt file database up and running so that it can store info.
+
+Progress:
+- Got a working proof of concept for the databse up.
+- Added documentation to database.
+- Got example code of how to use databse runing.
+- Thought about next steps/ointigrating with back-end.
+
+Issues:
+- Blocked by lack of info for what needs to be stored in database/how it should be stored.
+
+Goal for next week:
+- Sync with back-end. Get info as needed for the database.
+- Implement database to work with the back-end.
+- Merge with back-end.
 
 ### Steven
 Last week's goal: N/A.
