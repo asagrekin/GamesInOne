@@ -82,7 +82,7 @@ BOOL checkPath(std::string dir) {
 
 void EnhancePath(std::string& path) {
     path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
-    if (path.substr(path.length() - 4) == ".exe"){
+    if (path.length() > 4 && path.substr(path.length() - 4) == ".exe"){
         size_t i = 0;
         while ((i = path.find("\\", i)) != std::string::npos) {
             path.replace(i, 1, "/");
