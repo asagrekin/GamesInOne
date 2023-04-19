@@ -9,41 +9,22 @@
 #define _GAMESDB_H_
 
 #include <list>
-#include "example.h"
+#include <string>
+#include "dbObjects.h"
 
 namespace gamesDB {
-    // Stores the digital gaming platform and it's necessary information
-    // as an object in the database. Also adds the platform name to the
-    // list of available platforms in the database.
-    // Returns true if succeeded, flase if not.
-    bool addPlatform(PlatformStruct newPlatform);
-
     // Stores the game and it's necessary information in the databsae
-    // as an object. Also adds the name of the game to the list of
-    // available games in the database.
-    // Returns true if succeeded, flase if not.
-    bool addGame(GameStruct newGame);
+    // as an object.
+    // Parameters:
+    //  name: string holding the name of the game (max 16 characters in length).
+    //  path: string holding the path of the game (max 256 characters in length).
+    //  image_path: string holding the image path of the game (max 256 characters in length).
+    // Returns the resulting dbObject if succeeded, nullptr if not.
+    dbObject* storeGame(std::string name, std::string path, std::string image_path);
 
-    // Returns the list of available PlatformNameStructs. The user 
+    // Returns the list all dbObjects in the database. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
-    std::list<PlatformNameStruct*>* getPlatformNames();
-
-    // Returns the list of available GameNameStructs. The user 
-    // is responsible for cleaning up when they are done with it.
-    // Returns nullptr if an error occurs.
-    std::list<GameNameStruct*>* getGameNames();
-
-    // Returns the PlatformStruct associated with the given PlatformNameStruct.
-    // User is responsible for cleanup when they're done with it.
-    // If it does not exist in the database, or if another error occurs,
-    // will return nullptr.
-    PlatformStruct* getPlatform(PlatformNameStruct platform);
-
-    // Returns the GameStruct associated with the given GameNameStruct.
-    // User is responsible for cleanup when they're done with it.
-    // If it does not exist in the database, or if another error occurs,
-    // will return nullptr.
-    GameStruct* getGame(GameNameStruct game);
+    std::list<dbObject*>* getGames();
 }
 #endif

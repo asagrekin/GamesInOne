@@ -6,107 +6,96 @@
 #include <fstream>
 #include <cstdlib>
 #include <list>
-#include "example.h"
 #include "gamesDB.h"
+#include "dbObjects.h"
 
 using namespace std;
 
 int main(int argc, char **argv) {
-	// Create a new PlatformStruct
-	string name, username, password, path;
-	name = "Steam";
-	username = "Asa";
-	password = "password123";
-	path = "lick/my/butthole";
-
-	PlatformStruct platform(name.c_str(), username.c_str(), password.c_str(), path.c_str());
-
-	// Make call to gamesDB interface to store the new platform.
-	if (!gamesDB::addPlatform(platform)) {
-		// Error saving the platform. Exit failure.
-		cout << "There was an error while saving the platform. Exiting..." << endl;
+	// ADD GAMES TO THE DATABASE //
+	// Make call to gamesDB interdace to store a new game, and keep store the resulting object.
+	gamesDB::dbObject* game1 = gamesDB::storeGame("Game1", "this/is/game1.exe", "game1_pic/ture.pdf");
+	if (game1 == nullptr) {
+		// There was an error storing the game in the database if nullptr is returned.
+		cout << "There was an error storing the first game in the database." << endl;
 		return EXIT_FAILURE;
 	}
 
-	// Add a second one for testing purposes.
-	if (!gamesDB::addPlatform(platform)) {
-		// Error saving the platform. Exit failure.
-		cout << "There was an error while saving the platform. Exiting..." << endl;
+	// Read the contents of the dbObject returned.
+	cout << "Contents of the first game:" << endl << game1->getIndex() << endl << game1->getName() << endl
+		 << game1->getPath() << endl << game1->getImagePath() << endl << endl << endl;
+
+	// Store multiple other games in the database.
+	gamesDB::dbObject* game2 = gamesDB::storeGame("Game2", "this_is/game2", "game2/pic_ture.pdf");
+	gamesDB::dbObject* game3 = gamesDB::storeGame("Game3", "this/is_game3.exe", "game3/picture.pdf");
+	gamesDB::dbObject* game4 = gamesDB::storeGame("Game4", "this_is_game4.exe", "game4_picture.pdf");
+
+	if (game2 == nullptr) {
+		// There was an error storing the game in the database if nullptr is returned.
+		cout << "There was an error storing the second game in the database." << endl;
+		return EXIT_FAILURE;
+	} else if (game3 == nullptr) {
+		// There was an error storing the game in the database if nullptr is returned.
+		cout << "There was an error storing the third game in the database." << endl;
+		return EXIT_FAILURE;
+	} else if (game4 == nullptr) {
+		// There was an error storing the game in the database if nullptr is returned.
+		cout << "There was an error storing the fourth game in the database." << endl;
 		return EXIT_FAILURE;
 	}
 
-	// Make call to get the list of Platform names/indexes.
-	list<PlatformNameStruct*> *platformsList = gamesDB::getPlatformNames();
-	cout << "Current number of games: " << platformsList->size() << endl;
-	PlatformNameStruct *platformName = platformsList->front();
-	cout << "Current index: " << platformName->getIndex() << endl;
-	cout << "Current name: " << platformName->getName() << endl;
+	// Clean up the dbObjects that were returned to prevent memory leaks.
+	delete game1;
+	delete game2;
+	delete game3;
+	delete game4;
 
-	// Make call to retrieve the platform info from the database.
-	PlatformStruct *fromMemory = gamesDB::getPlatform(*platformName);
-	if (fromMemory == nullptr) {
-		// Error retrieving the platform from memory.
-		cout << "There was an error while retrieving the platform. Exiting..." << endl;
-		delete platformsList;
+
+
+	// RETRIEVE GAMES FROM THE DATABSE //
+	// Make the call to get the list of games stored in the database.
+	list<gamesDB::dbObject*>* games = gamesDB::getGames();
+	if (games == nullptr) {
+		// If the resulting list is equal to nullptr, an error occured.
+		cout << "There was an error retrieving the list of games from the database." << endl;
 		return EXIT_FAILURE;
 	}
 
-	// Print the contents of the platfrom saved to memory to the console to confirm its validity.
-	cout << "Name from memory: " << fromMemory->getName() << endl;
-	cout << "Username from memory: " << fromMemory->getUsername() << endl;
-	cout << "Password from memory: " << fromMemory->getPassword() << endl;
-	cout << "Path from memory: " << fromMemory->getPath() << endl;
+	// List the information that was stored in memory for all of the games.
+	for (auto it = games->begin(); it != games->end(); it++) {
+		// The games can be accessed like so.
+		cout << "Name: " << (*it)->getName() << endl << "Path: " << (*it)->getPath()
+			 << endl << "Image path: " << (*it)->getImagePath() << endl << endl;
+	}
 
-	// Clean up the struct from memory. DO THIS EVERY TIME TO PREVENT DATA LEAKS.
-	for (auto it = platformsList->begin(); it != platformsList->end(); it++) {
+	// Clean up the list to prevent data leaks.
+	for (auto it = games->begin(); it != games->end(); it++) {
+		// Delete the individual games in the list.
 		delete *it;
 	}
-	delete fromMemory;
-	delete platformsList;
+	// Delete the list itself
+	delete games;
 
-	//MANUALLY RESET THE DATABASE FILES. FOR DEMO PURPOSES ONLY. DON'T DO THIS!!!!//
-	// Platform file
+
+
+	// FOR DEMO PURPOSES ONLY. DON'T DO THIS //
+	// Reset the index file.
 	fstream file;
-	int index = 0;
-    file.open("dbFiles/pltInd.dat", ios::out | ios::binary);
+    file.open("dbFiles/ind.dat", ios::out | ios::binary);
 	if (!file) {
 	    cout << "Error opening file" << endl;
 		return EXIT_FAILURE;
 	}
 	file.close();
-	file.open("dbFiles/pltnmelst.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.close();
-	file.open("dbFiles/pltlst.dat", ios::out | ios::binary);
+	// Reset the games list file.
+    file.open("dbFiles/lst.dat", ios::out | ios::binary);
 	if (!file) {
 	    cout << "Error opening file" << endl;
 		return EXIT_FAILURE;
 	}
 	file.close();
 
-	// Game list
-	file.open("dbFiles/gmeInd.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.write((char*) &index, sizeof(index));
-	file.close();
-	file.open("dbFiles/gmenmelst.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.close();
-	file.open("dbFiles/gmelst.dat", ios::out | ios::binary);
-	if (!file) {
-	    cout << "Error opening file" << endl;
-		return EXIT_FAILURE;
-	}
-	file.close();
+
 
 	return EXIT_SUCCESS;
 }

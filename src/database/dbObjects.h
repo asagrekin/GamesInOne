@@ -9,22 +9,24 @@
 #ifndef _DBOBJECTS_H_
 #define _DBOBJECTS_H_
 
+#include <cstring>
+
 namespace gamesDB{
+    #define NAME_SIZE 17
+    #define PATH_SIZE 257
+
     class dbObject {
         public:
             // Creates an empty object instance.
             dbObject() : index_(0) {}
 
             // Creates a new object instance.
-            dbObject(int index, char* name) : index_(index) {
+            dbObject(int index, const char* name, const char* path, const char* image_path) : index_(index) {
                 int i;
-                for (i = 0; i < 16; i++) {
-                    if (name[i] == '\0') {
-                        break;
-                    }
-                    name_[i] = name[i]; 
-                }
-                name_[i] = '\0';
+                // Copy name, path, and image path.
+                strncpy(name_, name, NAME_SIZE);
+                strncpy(path_, path, PATH_SIZE);
+                strncpy(image_path_, image_path, PATH_SIZE);
             }
 
             // Deletes the object instance.
@@ -32,9 +34,11 @@ namespace gamesDB{
 
             int getIndex() {return index_;} // Returns the index.
             char* getName() {return name_;} // Returns the stored name.
+            char* getPath() {return path_;} // Returns the stored name.
+            char* getImagePath() {return image_path_;} // Returns the stored name.
         private:
             int index_;
-            char name_[17], path_[257], image_path_[257];
+            char name_[NAME_SIZE], path_[PATH_SIZE], image_path_[PATH_SIZE];
     };
 }
 #endif
