@@ -31,6 +31,9 @@ namespace Games_In_One_App
             // Invalid: Display error message 
             //      - Path not to an executable file (if user is the one entering the path)
             //      - 
+
+
+            /*Process.Start("explorer.exe", @"C:\Users");*/
         }
 
         private void GameNameTextBox_Enter(object sender, EventArgs e)
@@ -53,7 +56,7 @@ namespace Games_In_One_App
 
         private void GamePathTextBox_Enter(object sender, EventArgs e)
         {
-            if (GamePathTextBox.Text == "Path")
+            if (GamePathTextBox.Text == "Game Path")
             {
                 GamePathTextBox.Text = "";
                 GamePathTextBox.ForeColor = Color.Black;
@@ -64,11 +67,27 @@ namespace Games_In_One_App
         {
             if (GamePathTextBox.Text == "")
             {
-                GamePathTextBox.Text = "Path";
+                GamePathTextBox.Text = "Game Path";
                 GamePathTextBox.ForeColor = Color.Gray;
             }
         }
 
+        private void GameImagePathTextBox_Enter(object sender, EventArgs e)
+        {
+            if (GameImagePathTextBox.Text == "Image Path")
+            {
+                GameImagePathTextBox.Text = "";
+                GameImagePathTextBox.ForeColor = Color.Black;
+            }
+        }
 
+        private void GameImagePathTextBox_Exit(object sender, EventArgs e)
+        {
+            if (GameImagePathTextBox.Text == "")
+            {
+                GameImagePathTextBox.Text = "Image Path";
+                GameImagePathTextBox.ForeColor = Color.Gray;
+            }
+        }
     }
 }

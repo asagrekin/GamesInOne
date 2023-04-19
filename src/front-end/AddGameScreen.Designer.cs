@@ -38,15 +38,17 @@ namespace Games_In_One_App
             this.ExitAddGameButton = new System.Windows.Forms.Button();
             this.AddGameNameLabel = new System.Windows.Forms.Label();
             this.AddGamePathLabel = new System.Windows.Forms.Label();
+            this.AddGameImagePathLabel = new System.Windows.Forms.Label();
+            this.GameImagePathTextBox = new System.Windows.Forms.MaskedTextBox();
             ClearAddGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearAddGameButton
             // 
-            ClearAddGameButton.Location = new System.Drawing.Point(80, 258);
-            ClearAddGameButton.Margin = new System.Windows.Forms.Padding(2);
+            ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
+            ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             ClearAddGameButton.Name = "ClearAddGameButton";
-            ClearAddGameButton.Size = new System.Drawing.Size(56, 19);
+            ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
             ClearAddGameButton.TabIndex = 4;
             ClearAddGameButton.Text = "Clear";
             ClearAddGameButton.UseVisualStyleBackColor = true;
@@ -56,20 +58,19 @@ namespace Games_In_One_App
             this.AddGameScreenLabel.AutoSize = true;
             this.AddGameScreenLabel.Font = new System.Drawing.Font("Arial Narrow", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddGameScreenLabel.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.AddGameScreenLabel.Location = new System.Drawing.Point(116, 68);
-            this.AddGameScreenLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.AddGameScreenLabel.Location = new System.Drawing.Point(57, 26);
             this.AddGameScreenLabel.Name = "AddGameScreenLabel";
-            this.AddGameScreenLabel.Size = new System.Drawing.Size(114, 26);
+            this.AddGameScreenLabel.Size = new System.Drawing.Size(145, 33);
             this.AddGameScreenLabel.TabIndex = 0;
             this.AddGameScreenLabel.Text = "Add a game";
             // 
             // GameNameTextBox
             // 
             this.GameNameTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.GameNameTextBox.Location = new System.Drawing.Point(47, 158);
-            this.GameNameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GameNameTextBox.Location = new System.Drawing.Point(63, 119);
+            this.GameNameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GameNameTextBox.Name = "GameNameTextBox";
-            this.GameNameTextBox.Size = new System.Drawing.Size(242, 20);
+            this.GameNameTextBox.Size = new System.Drawing.Size(321, 22);
             this.GameNameTextBox.TabIndex = 1;
             this.GameNameTextBox.Text = "Name";
             this.GameNameTextBox.Enter += new System.EventHandler(this.GameNameTextBox_Enter);
@@ -78,21 +79,21 @@ namespace Games_In_One_App
             // GamePathTextBox
             // 
             this.GamePathTextBox.ForeColor = System.Drawing.Color.Gray;
-            this.GamePathTextBox.Location = new System.Drawing.Point(47, 211);
-            this.GamePathTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.GamePathTextBox.Location = new System.Drawing.Point(63, 185);
+            this.GamePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GamePathTextBox.Name = "GamePathTextBox";
-            this.GamePathTextBox.Size = new System.Drawing.Size(242, 20);
+            this.GamePathTextBox.Size = new System.Drawing.Size(321, 22);
             this.GamePathTextBox.TabIndex = 2;
-            this.GamePathTextBox.Text = "Path";
+            this.GamePathTextBox.Text = "Game Path";
             this.GamePathTextBox.Enter += new System.EventHandler(this.GamePathTextBox_Enter);
             this.GamePathTextBox.Leave += new System.EventHandler(this.GamePathTextBox_Exit);
             // 
             // ConfirmAddGameButton
             // 
-            this.ConfirmAddGameButton.Location = new System.Drawing.Point(200, 258);
-            this.ConfirmAddGameButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ConfirmAddGameButton.Location = new System.Drawing.Point(267, 318);
+            this.ConfirmAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ConfirmAddGameButton.Name = "ConfirmAddGameButton";
-            this.ConfirmAddGameButton.Size = new System.Drawing.Size(56, 19);
+            this.ConfirmAddGameButton.Size = new System.Drawing.Size(75, 23);
             this.ConfirmAddGameButton.TabIndex = 3;
             this.ConfirmAddGameButton.Text = "Add Game";
             this.ConfirmAddGameButton.UseVisualStyleBackColor = true;
@@ -100,10 +101,10 @@ namespace Games_In_One_App
             // 
             // ExitAddGameButton
             // 
-            this.ExitAddGameButton.Location = new System.Drawing.Point(271, 13);
-            this.ExitAddGameButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ExitAddGameButton.Location = new System.Drawing.Point(361, 16);
+            this.ExitAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ExitAddGameButton.Name = "ExitAddGameButton";
-            this.ExitAddGameButton.Size = new System.Drawing.Size(56, 19);
+            this.ExitAddGameButton.Size = new System.Drawing.Size(75, 23);
             this.ExitAddGameButton.TabIndex = 5;
             this.ExitAddGameButton.Text = "Exit";
             this.ExitAddGameButton.UseVisualStyleBackColor = true;
@@ -112,26 +113,52 @@ namespace Games_In_One_App
             // AddGameNameLabel
             // 
             this.AddGameNameLabel.AutoSize = true;
-            this.AddGameNameLabel.Location = new System.Drawing.Point(47, 140);
+            this.AddGameNameLabel.Location = new System.Drawing.Point(63, 97);
+            this.AddGameNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddGameNameLabel.Name = "AddGameNameLabel";
-            this.AddGameNameLabel.Size = new System.Drawing.Size(66, 13);
+            this.AddGameNameLabel.Size = new System.Drawing.Size(84, 16);
             this.AddGameNameLabel.TabIndex = 6;
             this.AddGameNameLabel.Text = "Game Name";
             // 
             // AddGamePathLabel
             // 
             this.AddGamePathLabel.AutoSize = true;
-            this.AddGamePathLabel.Location = new System.Drawing.Point(47, 196);
+            this.AddGamePathLabel.Location = new System.Drawing.Point(63, 166);
+            this.AddGamePathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.AddGamePathLabel.Name = "AddGamePathLabel";
-            this.AddGamePathLabel.Size = new System.Drawing.Size(60, 13);
+            this.AddGamePathLabel.Size = new System.Drawing.Size(74, 16);
             this.AddGamePathLabel.TabIndex = 7;
             this.AddGamePathLabel.Text = "Game Path";
             // 
+            // AddGameImagePathLabel
+            // 
+            this.AddGameImagePathLabel.AutoSize = true;
+            this.AddGameImagePathLabel.Location = new System.Drawing.Point(63, 233);
+            this.AddGameImagePathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.AddGameImagePathLabel.Name = "AddGameImagePathLabel";
+            this.AddGameImagePathLabel.Size = new System.Drawing.Size(115, 16);
+            this.AddGameImagePathLabel.TabIndex = 9;
+            this.AddGameImagePathLabel.Text = "Game Image Path";
+            // 
+            // GameImagePathTextBox
+            // 
+            this.GameImagePathTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.GameImagePathTextBox.Location = new System.Drawing.Point(63, 252);
+            this.GameImagePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GameImagePathTextBox.Name = "GameImagePathTextBox";
+            this.GameImagePathTextBox.Size = new System.Drawing.Size(321, 22);
+            this.GameImagePathTextBox.TabIndex = 8;
+            this.GameImagePathTextBox.Text = "Image Path";
+            this.GameImagePathTextBox.Enter += new System.EventHandler(this.GameImagePathTextBox_Enter);
+            this.GameImagePathTextBox.Leave += new System.EventHandler(this.GameImagePathTextBox_Exit);
+            // 
             // AddGameScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Controls.Add(this.AddGameImagePathLabel);
+            this.Controls.Add(this.GameImagePathTextBox);
             this.Controls.Add(this.AddGamePathLabel);
             this.Controls.Add(this.AddGameNameLabel);
             this.Controls.Add(this.ExitAddGameButton);
@@ -140,9 +167,9 @@ namespace Games_In_One_App
             this.Controls.Add(this.GamePathTextBox);
             this.Controls.Add(this.GameNameTextBox);
             this.Controls.Add(this.AddGameScreenLabel);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddGameScreen";
-            this.Size = new System.Drawing.Size(341, 342);
+            this.Size = new System.Drawing.Size(455, 421);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,5 +184,7 @@ namespace Games_In_One_App
         private System.Windows.Forms.Button ExitAddGameButton;
         private System.Windows.Forms.Label AddGameNameLabel;
         private System.Windows.Forms.Label AddGamePathLabel;
+        private System.Windows.Forms.Label AddGameImagePathLabel;
+        private System.Windows.Forms.MaskedTextBox GameImagePathTextBox;
     }
 }
