@@ -1,7 +1,7 @@
 # Overview
 ## How to use
 This is an implementation of a simple data file db, built for the GamesInOne app.\
-Allows users to store new games, as well as retrieve the overall list of available games.\
+Allows users to store new games, as well as retrieve the overall list of available games.
 ## Use cases
 - Store a new game in the database:             gamesDB::storeGame(string name, string path, string image_path);\
 - Retrieve the list of games in the database:   gamesDB::getGames();
