@@ -2,12 +2,17 @@
 #
 ## Team Report
 ### Backend:
-Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
+Last Week's Goal: Be able to Anticipating and handle user errors.
+Begin setting up a larger system to function with the database and front end.
+
+Progress: Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
 
 High Level Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Frontend:
-Created an add game screen to the UI, it is displayed when the user click on the "Add game" button.
+Last Week's Goal: work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
+
+Progress: Created an add game screen to the UI, it is displayed when the user click on the "Add game" button.
 
 High Level Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
 
@@ -27,7 +32,7 @@ High Level Goal: Get database working in context of app (i.e. meet requirements 
 
 ## Contributions
 ### Leo & Kelby
-Last week's goal: 
+Last week's goal:
 - By April 19 we should be Anticipating and handling user errors.
 Begin setting up a larger system to function with the database and front end.
 
@@ -60,10 +65,10 @@ Goal for next week:
 - Merge with back-end.
 
 ### Steven
-Last week's goal: 
+Last week's goal:
 - Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
 
-Progress: 
+Progress:
 - Able to create multiple rows of game. Created an add game screen to the UI, looked into how to dispaly/remove new screen on the application based on button interactions. Look into how to communicate between C++ and C# code.
 
 
