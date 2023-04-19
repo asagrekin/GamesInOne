@@ -8,15 +8,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Games_In_One_App.GamesInOne;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Games_In_One_App
 {
     public partial class AddGameScreen : UserControl
     {
-        public AddGameScreen()
+        private AddGameRowFunc addGameFunc;
+/*        public AddGameScreen()
         {
             InitializeComponent();
+        }*/
+
+        public AddGameScreen(AddGameRowFunc addGameFunc)
+        {
+            InitializeComponent();
+            this.addGameFunc = addGameFunc;
         }
 
         private void ExitAddGameButton_Click(object sender, EventArgs e)
@@ -32,7 +40,7 @@ namespace Games_In_One_App
             //      - Path not to an executable file (if user is the one entering the path)
             //      - 
 
-
+            this.addGameFunc(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
             /*Process.Start("explorer.exe", @"C:\Users");*/
         }
 

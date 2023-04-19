@@ -33,7 +33,7 @@ namespace Games_In_One_App
             this.GamesInOneTitle = new System.Windows.Forms.Label();
             this.AddGameButton = new System.Windows.Forms.Button();
             this.GamesTable = new System.Windows.Forms.TableLayoutPanel();
-            this.addGameScreen = new Games_In_One_App.AddGameScreen();
+            this.addGameScreen = new Games_In_One_App.AddGameScreen(new AddGameRowFunc(AddGameRow));
             this.SuspendLayout();
             // 
             // GamesInOneTitle

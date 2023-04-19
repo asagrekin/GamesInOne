@@ -12,6 +12,7 @@ namespace Games_In_One_App
 {
     public partial class GamesInOne : Form
     {
+        public delegate void AddGameRowFunc(String gameName, String gamePath, String imagePath);
         public GamesInOne()
         {
             InitializeComponent();
@@ -24,14 +25,17 @@ namespace Games_In_One_App
 
         private void AddGameButton_Click(object sender, EventArgs e)
         {
-            /*GameRow gameRow = new GameRow();
-            gameRow.Dock = DockStyle.Fill;
-            GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
-            GamesTable.RowCount++;*/
-
             addGameScreen.Visible = true;
             addGameScreen.BringToFront();
+        }
 
+        public void AddGameRow(String gameName, String gamePath, String imagePath)
+        {
+            addGameScreen.Visible = false;
+            GameRow gameRow = new GameRow();
+            gameRow.Dock = DockStyle.Fill;
+            GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
+            GamesTable.RowCount++;
         }
 
         private void GamesTable_Paint(object sender, PaintEventArgs e)
