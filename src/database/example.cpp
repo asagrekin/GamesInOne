@@ -62,14 +62,14 @@ int main(int argc, char **argv) {
 	}
 
 	// List the information that was stored in memory for all of the games.
-	for (auto it = games->begin(); it != games->end(); it++) {
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
 		// The games can be accessed like so.
 		cout << "Name: " << (*it)->getName() << endl << "Path: " << (*it)->getPath()
 			 << endl << "Image path: " << (*it)->getImagePath() << endl << endl;
 	}
 
 	// Clean up the list to prevent data leaks.
-	for (auto it = games->begin(); it != games->end(); it++) {
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
 		// Delete the individual games in the list.
 		delete *it;
 	}
