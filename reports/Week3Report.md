@@ -66,4 +66,4 @@ Issue:
 - was figuring out how to populate multiple rows of game info. Currently, testing it out with creating a class, that contains the components of each row. Each time we add a new game, it will create that class and put those components into a new row.
 
 Goal for next week: 
-- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. COmplete by April 19.
+- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
