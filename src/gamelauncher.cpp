@@ -32,10 +32,10 @@ int main() {
 
 
 void launchGame(std::string& path){
-    HANDLE hProcess;
-    HANDLE hThread;
-    DWORD dwProcessID =0;
-    DWORD dwThreadId =0;
+    // HANDLE hProcess;
+    // HANDLE hThread;
+    // DWORD dwProcessID =0;
+    // DWORD dwThreadId =0;
 
     STARTUPINFO startinfo;
 	PROCESS_INFORMATION processinfo;
@@ -57,8 +57,8 @@ void launchGame(std::string& path){
     // Terminal will help us track the proccess and thread
     cout<<"Process ID ->"<<processinfo.dwProcessId<<endl;
     cout<<"Thread ID ->"<<processinfo.dwThreadId<<endl;
-    cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
-    cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
+    // cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
+    // cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
 
     // Wait for process to go down then close when finished
     WaitForSingleObject(processinfo.hProcess, INFINITE);

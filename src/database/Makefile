@@ -1,3 +1,11 @@
+ifeq ($(OS), Windows_NT)
+	#Windows
+	RM := del /q
+else 
+	#macOS
+	RM := rm -f
+endif
+
 CPP = g++
 
 all : example
@@ -12,4 +20,4 @@ gamesDB.o: gamesDB.cpp gamesDB.h dbObjects.h
 	$(CPP) -c gamesDB.cpp
 
 clean:
-	rm example *.o
+	$(RM) example.exe *.o
