@@ -30,7 +30,7 @@ namespace Games_In_One_App
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button ClearAddGameButton;
+   
             this.AddGameScreenLabel = new System.Windows.Forms.Label();
             this.GameNameTextBox = new System.Windows.Forms.TextBox();
             this.GamePathTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -40,18 +40,19 @@ namespace Games_In_One_App
             this.AddGamePathLabel = new System.Windows.Forms.Label();
             this.AddGameImagePathLabel = new System.Windows.Forms.Label();
             this.GameImagePathTextBox = new System.Windows.Forms.MaskedTextBox();
-            ClearAddGameButton = new System.Windows.Forms.Button();
+            this.ClearAddGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearAddGameButton
             // 
-            ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
-            ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            ClearAddGameButton.Name = "ClearAddGameButton";
-            ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
-            ClearAddGameButton.TabIndex = 4;
-            ClearAddGameButton.Text = "Clear";
-            ClearAddGameButton.UseVisualStyleBackColor = true;
+            this.ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
+            this.ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearAddGameButton.Name = "ClearAddGameButton";
+            this.ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearAddGameButton.TabIndex = 4;
+            this.ClearAddGameButton.Text = "Clear";
+            this.ClearAddGameButton.UseVisualStyleBackColor = true;
+            this.ClearAddGameButton.Click += new System.EventHandler(this.ClearAddGameButton_Click);
             // 
             // AddGameScreenLabel
             // 
@@ -180,6 +181,7 @@ namespace Games_In_One_App
         private System.Windows.Forms.Label AddGameScreenLabel;
         private System.Windows.Forms.TextBox GameNameTextBox;
         private System.Windows.Forms.MaskedTextBox GamePathTextBox;
+        private System.Windows.Forms.Button ClearAddGameButton;
         private System.Windows.Forms.Button ConfirmAddGameButton;
         private System.Windows.Forms.Button ExitAddGameButton;
         private System.Windows.Forms.Label AddGameNameLabel;

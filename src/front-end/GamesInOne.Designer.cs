@@ -70,7 +70,6 @@ namespace Games_In_One_App
             this.GamesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.GamesTable.Size = new System.Drawing.Size(0, 0);
             this.GamesTable.TabIndex = 9;
-            this.GamesTable.Paint += new System.Windows.Forms.PaintEventHandler(this.GamesTable_Paint);
             // 
             // addGameScreen
             // 

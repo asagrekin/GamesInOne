@@ -16,10 +16,6 @@ namespace Games_In_One_App
     public partial class AddGameScreen : UserControl
     {
         private AddGameRowFunc addGameFunc;
-/*        public AddGameScreen()
-        {
-            InitializeComponent();
-        }*/
 
         public AddGameScreen(AddGameRowFunc addGameFunc)
         {
@@ -38,10 +34,15 @@ namespace Games_In_One_App
             // Valid: Add the selected game, display "Game has been added text"
             // Invalid: Display error message 
             //      - Path not to an executable file (if user is the one entering the path)
-            //      - 
 
+            // Currently assuming user inputed everything correctly.
             this.addGameFunc(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
-            /*Process.Start("explorer.exe", @"C:\Users");*/
+            resetTextBox();
+        }
+
+        private void ClearAddGameButton_Click(object sender, EventArgs e)
+        {
+            resetTextBox();
         }
 
         private void GameNameTextBox_Enter(object sender, EventArgs e)
@@ -96,6 +97,18 @@ namespace Games_In_One_App
                 GameImagePathTextBox.Text = "Image Path";
                 GameImagePathTextBox.ForeColor = Color.Gray;
             }
+        }
+
+        private void resetTextBox()
+        {
+            GameNameTextBox.Text = "Name";
+            GameNameTextBox.ForeColor = Color.Gray;
+
+            GamePathTextBox.Text = "Game Path";
+            GamePathTextBox.ForeColor = Color.Gray;
+
+            GameImagePathTextBox.Text = "Image Path";
+            GameImagePathTextBox.ForeColor = Color.Gray;
         }
     }
 }

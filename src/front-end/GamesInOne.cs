@@ -32,15 +32,10 @@ namespace Games_In_One_App
         public void AddGameRow(String gameName, String gamePath, String imagePath)
         {
             addGameScreen.Visible = false;
-            GameRow gameRow = new GameRow();
+            GameRow gameRow = new GameRow(gameName, gamePath, imagePath);
             gameRow.Dock = DockStyle.Fill;
             GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
             GamesTable.RowCount++;
-        }
-
-        private void GamesTable_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void addGameScreen_Load(object sender, EventArgs e)
