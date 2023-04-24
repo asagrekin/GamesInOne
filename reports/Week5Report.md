@@ -2,12 +2,11 @@
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Be able to Anticipating and handle user errors.
-Begin setting up a larger system to function with the database and front end.
+Last Week's Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
-Progress: Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
+Progress: 
 
-High Level Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+High Level Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
 ### Frontend:
 Last Week's Goal: work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
@@ -33,17 +32,16 @@ High Level Goal: Get database working in context of app (i.e. meet requirements 
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- By April 19 we should be Anticipating and handling user errors.
-Begin setting up a larger system to function with the database and front end.
+- By April 26 we should begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 Progress:
-- Created two new methods to handle poor user inputs. The method called checkPath checks to make sure the inputted path is a valid path to execute. The method EnhancePath checks that the file is of type .exe and if it is it fixes the path to account for needed escape characters. Additionally, we created a way to take in user input and store it which accompilshes our goal of setting up a larger system to function with database and front end.
+- 
 
 Issue:
-- Ran into some varaible type issues when factoring code out of main into seperate methods. Simple fix was being more cautious when using string and making sure to use addresses of the strings' starts when referencing.
+- 
 
 Goal for next week:
-- By April 26 we plan to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+- By May 3 we plan to have functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
 ### Asa
 Last week's goal:
