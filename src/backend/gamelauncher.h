@@ -34,5 +34,13 @@ BOOL checkPath(std::string path) ;
 // Input:   A string address representing game's path.
 void EnhancePath(std::string& path, std::string file_type) ;
 
+bool add();
+
+void play();
+
+void del();
+
+void gameList();
+
 
 #endif // _GAMELAUNCHER_H_
