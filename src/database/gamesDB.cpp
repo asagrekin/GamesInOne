@@ -92,4 +92,52 @@ namespace gamesDB {
 
         return result;
     }
+
+    // Removes the specified game object from the database. Specified game
+    // object should come from the overall list, which is retrieved from the
+    // database using getGames().
+    // Parameters:
+    //  game: the game object representing the game to be deleted.
+    // Returns true if succeeded, false if an error occured.
+    bool removeGame(dbObject game) {
+        // Get the list of current games, and remove the specified one.
+        std::list<dbObject*>* games = getGames();
+        if (games == nullptr) {
+            return false;
+        }
+        list<gamesDB::dbObject*>::iterator it = games.begin();
+
+        int index = game.getIndex();
+        std::advance(it, index - 1);
+        delete *it;
+        games.erase(it);
+        
+        // Change the index of all remaining games in the list.
+        for (it; it < games.end(); it++) {
+            dbObject* curr = new dbObject((*it)->getIndex() + 1, (*it)->getName(), (*it)->getPath(), (*it)->getImagePath());
+            delete *it;
+            games.erase(it);
+            games.insert(it, curr);
+        }
+
+        // Write the new list of games to the file.
+	    std::fstream file;
+        file.open(LIST_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return false;
+	    }
+
+        for (it = games.begin(); it < games.end(); it++) {
+            file.write((char*) (*it), sizeof(dbObject));
+        }
+        file.close();
+        
+        // Clean up the list
+        for (it = games.being(); it < games.end(); it++) {
+            delete *it;
+        }
+        delete games;
+        
+        return true;
+    }
 }
