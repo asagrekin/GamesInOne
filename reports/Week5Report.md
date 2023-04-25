@@ -39,8 +39,9 @@ Last week's goal:
 Progress:
 - We now have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 - Created a new Make File for our original launcher files.
+
 Issue:
-- 
+- An issue was integrating the database with the backend. This issue was resolved and the only other issue was not being able to delete a game from the database. 
 
 Goal for next week:
 - By May 3 we plan to have functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
