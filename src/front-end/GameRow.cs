@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace Games_In_One_App
 {
     public partial class GameRow : UserControl
     {
+        
         private bool running = false;
         private string path;
+
+        [DllImport("D:\\Git Repos\\CSE 403 - SDE\\Games In One\\src\\front-end\\x64\\Debug\\LinkFrontAndBack.dll")]
+        public static extern void launchGame(IntPtr path);
 
         public GameRow(string name, string path, string imagePath)
         {
@@ -34,6 +39,8 @@ namespace Games_In_One_App
             if (running)
             {
                 this.GameStatus.Text = "Game Running...";
+                IntPtr pathPtr = Marshal.StringToHGlobalAnsi(path);
+                launchGame(pathPtr);
             } else
             {
                 this.GameStatus.Text = "";
