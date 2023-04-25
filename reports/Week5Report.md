@@ -4,7 +4,7 @@
 ### Backend:
 Last Week's Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
-Progress: 
+Progress: We now have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 High Level Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
@@ -35,8 +35,8 @@ Last week's goal:
 - By April 26 we should begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 Progress:
-- 
-
+- We now have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+- Created a new Make File for our original launcher files.
 Issue:
 - 
 
