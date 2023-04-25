@@ -16,11 +16,11 @@ Progress: Created an add game screen to the UI, it is displayed when the user cl
 High Level Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
 
 ### Database:
-Last Week's Goal: Initial database is working (can store platforms as objects in the database, and has a list of game and platform names).
+Last Week's Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
 
-Progress: Got databse working as a proof of concept. Issue is: I don't know what the backend and front end need stored in the databse, so I'm blocked on that, until I get more information.
+Progress: Got the database fully up and running, and merged it to main. Synced with the back-end to make sure everything was working properly, and they were able to use it.
 
-High Level Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
+High Level Goal: Finalize the database (deals with errors in saving robustly, stores data efficiently, etc). Also, any additional features needed for the front end get added.
 
 ### Agenda for Project Meeting:
 - Discuss current progress
@@ -45,22 +45,22 @@ Goal for next week:
 
 ### Asa
 Last week's goal:
-- Keep up with the deadlines.
-- Get initial txt file database up and running so that it can store info.
-
-Progress:
-- Got a working proof of concept for the databse up.
-- Added documentation to database.
-- Got example code of how to use databse runing.
-- Thought about next steps/ointigrating with back-end.
-
-Issues:
-- Blocked by lack of info for what needs to be stored in database/how it should be stored.
-
-Goal for next week:
 - Sync with back-end. Get info as needed for the database.
 - Implement database to work with the back-end.
 - Merge with back-end.
+
+Progress:
+- Synced with the rest of team.
+- Got the database working with the needed pieces for back and front end.
+- Merged database to main.
+- Added a delete feature.
+
+Issues:
+- Not sure what needs to be done next, so blocked on what to do next in that regard.
+
+Goal for next week:
+- Deal with any errors that arise in database use.
+- Add features as needed for front end.
 
 ### Steven
 Last week's goal:
