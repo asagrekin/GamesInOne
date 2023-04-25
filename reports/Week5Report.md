@@ -9,12 +9,14 @@ Progress: We now have a functioning interaction with the database. Storing, dele
 High Level Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
 ### Frontend:
-Last Week's Goal: work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
+Last Week's Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
 
-Progress: Created an add game screen to the UI, it is displayed when the user click on the "Add game" button.
+Progress:
+- Added image path text box in the Add Game Screen
+- created a new row with the information using user input
+- Able to Launch a game after clicking "start game"
 
-High Level Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
-
+High Level Goal: Create connection with the back end, create file explorer for the add game screen.
 ### Database:
 Last Week's Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
 
@@ -64,16 +66,18 @@ Goal for next week:
 
 ### Steven
 Last week's goal:
-- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
-
-Progress:
-- Able to create multiple rows of game. Created an add game screen to the UI, looked into how to dispaly/remove new screen on the application based on button interactions. Look into how to communicate between C++ and C# code.
-
-
-Issue:
-- Was encountering issue of the text box not reacting as expecting.
-
-Goal for next week: By April 26
 - Application is able to create new game rows based on the infromation entered by the user
 - Improve user interaction handling
 - Allow user to add an image path (for the image in a game row)
+
+Progress:
+- Added image path text box in the Add Game Screen
+- Based on the inputs from the user, created a new row with the information included
+- Tested with C++ to C# connection, using Dynamic Linked Library (DLL) to launch a game after clicking "start game"
+
+Issue:
+- Was encountering issue when using Dynamic Linked Library, issue was due to the C# project not built to the specifc x64 architecture.
+
+Goal for next week: By May 3
+- Make connection with the back end, create the DLL project.
+- Add file explorer for the Add Game Screen so the user do not have to type the path.
