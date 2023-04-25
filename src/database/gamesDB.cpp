@@ -98,46 +98,58 @@ namespace gamesDB {
     // database using getGames().
     // Parameters:
     //  game: the game object representing the game to be deleted.
-    // Returns true if succeeded, false if an error occured.
-    bool removeGame(dbObject game) {
+    // Returns the updated list of games, or nullptr if an error occured.
+    std::list<dbObject*>* removeGame(dbObject* game) {
         // Get the list of current games, and remove the specified one.
         std::list<dbObject*>* games = getGames();
         if (games == nullptr) {
-            return false;
+            return nullptr;
         }
-        list<gamesDB::dbObject*>::iterator it = games.begin();
+        std::list<gamesDB::dbObject*>::iterator it = games->begin();
 
-        int index = game.getIndex();
+        int index = game->getIndex();
         std::advance(it, index - 1);
         delete *it;
-        games.erase(it);
+        games->erase(it);
+
         
         // Change the index of all remaining games in the list.
-        for (it; it < games.end(); it++) {
-            dbObject* curr = new dbObject((*it)->getIndex() + 1, (*it)->getName(), (*it)->getPath(), (*it)->getImagePath());
-            delete *it;
-            games.erase(it);
-            games.insert(it, curr);
+        std::advance(it, index - 1);
+        for (;it != games->end(); ++it) {
+            (*it)->decrementIndex();
         }
 
         // Write the new list of games to the file.
 	    std::fstream file;
         file.open(LIST_FILE, std::ios::out | std::ios::binary);
 	    if (!file) {
-	    	return false;
+	    	return nullptr;
 	    }
 
-        for (it = games.begin(); it < games.end(); it++) {
+        for (it = games->begin(); it != games->end(); ++it) {
             file.write((char*) (*it), sizeof(dbObject));
         }
         file.close();
-        
-        // Clean up the list
-        for (it = games.being(); it < games.end(); it++) {
-            delete *it;
+
+         // Get the current index.
+	    file.open(INDEX_FILE, std::ios::in | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    } else if (!file.read((char*) &index, sizeof(index))) {
+            file.close();
+            index = 0;
         }
-        delete games;
+        file.close();
+
+        // Save the new index.
+        index--;
+        file.open(INDEX_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    }
+        file.write((char*) &index, sizeof(index));
+        file.close();
         
-        return true;
+        return games;
     }
 }

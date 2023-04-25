@@ -36,6 +36,9 @@ namespace gamesDB{
             char* getName() {return name_;} // Returns the stored name.
             char* getPath() {return path_;} // Returns the stored name.
             char* getImagePath() {return image_path_;} // Returns the stored name.
+
+            // FOR DATABASE USE ONLY.
+            void decrementIndex() {index_--;} // Decrements the index.
         private:
             int index_;
             char name_[NAME_SIZE], path_[PATH_SIZE], image_path_[PATH_SIZE];

@@ -32,7 +32,7 @@ namespace gamesDB {
     // database using getGames().
     // Parameters:
     //  game: the game object representing the game to be deleted.
-    // Returns true if succeeded, false if an error occured.
-    bool removeGame(dbObject game);
+    // Returns the updated list of games, or nullptr if an error occured.
+    std::list<dbObject*>* removeGame(dbObject* game);
 }
 #endif

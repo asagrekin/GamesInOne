@@ -12,6 +12,23 @@
 using namespace std;
 
 int main(int argc, char **argv) {
+	// FOR DEMO PURPOSES ONLY. DON'T DO THIS //
+	// Reset the index file.
+	fstream file;
+    file.open("dbFiles/ind.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
+	file.close();
+	// Reset the games list file.
+    file.open("dbFiles/lst.dat", ios::out | ios::binary);
+	if (!file) {
+	    cout << "Error opening file" << endl;
+		return EXIT_FAILURE;
+	}
+	file.close();
+
 	// ADD GAMES TO THE DATABASE //
 	// Make call to gamesDB interdace to store a new game, and keep store the resulting object.
 	gamesDB::dbObject* game1 = gamesDB::storeGame("Game1", "this/is/game1.exe", "game1_pic/ture.pdf");
@@ -20,10 +37,6 @@ int main(int argc, char **argv) {
 		cout << "There was an error storing the first game in the database." << endl;
 		return EXIT_FAILURE;
 	}
-
-	// Read the contents of the dbObject returned.
-	cout << "Contents of the first game:" << endl << game1->getIndex() << endl << game1->getName() << endl
-		 << game1->getPath() << endl << game1->getImagePath() << endl << endl << endl;
 
 	// Store multiple other games in the database.
 	gamesDB::dbObject* game2 = gamesDB::storeGame("Game2", "this_is/game2", "game2/pic_ture.pdf");
@@ -44,9 +57,8 @@ int main(int argc, char **argv) {
 		return EXIT_FAILURE;
 	}
 
-	// Clean up the dbObjects that were returned to prevent memory leaks.
+	// Clean up the dbObjects that were returned to prevent memory leaks (except game2, we'll use that later).
 	delete game1;
-	delete game2;
 	delete game3;
 	delete game4;
 
@@ -75,12 +87,35 @@ int main(int argc, char **argv) {
 	}
 	// Delete the list itself
 	delete games;
+	cout << endl << endl << endl;
+
+
+
+	// DELETE A GAME //
+	// Remove game 2 from the database, and clean up the old object.
+	games = gamesDB::removeGame(game2);
+	delete game2;
+
+	// List the information of the remaining games.
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
+		// The games can be accessed like so.
+		cout << "Name: " << (*it)->getName() << endl << "Path: " << (*it)->getPath()
+			 << endl << "Image path: " << (*it)->getImagePath() << endl << endl;
+	}
+
+	// Clean up the list to prevent data leaks.
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
+		// Delete the individual games in the list.
+		delete *it;
+	}
+	// Delete the list itself
+	delete games;
 
 
 
 	// FOR DEMO PURPOSES ONLY. DON'T DO THIS //
 	// Reset the index file.
-	fstream file;
+	// fstream file;
     file.open("dbFiles/ind.dat", ios::out | ios::binary);
 	if (!file) {
 	    cout << "Error opening file" << endl;
