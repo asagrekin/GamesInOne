@@ -57,8 +57,12 @@ int main(int argc, char **argv) {
 		return EXIT_FAILURE;
 	}
 
+	//********** get a copy for later use **********//
+	gamesDB::dbObject temp = *game2;
+
 	// Clean up the dbObjects that were returned to prevent memory leaks (except game2, we'll use that later).
 	delete game1;
+	delete game2;
 	delete game3;
 	delete game4;
 
@@ -92,10 +96,31 @@ int main(int argc, char **argv) {
 
 
 	// DELETE A GAME //
-	// Remove game 2 from the database, and clean up the old object.
-	games = gamesDB::removeGame(game2);
-	delete game2;
+	// Remove game 2 from the database, using the object we copied earlier.
+	games = gamesDB::removeGame(&temp);
 
+	// List the information of the remaining games.
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
+		// The games can be accessed like so.
+		cout << "Name: " << (*it)->getName() << endl << "Path: " << (*it)->getPath()
+			 << endl << "Image path: " << (*it)->getImagePath() << endl << endl;
+	}
+
+	// Clean up the list to prevent data leaks.
+	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
+		// Delete the individual games in the list.
+		delete *it;
+	}
+	// Delete the list itself
+	delete games;
+	cout << endl << endl << endl;
+
+
+
+	// DELETE A SECOND GAME USING INDEX //
+	// Make the call to remove the second game using index.
+	games = gamesDB::removeGame(2);
+	
 	// List the information of the remaining games.
 	for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
 		// The games can be accessed like so.

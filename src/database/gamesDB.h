@@ -34,5 +34,13 @@ namespace gamesDB {
     //  game: the game object representing the game to be deleted.
     // Returns the updated list of games, or nullptr if an error occured.
     std::list<dbObject*>* removeGame(dbObject* game);
+
+    // Removes the specified game object from the database. Specified game
+    // object should come from the overall list, which is retrieved from the
+    // database using getGames().
+    // Parameters:
+    //  index: the index of the game to be deleted.
+    // Returns the updated list of games, or nullptr if an error occured.
+    std::list<dbObject*>* removeGame(int index);
 }
 #endif
