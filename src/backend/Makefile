@@ -8,12 +8,12 @@ endif
 CC = g++
 CFLAGS = -Wall -Wextra -std=c++11
 
-SOURCES = gamelauncher.cpp gamesDB.cpp
+SOURCES = demo.cpp gamelauncher.cpp gamesDB.cpp
 HEADERS = gamelauncher.h gamesDB.h dbObjects.h
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
-TARGET = gamelauncher.exe
+TARGET = demo.exe
 
 $(TARGET): $(OBJECTS)
 	$(CC) $(CFLAGS) -o $@ $^
