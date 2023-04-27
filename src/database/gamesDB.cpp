@@ -92,4 +92,123 @@ namespace gamesDB {
 
         return result;
     }
+
+    // Removes the specified game object from the database. Specified game
+    // object should come from the overall list, which is retrieved from the
+    // database using getGames().
+    // Parameters:
+    //  game: the game object representing the game to be deleted.
+    // Returns the updated list of games, or nullptr if an error occured.
+    std::list<dbObject*>* removeGame(dbObject* game) {
+        // Get the list of current games, and remove the specified one.
+        std::list<dbObject*>* games = getGames();
+        if (games == nullptr) {
+            return nullptr;
+        }
+        std::list<gamesDB::dbObject*>::iterator it = games->begin();
+
+        int index = game->getIndex();
+        std::advance(it, index - 1);
+        delete *it;
+        games->erase(it);
+
+        
+        // Change the index of all remaining games in the list.
+        // std::advance(it, index - 1);
+        // for (;it != games->end(); ++it) {
+        //     (*it)->decrementIndex();
+        // }
+
+        // Write the new list of games to the file.
+	    std::fstream file;
+        file.open(LIST_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    }
+
+        for (it = games->begin(); it != games->end(); ++it) {
+            file.write((char*) (*it), sizeof(dbObject));
+        }
+        file.close();
+
+         // Get the current index.
+	    file.open(INDEX_FILE, std::ios::in | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    } else if (!file.read((char*) &index, sizeof(index))) {
+            file.close();
+            index = 0;
+        }
+        file.close();
+
+        // Save the new index.
+        index--;
+        file.open(INDEX_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    }
+        file.write((char*) &index, sizeof(index));
+        file.close();
+        
+        return games;
+    }
+
+    // Removes the specified game object from the database. Specified game
+    // object should come from the overall list, which is retrieved from the
+    // database using getGames().
+    // Parameters:
+    //  index: the index of the game to be deleted.
+    // Returns the updated list of games, or nullptr if an error occured.
+    std::list<dbObject*>* removeGame(int index) {
+        // Get the list of current games, and remove the specified one.
+        std::list<dbObject*>* games = getGames();
+        if (games == nullptr) {
+            return nullptr;
+        }
+        std::list<gamesDB::dbObject*>::iterator it = games->begin();
+
+        std::advance(it, index - 1);
+        delete *it;
+        games->erase(it);
+
+        
+        // Change the index of all remaining games in the list.
+        // std::advance(it, index - 1);
+        // for (;it != games->end(); ++it) {
+        //     (*it)->decrementIndex();
+        // }
+
+        // Write the new list of games to the file.
+	    std::fstream file;
+        file.open(LIST_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    }
+
+        for (it = games->begin(); it != games->end(); ++it) {
+            file.write((char*) (*it), sizeof(dbObject));
+        }
+        file.close();
+
+         // Get the current index.
+	    file.open(INDEX_FILE, std::ios::in | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    } else if (!file.read((char*) &index, sizeof(index))) {
+            file.close();
+            index = 0;
+        }
+        file.close();
+
+        // Save the new index.
+        index--;
+        file.open(INDEX_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return nullptr;
+	    }
+        file.write((char*) &index, sizeof(index));
+        file.close();
+        
+        return games;
+    }
 }
