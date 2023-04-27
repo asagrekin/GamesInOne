@@ -1,15 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Games_In_One_App.GamesInOne;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Games_In_One_App
 {
@@ -109,6 +101,30 @@ namespace Games_In_One_App
 
             GameImagePathTextBox.Text = "Image Path";
             GameImagePathTextBox.ForeColor = Color.Gray;
+        }
+
+        private void GamePathFileExplorer_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GamePathTextBox.Text = GamePathFileExplorer.FileName;
+            GamePathTextBox.ForeColor = Color.Black;
+        }
+
+        private void GameImagePathFileExplorer_FileOk(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            GameImagePathTextBox.Text = GameImagePathFileExplorer.FileName;
+            GameImagePathTextBox.ForeColor = Color.Black;
+        }
+
+
+
+        private void GamePathFileExplorerButton_Click(object sender, EventArgs e)
+        {
+            this.GamePathFileExplorer.ShowDialog();
+        }
+
+        private void GameImagePathExplorerButton_Click(object sender, EventArgs e)
+        {
+            this.GameImagePathFileExplorer.ShowDialog();
         }
     }
 }

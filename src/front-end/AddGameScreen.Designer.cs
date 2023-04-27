@@ -1,4 +1,4 @@
-﻿using System.Drawing;
+﻿using System.Windows.Forms;
 
 namespace Games_In_One_App
 {
@@ -30,7 +30,7 @@ namespace Games_In_One_App
         /// </summary>
         private void InitializeComponent()
         {
-   
+            System.Windows.Forms.Button ClearAddGameButton;
             this.AddGameScreenLabel = new System.Windows.Forms.Label();
             this.GameNameTextBox = new System.Windows.Forms.TextBox();
             this.GamePathTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -40,19 +40,23 @@ namespace Games_In_One_App
             this.AddGamePathLabel = new System.Windows.Forms.Label();
             this.AddGameImagePathLabel = new System.Windows.Forms.Label();
             this.GameImagePathTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.ClearAddGameButton = new System.Windows.Forms.Button();
+            this.GamePathFileExplorer = new System.Windows.Forms.OpenFileDialog();
+            this.GamePathFileExplorerButton = new System.Windows.Forms.Button();
+            this.GameImagePathFileExplorer = new System.Windows.Forms.OpenFileDialog();
+            this.GameImagePathExplorerButton = new System.Windows.Forms.Button();
+            ClearAddGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearAddGameButton
             // 
-            this.ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
-            this.ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ClearAddGameButton.Name = "ClearAddGameButton";
-            this.ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
-            this.ClearAddGameButton.TabIndex = 4;
-            this.ClearAddGameButton.Text = "Clear";
-            this.ClearAddGameButton.UseVisualStyleBackColor = true;
-            this.ClearAddGameButton.Click += new System.EventHandler(this.ClearAddGameButton_Click);
+            ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
+            ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            ClearAddGameButton.Name = "ClearAddGameButton";
+            ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
+            ClearAddGameButton.TabIndex = 4;
+            ClearAddGameButton.Text = "Clear";
+            ClearAddGameButton.UseVisualStyleBackColor = true;
+            ClearAddGameButton.Click += new System.EventHandler(this.ClearAddGameButton_Click);
             // 
             // AddGameScreenLabel
             // 
@@ -83,7 +87,7 @@ namespace Games_In_One_App
             this.GamePathTextBox.Location = new System.Drawing.Point(63, 185);
             this.GamePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GamePathTextBox.Name = "GamePathTextBox";
-            this.GamePathTextBox.Size = new System.Drawing.Size(321, 22);
+            this.GamePathTextBox.Size = new System.Drawing.Size(277, 22);
             this.GamePathTextBox.TabIndex = 2;
             this.GamePathTextBox.Text = "Game Path";
             this.GamePathTextBox.Enter += new System.EventHandler(this.GamePathTextBox_Enter);
@@ -147,17 +151,58 @@ namespace Games_In_One_App
             this.GameImagePathTextBox.Location = new System.Drawing.Point(63, 252);
             this.GameImagePathTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.GameImagePathTextBox.Name = "GameImagePathTextBox";
-            this.GameImagePathTextBox.Size = new System.Drawing.Size(321, 22);
+            this.GameImagePathTextBox.Size = new System.Drawing.Size(277, 22);
             this.GameImagePathTextBox.TabIndex = 8;
             this.GameImagePathTextBox.Text = "Image Path";
             this.GameImagePathTextBox.Enter += new System.EventHandler(this.GameImagePathTextBox_Enter);
             this.GameImagePathTextBox.Leave += new System.EventHandler(this.GameImagePathTextBox_Exit);
+            // 
+            // GamePathFileExplorer
+            // 
+            this.GamePathFileExplorer.DefaultExt = "exe";
+            this.GamePathFileExplorer.FileName = "Game Path";
+            this.GamePathFileExplorer.Filter = "Executable files (*.exe)|*.exe|All files (*.*)|*.*";
+            this.GamePathFileExplorer.FileOk += new System.ComponentModel.CancelEventHandler(this.GamePathFileExplorer_FileOk);
+            // 
+            // GamePathFileExplorerButton
+            // 
+            this.GamePathFileExplorerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GamePathFileExplorerButton.BackgroundImage = global::Games_In_One_App.Properties.Resources.file_explorer_icon;
+            this.GamePathFileExplorerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GamePathFileExplorerButton.Location = new System.Drawing.Point(354, 177);
+            this.GamePathFileExplorerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GamePathFileExplorerButton.Name = "GamePathFileExplorerButton";
+            this.GamePathFileExplorerButton.Size = new System.Drawing.Size(37, 39);
+            this.GamePathFileExplorerButton.TabIndex = 10;
+            this.GamePathFileExplorerButton.UseVisualStyleBackColor = true;
+            this.GamePathFileExplorerButton.Click += new System.EventHandler(this.GamePathFileExplorerButton_Click);
+            // 
+            // GameImagePathFileExplorer
+            // 
+            this.GameImagePathFileExplorer.FileName = "Game Image Path";
+            this.GameImagePathFileExplorer.Filter = "Image Files|*.jpg;*.jpeg;*.png;";
+            this.GameImagePathFileExplorer.FileOk += new System.ComponentModel.CancelEventHandler(this.GameImagePathFileExplorer_FileOk);
+            // 
+            // GameImagePathExplorerButton
+            // 
+            this.GameImagePathExplorerButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.GameImagePathExplorerButton.BackgroundImage = global::Games_In_One_App.Properties.Resources.file_explorer_icon;
+            this.GameImagePathExplorerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GameImagePathExplorerButton.Location = new System.Drawing.Point(354, 244);
+            this.GameImagePathExplorerButton.Margin = new System.Windows.Forms.Padding(4);
+            this.GameImagePathExplorerButton.Name = "GameImagePathExplorerButton";
+            this.GameImagePathExplorerButton.Size = new System.Drawing.Size(37, 39);
+            this.GameImagePathExplorerButton.TabIndex = 11;
+            this.GameImagePathExplorerButton.UseVisualStyleBackColor = true;
+            this.GameImagePathExplorerButton.Click += new System.EventHandler(this.GameImagePathExplorerButton_Click);
             // 
             // AddGameScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.Controls.Add(this.GameImagePathExplorerButton);
+            this.Controls.Add(this.GamePathFileExplorerButton);
             this.Controls.Add(this.AddGameImagePathLabel);
             this.Controls.Add(this.GameImagePathTextBox);
             this.Controls.Add(this.AddGamePathLabel);
@@ -181,12 +226,15 @@ namespace Games_In_One_App
         private System.Windows.Forms.Label AddGameScreenLabel;
         private System.Windows.Forms.TextBox GameNameTextBox;
         private System.Windows.Forms.MaskedTextBox GamePathTextBox;
-        private System.Windows.Forms.Button ClearAddGameButton;
         private System.Windows.Forms.Button ConfirmAddGameButton;
         private System.Windows.Forms.Button ExitAddGameButton;
         private System.Windows.Forms.Label AddGameNameLabel;
         private System.Windows.Forms.Label AddGamePathLabel;
         private System.Windows.Forms.Label AddGameImagePathLabel;
         private System.Windows.Forms.MaskedTextBox GameImagePathTextBox;
+        private System.Windows.Forms.OpenFileDialog GamePathFileExplorer;
+        private System.Windows.Forms.Button GamePathFileExplorerButton;
+        private OpenFileDialog GameImagePathFileExplorer;
+        private Button GameImagePathExplorerButton;
     }
 }

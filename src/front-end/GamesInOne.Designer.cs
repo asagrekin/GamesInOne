@@ -1,6 +1,4 @@
-﻿using System.Drawing.Text;
-
-namespace Games_In_One_App
+﻿namespace Games_In_One_App
 {
     partial class GamesInOne
     {

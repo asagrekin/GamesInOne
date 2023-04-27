@@ -17,7 +17,7 @@ namespace Games_In_One_App
         private bool running = false;
         private string path;
 
-        [DllImport("D:\\Git Repos\\CSE 403 - SDE\\Games In One\\src\\front-end\\x64\\Debug\\LinkFrontAndBack.dll")]
+        [DllImport("..\\.\\..\\x64\\Debug\\LinkFrontAndBack.dll")]
         public static extern void launchGame(IntPtr path);
 
         public GameRow(string name, string path, string imagePath)
@@ -47,5 +47,9 @@ namespace Games_In_One_App
             }
         }
 
+        private void DeleteButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Deleting " +  this.GameName.Text);
+        }
     }
 }
