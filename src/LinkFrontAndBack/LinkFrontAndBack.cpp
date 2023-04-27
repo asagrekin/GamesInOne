@@ -16,7 +16,7 @@ void launchGame(const char* path) {
 
     // Key components to creating process.
     BOOL bScucces = CreateProcess(NULL, const_cast<char*>(path),
-        NULL, NULL, FALSE, 0, NULL, NULL, &startinfo, &processinfo);
+        NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startinfo, &processinfo);
 
 
     // Error handling
