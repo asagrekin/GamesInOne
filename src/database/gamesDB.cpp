@@ -114,10 +114,10 @@ namespace gamesDB {
 
         
         // Change the index of all remaining games in the list.
-        std::advance(it, index - 1);
-        for (;it != games->end(); ++it) {
-            (*it)->decrementIndex();
-        }
+        // std::advance(it, index - 1);
+        // for (;it != games->end(); ++it) {
+        //     (*it)->decrementIndex();
+        // }
 
         // Write the new list of games to the file.
 	    std::fstream file;
@@ -173,10 +173,10 @@ namespace gamesDB {
 
         
         // Change the index of all remaining games in the list.
-        std::advance(it, index - 1);
-        for (;it != games->end(); ++it) {
-            (*it)->decrementIndex();
-        }
+        // std::advance(it, index - 1);
+        // for (;it != games->end(); ++it) {
+        //     (*it)->decrementIndex();
+        // }
 
         // Write the new list of games to the file.
 	    std::fstream file;
