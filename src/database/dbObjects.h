@@ -10,6 +10,8 @@
 #define _DBOBJECTS_H_
 
 #include <cstring>
+#include <string>
+#include <unordered_map>
 
 namespace gamesDB{
     #define NAME_SIZE 17
@@ -17,22 +19,21 @@ namespace gamesDB{
 
     class dbObject {
         public:
-            // Creates an empty object instance.
-            dbObject() : index_(0) {}
-
             // Creates a new object instance.
-            dbObject(int index, const char* name, const char* path, const char* image_path) : index_(index) {
-                int i;
+            dbObject(const string &name, const string &path, const string &image_path) {
+                // Set the ID to a hash of the game path.
+                ID_ = std::hash<std::string>{}(path);
+
                 // Copy name, path, and image path.
-                strncpy(name_, name, NAME_SIZE);
-                strncpy(path_, path, PATH_SIZE);
-                strncpy(image_path_, image_path, PATH_SIZE);
+                strncpy(name_, name.c_str(), NAME_SIZE);
+                strncpy(path_, path.c_str(), PATH_SIZE);
+                strncpy(image_path_, image_path.c_str(), PATH_SIZE);
             }
 
             // Deletes the object instance.
             ~dbObject() {}
 
-            int getIndex() {return index_;} // Returns the index.
+            int getID() {return ID_;} // Returns the ID.
             char* getName() {return name_;} // Returns the stored name.
             char* getPath() {return path_;} // Returns the stored name.
             char* getImagePath() {return image_path_;} // Returns the stored name.
@@ -40,7 +41,7 @@ namespace gamesDB{
             // FOR DATABASE USE ONLY.
             void decrementIndex() {index_--;} // Decrements the index.
         private:
-            int index_;
+            int ID_;
             char name_[NAME_SIZE], path_[PATH_SIZE], image_path_[PATH_SIZE];
     };
 }
