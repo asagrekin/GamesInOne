@@ -31,6 +31,8 @@ namespace gamesDB {
 	    }
         file.write((char*) &index, sizeof(index));
         file.close();
+
+        return true;
     }
 
     // Returns the list all dbObjects in the database. The user 

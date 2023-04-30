@@ -19,10 +19,14 @@ namespace gamesDB{
 
     class dbObject {
         public:
+            // Creates an empty object instance.
+            dbObject() : ID_(0) {}
+
             // Creates a new object instance.
-            dbObject(const string &name, const string &path, const string &image_path) {
+            dbObject(const std::string &name, const std::string &path, const std::string &image_path) {
                 // Set the ID to a hash of the game path.
-                ID_ = std::hash<std::string>{}(path);
+                std::hash<std::string> hasher;
+                ID_ = hasher(path);
 
                 // Copy name, path, and image path.
                 strncpy(name_, name.c_str(), NAME_SIZE);
@@ -37,11 +41,8 @@ namespace gamesDB{
             char* getName() {return name_;} // Returns the stored name.
             char* getPath() {return path_;} // Returns the stored name.
             char* getImagePath() {return image_path_;} // Returns the stored name.
-
-            // FOR DATABASE USE ONLY.
-            void decrementIndex() {index_--;} // Decrements the index.
         private:
-            int ID_;
+            size_t ID_;
             char name_[NAME_SIZE], path_[PATH_SIZE], image_path_[PATH_SIZE];
     };
 }
