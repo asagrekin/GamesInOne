@@ -17,7 +17,7 @@ namespace Games_In_One_App
         private bool running = false;
         private string path;
 
-        [DllImport("..\\.\\..\\x64\\Debug\\LinkFrontAndBack.dll")]
+        [DllImport("LinkFrontAndBack.dll")]
         public static extern void launchGame(IntPtr path);
 
         public GameRow(string name, string path, string imagePath)

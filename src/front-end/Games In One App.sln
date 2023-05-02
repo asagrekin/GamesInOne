@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games In One App", "Games In One App.csproj", "{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FB54DC06-789F-43EA-8598-4387A3CA40EC} = {FB54DC06-789F-43EA-8598-4387A3CA40EC}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkFrontAndBack", "..\LinkFrontAndBack\LinkFrontAndBack.vcxproj", "{FB54DC06-789F-43EA-8598-4387A3CA40EC}"
 EndProject
