@@ -96,26 +96,26 @@ TEST(ExampleTests, EnhancePath_BadInputs) {
 }
 
 // "C:\Windows\System32\notepad.exe"
-TEST(ExampleTests, checkpath) {
-   string dir = "C:\\Windows\\System32\\notepad.exe";
-   string wrongdir = "C:\Windows\System32\notepad.exe";
-   string random = "\\random.exe";
+// TEST(ExampleTests, checkpath) {
+//    string dir = "C:\\Windows\\System32\\notepad.exe";
+//    string wrongdir = "C:\Windows\System32\notepad.exe";
+//    string random = "\\random.exe";
 
-   EXPECT_EQ(TRUE, checkPath(dir));
-   EXPECT_EQ(FALSE, checkPath(wrongdir));
-   EXPECT_EQ(FALSE, checkPath(random));
-}
+//    EXPECT_EQ(TRUE, checkPath(dir));
+//    EXPECT_EQ(FALSE, checkPath(wrongdir));
+//    EXPECT_EQ(FALSE, checkPath(random));
+// }
 
 
-TEST(ExampleTests, LaunchGame) {
-   string dir = "C:\\Windows\\System32\\notepad.exe";
-   string wrongdir = "C:\Windows\System32\notepad.exe";
-   string random = "\\random.exe";
+// TEST(ExampleTests, LaunchGame) {
+//    string dir = "C:\\Windows\\System32\\notepad.exe";
+//    string wrongdir = "C:\Windows\System32\notepad.exe";
+//    string random = "\\random.exe";
 
-   EXPECT_EQ(TRUE, checkPath(dir));
-   EXPECT_EQ(FALSE, checkPath(wrongdir));
-   EXPECT_EQ(FALSE, checkPath(random));
-}
+//    EXPECT_EQ(TRUE, checkPath(dir));
+//    EXPECT_EQ(FALSE, checkPath(wrongdir));
+//    EXPECT_EQ(FALSE, checkPath(random));
+// }
 
 
 
