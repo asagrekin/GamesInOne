@@ -8,12 +8,15 @@ using namespace std;
 
 namespace launcher {
 
-    void launchGame(string& path){
-        // HANDLE hProcess;
-        // HANDLE hThread;
-        // DWORD dwProcessID =0;
-        // DWORD dwThreadId =0;
+    static list<gamesDB::dbObject*>* current_games;
 
+    list<gamesDB::dbObject*>* get_data(){
+        current_games = gamesDB::getGames();
+        list<gamesDB::dbObject*>* current_games2 = new list<gamesDB::dbObject*>(*current_games);
+        return current_games2;
+    }
+
+    void launchGame(string& path){
         STARTUPINFO startinfo;
         PROCESS_INFORMATION processinfo;
         ZeroMemory(&startinfo, sizeof(startinfo));
@@ -59,11 +62,17 @@ namespace launcher {
 
     void EnhancePath(string& path, string file_type) {
         path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
-        if (path.length() > 4 && path.substr(path.length() - 4) == file_type){
-            size_t i = 0;
-            while ((i = path.find("\\", i)) != string::npos) {
-                path.replace(i, 1, "/");
-                i += 1;
+        if (path.length() > 4) {
+            if ((file_type == ".exe" && path.substr(path.length() - 4) == ".exe")
+                || (path.substr(path.length() - 4) == ".png" || path.substr(path.length() - 4) == ".ico"   
+                || path.substr(path.length() - 4) == ".jpg" || path.substr(path.length() - 5) == ".jpeg")) {
+                size_t i = 0;
+                while ((i = path.find("\\", i)) != string::npos) {
+                    path.replace(i, 1, "/");
+                    i += 1;
+                }
+            } else {
+                path = "";
             }
         } else {
             path = "";
@@ -83,9 +92,9 @@ namespace launcher {
         }
 
         // make sure path is readable
-        EnhancePath(image_path, ".ico");
+        EnhancePath(image_path, "images");
         if (image_path.length() == 0) {
-            return "Not a valid .ico file!";
+            return "Not a valid .ico, png, or jpeg/jpg file!";
         }
 
         // check valid path
@@ -93,27 +102,29 @@ namespace launcher {
             return "The image path is not valid!";
         }
 
-        gamesDB::dbObject* gameinfo = gamesDB::storeGame(game_name, game_path, image_path);
-        if (gameinfo == nullptr) {
-            return "unable to store " + game_name;
+        if (hasPath(game_path)) {
+            return "this path already exists!";
         }
+
+        gamesDB::dbObject* game = new gamesDB::dbObject(game_name, game_path, image_path);
+        current_games->push_back(game);
+
+        if (!gamesDB::storeGames(current_games)) {
+	    	return "There was an error storing the games in the database.";
+	    }
         return "success";
     }
 
-    BOOL play(string game_name) {
+    BOOL play(int id) {
         bool found = false;
-
-        list<gamesDB::dbObject*>* games = gamesDB::getGames();
-
-        for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
-            if (game_name == (*it)->getName()) {
+        for (list<gamesDB::dbObject*>::iterator it = current_games->begin(); it != current_games->end(); it++) {
+            if (id == (*it)->getID()) {
                 string path = (*it)->getPath();
                 launchGame(path);
                 found = true;
                 break;
             }
         }
-        delete games;
         if (!found) {
             return 0;
         }
@@ -121,29 +132,38 @@ namespace launcher {
     }
 
     void gameList() {
-        list<gamesDB::dbObject*>* games = gamesDB::getGames();
-
-        for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
-            cout << "Name: " << (*it)->getName() << ",  ID: " << (*it)->getIndex() << endl;
+        for (list<gamesDB::dbObject*>::iterator it = current_games->begin(); it != current_games->end(); it++) {
+            cout << "Name: " << (*it)->getName() << ",  ID: " << (*it)->getID() << endl;
         }
     }
 
-    void del() {
-        // std::string game_name;
-        // std::cout << "Enter game to delete: ";
-        // std::getline(std::cin, game_name);
-        // list<gamesDB::dbObject*>* games = gamesDB::getGames();
-        // bool deleted = false;
-        // for (list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); it++) {
-        //     if (game_name == (*it)->getName()) {
-        //         cout << (*it)->getName() << endl;
-        //         delete *it;
-        //         deleted = true;
-        //         break;
-        //     }
-        // }
-        // if (!deleted) {
-        //     cout << game_name << " was not deleted" << endl;
-        // }
+    string del(int id) {
+        bool deleted = false;
+        for (list<gamesDB::dbObject*>::iterator it = current_games->begin(); it != current_games->end(); it++) {
+            if (id == (*it)->getID()) {
+                it = current_games->erase(it);
+                deleted = true;
+                break;
+            }
+        }
+        if (!deleted) {
+            return "game could not be deleted";
+        }
+        gamesDB::clearDB();
+        if (!gamesDB::storeGames(current_games)) {
+	    	return "There was an error storing the games in the database.";
+	    }
+        return "success";
     }
+
+    bool hasPath(string path) {
+        for (list<gamesDB::dbObject*>::iterator it = current_games->begin(); it != current_games->end(); it++) {
+            string check_path = (*it)->getPath();
+            if ( check_path == path) {
+                return true;
+            }
+        }
+        return false;
+    } 
 }
+

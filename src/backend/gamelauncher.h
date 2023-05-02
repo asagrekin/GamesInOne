@@ -36,13 +36,28 @@ namespace launcher {
     // Input:   A string address representing game's path.
     void EnhancePath(string& path, string file_type) ;
 
-    string add(string ame_name, string game_path, string image_path);
 
-    BOOL play(string game_name);
+    // used for adding a game
+    // Inputs: 
+    // game_name: name of the game
+    // game_path: path of the game
+    // image_path: path of the image
 
-    void del();
+    string add(string game_name, string game_path, string image_path);
 
+    // used for launching the game
+    BOOL play(int id);
+
+    // used for deleting a game
+    string del(int id);
+
+    // used for getting updated list of dbObjects
     void gameList();
+
+    // return the current list of gamesDB::dbObject stored in the database
+    list<gamesDB::dbObject*>* get_data();
+
+    bool hasPath(string path);
 
 }
 #endif // _GAMELAUNCHER_H_

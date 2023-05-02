@@ -14,46 +14,25 @@
 #define LIST_FILE  "dbFiles/lst.dat"
 
 namespace gamesDB {
-    // Stores the game and it's necessary information in the databsae
-    // as an object.
-    // Parameters:
-    //  name: string holding the name of the game (max 16 characters in length).
-    //  path: string holding the path of the game (max 256 characters in length).
-    //  image_path: string holding the image path of the game (max 256 characters in length).
-    // Returns the resulting dbObject if succeeded, nullptr if not.
-    dbObject* storeGame(std::string name, std::string path, std::string image_path) {
-	    std::fstream file;
-        int index;
-
-        // Get the current index.
-	    file.open(INDEX_FILE, std::ios::in | std::ios::binary);
+    bool clearDB() {
+        // Clear the list file.
+        std::fstream file;
+        file.open(LIST_FILE, std::ios::out | std::ios::binary);
 	    if (!file) {
-	    	return nullptr;
-	    } else if (!file.read((char*) &index, sizeof(index))) {
-            file.close();
-            index = 0;
-        }
+	    	return false;
+	    }
         file.close();
 
-        // Save the new index.
-        index++;
-        file.open(INDEX_FILE, std::ios::out | std::ios::binary);
+        // Clear the index file, and set the number of games to 0.
+        int index = 0;
+	    file.open(INDEX_FILE, std::ios::out | std::ios::binary);
 	    if (!file) {
-	    	return nullptr;
+	    	return false;
 	    }
         file.write((char*) &index, sizeof(index));
         file.close();
 
-        // Create a new dbObject instance with provided info, and save to database.
-        dbObject* game = new dbObject(index, name.c_str(), path.c_str(), image_path.c_str());
-        file.open(LIST_FILE, std::ios::app | std::ios::binary);
-	    if (!file) {
-	    	return nullptr;
-	    }
-        file.write((char*) game, sizeof(dbObject));
-        file.close();
-
-        return game;
+        return true;
     }
 
     // Returns the list all dbObjects in the database. The user 
@@ -67,6 +46,7 @@ namespace gamesDB {
         // Get the number of dbObjects stored in the databse.
 	    file.open(INDEX_FILE, std::ios::in | std::ios::binary);
 	    if (!file) {
+            delete result;
 	    	return nullptr;
 	    } else if (!file.read((char*) &index, sizeof(index))) {
             file.close();
@@ -77,6 +57,7 @@ namespace gamesDB {
         // Get all of the dbObjects stored in database, and put them in the resulting list.
         file.open(LIST_FILE, std::ios::in | std::ios::binary);
 	    if (!file) {
+            delete result;
 	    	return nullptr;
 	    }
         for (int i = 0; i < index; i++) {
@@ -84,6 +65,7 @@ namespace gamesDB {
             file.seekg(sizeof(dbObject) * i, std::ios::beg);
             if (!file.read((char*) curr, sizeof(dbObject))) {
                 file.close();
+                delete result;
                 return nullptr;
             }
             result->push_back(curr);
@@ -91,5 +73,35 @@ namespace gamesDB {
         file.close();
 
         return result;
+    }
+
+    // Erases the current database, and stores the specified list instead.
+    // Parameters:
+    //  games: the specified list of dbObjects to be stored in the database.
+    // Returns true if succeeded, false if an error occured.
+    bool storeGames(std::list<dbObject*>* games) {
+        // Open the file to be written to, erasing old contents.
+        std::fstream file;
+        file.open(LIST_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return false;
+	    }
+
+        // Iterate through the new list of dbObjects, and store each one in the database.
+        for (std::list<gamesDB::dbObject*>::iterator it = games->begin(); it != games->end(); ++it) {
+            file.write((char*) (*it), sizeof(dbObject));
+        }
+        file.close();
+
+        // Write the new number of games in the index file.
+        int index = games->size();
+        file.open(INDEX_FILE, std::ios::out | std::ios::binary);
+	    if (!file) {
+	    	return false;
+	    }
+        file.write((char*) &index, sizeof(index));
+        file.close();
+
+        return true;
     }
 }

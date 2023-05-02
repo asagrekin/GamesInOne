@@ -13,18 +13,19 @@
 #include "dbObjects.h"
 
 namespace gamesDB {
-    // Stores the game and it's necessary information in the databsae
-    // as an object.
-    // Parameters:
-    //  name: string holding the name of the game (max 16 characters in length).
-    //  path: string holding the path of the game (max 256 characters in length).
-    //  image_path: string holding the image path of the game (max 256 characters in length).
-    // Returns the resulting dbObject if succeeded, nullptr if not.
-    dbObject* storeGame(std::string name, std::string path, std::string image_path);
+    // Clears the database of all data.
+    // Returns true if succeeded, false if an error occured.
+    bool clearDB();
 
     // Returns the list all dbObjects in the database. The user 
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
     std::list<dbObject*>* getGames();
+
+    // Erases the current database, and stores the specified list instead.
+    // Parameters:
+    //  games: the specified list of dbObjects to be stored in the database.
+    // Returns true if succeeded, false if an error occured.
+    bool storeGames(std::list<dbObject*>* games);
 }
 #endif
