@@ -4,19 +4,15 @@
 using namespace std;
 
 void launchGame(const char* path) {
-    // HANDLE hProcess;
-    // HANDLE hThread;
-    // DWORD dwProcessID =0;
-    // DWORD dwThreadId =0;
-
     STARTUPINFO startinfo;
     PROCESS_INFORMATION processinfo;
     ZeroMemory(&startinfo, sizeof(startinfo));
     ZeroMemory(&processinfo, sizeof(processinfo));
 
     // Key components to creating process.
-    BOOL bScucces = CreateProcess(NULL, const_cast<char*>(path),
-        NULL, NULL, FALSE, CREATE_NO_WINDOW, NULL, NULL, &startinfo, &processinfo);
+    //char* game_path = &path[0];
+    BOOL bScucces = CreateProcessA(NULL, (LPSTR)path,
+        NULL, NULL, FALSE, 0, NULL, NULL, &startinfo, &processinfo);
 
 
     // Error handling
@@ -35,5 +31,5 @@ void launchGame(const char* path) {
     WaitForSingleObject(processinfo.hProcess, INFINITE);
     CloseHandle(processinfo.hThread);
     CloseHandle(processinfo.hProcess);
-    system("PAUSE");
+    //system("PAUSE");
 }
