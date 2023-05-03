@@ -2,11 +2,11 @@
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+Last Week's Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
-Progress: We now have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+Progress: We now have a functioning interaction with the front end. We've also began next week's task of setting up proper unit testing for each component.
 
-High Level Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
+High Level Goal: Add unit testing to all elements. Fix any issues that arise with the back end when testing.
 
 ### Frontend:
 Last Week's Goal: Create connection with the back end, create file explorer for the add game screen.
@@ -35,17 +35,21 @@ High Level Goal: Fix any errors that arise.
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- By April 26 we should begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
+- By May 3 we plan to have functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
 Progress:
-- We now have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
-- Created a new Make File for our original launcher files.
+- We now have a functioning integration and interactions with the front end. 
+- Front End can now call add function which adds path to game's executable, game's image path, and game's name.
+- Front End can now call delete function which deletes game's stored information in data base.
+- Front End can now call play which launches the selected game that is stored in the database.
+- Began next week's task of setting up proper unit testing for each component.
+- Created a new Cmake file and testing file using Google Tests for C++.
 
 Issue:
-- An issue was integrating the database with the backend. This issue was resolved and the only other issue was not being able to delete a game from the database. 
+- An issue we had was getting the cMakeLists file to properly call the header files we've created for this project. 
 
 Goal for next week:
-- By May 3 we plan to have functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
+- By May 9 we plan to add additional unit testing fixing any issues that arise with the back end. Plan to also improve code quality of previous implementations.
 
 ### Asa
 Last week's goal:
