@@ -17,7 +17,7 @@ env:
   BUILD_CONFIGURATION: Debug
   
   # Path to the test .dll
-  TEST_DLL_PATH: ./src/front-end/front-end-test/bin/${{env.BUILD_CONFIGURATION}}/net6.0/FrontEndTest.dll
+  TEST_BIN_PATH: ./src/front-end/front-end-test/bin
 
 permissions:
   contents: read
@@ -47,4 +47,4 @@ jobs:
 
     - name: Test
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: VSTest.Console.exe ${{TEST_DLL_PATH}}
+      run: VSTest.Console.exe ${{TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0/FrontEndTest.dll
