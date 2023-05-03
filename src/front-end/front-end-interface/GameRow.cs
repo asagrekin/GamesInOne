@@ -39,6 +39,7 @@ namespace Games_In_One_App
             if (running)
             {
                 this.GameStatus.Text = "Game Running...";
+                Console.WriteLine("Starting Game");
                 launchGame(path);
             } else
             {
