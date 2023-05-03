@@ -9,14 +9,15 @@ Progress: We now have a functioning interaction with the database. Storing, dele
 High Level Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
 
 ### Frontend:
-Last Week's Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
+Last Week's Goal: Create connection with the back end, create file explorer for the add game screen.
 
 Progress:
-- Added image path text box in the Add Game Screen
-- created a new row with the information using user input
-- Able to Launch a game after clicking "start game"
+- Successfully added files explore for the user to locate game and image paths
+- Created test framework for the front end using MSBuild
+- Created a Github action for on push on my front-end branch
 
-High Level Goal: Create connection with the back end, create file explorer for the add game screen.
+High Level Goal: Fully integrate front and back end for Alpha release. Add more test cases.
+
 ### Database:
 Last Week's Goal: Finalize the database (deals with errors in saving robustly, stores data efficiently, etc). Also, any additional features needed for the front end get added.
 
@@ -63,19 +64,18 @@ Goal for next week:
 - Help other teams with unit testing.
 
 ### Steven
-Last week's goal:
-- Application is able to create new game rows based on the infromation entered by the user
-- Improve user interaction handling
-- Allow user to add an image path (for the image in a game row)
-
-Progress:
-- Added image path text box in the Add Game Screen
-- Based on the inputs from the user, created a new row with the information included
-- Tested with C++ to C# connection, using Dynamic Linked Library (DLL) to launch a game after clicking "start game"
-
-Issue:
-- Was encountering issue when using Dynamic Linked Library, issue was due to the C# project not built to the specifc x64 architecture.
-
-Goal for next week: By May 3
+Last week's goal: By May 3
 - Make connection with the back end, create the DLL project.
 - Add file explorer for the Add Game Screen so the user do not have to type the path.
+
+Progress:
+- Added File explorer to the add game screen
+- Researched on options of testing frameworks for front-end C#
+- DEcided on using MSTest, as it already included in VIsual Studio, allowing easier build and access. MSBuild allow easy reference of different components within my interface.
+
+Issue:
+- Was having difficulties setting up the CI for that framework. (Solved)
+
+Goal for next week: By May 9
+- Fully integrate with backend for Alpha Release
+- Add more test cases
