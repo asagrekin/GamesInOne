@@ -15,6 +15,9 @@ env:
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Debug
+  
+  # Path to the test .dll
+  TEST_DLL_PATH: ./src/front-end/front-end-test/bin/${{env.BUILD_CONFIGURATION}}/net6.0/FrontEndTest.dll
 
 permissions:
   contents: read
@@ -28,7 +31,10 @@ jobs:
 
     - name: Add MSBuild to PATH
       uses: microsoft/setup-msbuild@v1.0.2
-
+    
+    - name: vstest-action
+      uses: microsoft/vstest-action@v1.0.0
+      
     - name: Restore NuGet packages
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
@@ -39,6 +45,6 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-    #- name: Test
-    #  working-directory: ${{env.GITHUB_WORKSPACE}}
-    #  run: dotnet test
+    - name: Test
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: VSTest.Console.exe ${{TEST_DLL_PATH}}
