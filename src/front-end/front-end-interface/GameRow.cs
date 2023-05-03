@@ -18,7 +18,7 @@ namespace Games_In_One_App
         private string path;
 
         [DllImport("LinkFrontAndBack.dll")]
-        public static extern void launchGame(IntPtr path);
+        public static extern void launchGame(string path);
 
         public GameRow(string name, string path, string imagePath)
         {
@@ -39,8 +39,7 @@ namespace Games_In_One_App
             if (running)
             {
                 this.GameStatus.Text = "Game Running...";
-                IntPtr pathPtr = Marshal.StringToHGlobalAnsi(path);
-                launchGame(pathPtr);
+                launchGame(path);
             } else
             {
                 this.GameStatus.Text = "";

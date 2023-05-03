@@ -1,6 +1,6 @@
 ﻿namespace Games_In_One_App
 {
-    partial class GamesInOne
+    partial class MainScreen
     {
         /// <summary>
         /// Required designer variable.

@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace Games_In_One_App
 {
-    public partial class GamesInOne : Form
+    public partial class MainScreen : Form
     {
         public delegate void AddGameRowFunc(String gameName, String gamePath, String imagePath);
-        public GamesInOne()
+        public MainScreen()
         {
             InitializeComponent();
         }

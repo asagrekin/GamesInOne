@@ -3,12 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Games In One App", "Games In One App.csproj", "{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamesInOne", "GamesInOne.csproj", "{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}"
 	ProjectSection(ProjectDependencies) = postProject
 		{FB54DC06-789F-43EA-8598-4387A3CA40EC} = {FB54DC06-789F-43EA-8598-4387A3CA40EC}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkFrontAndBack", "..\LinkFrontAndBack\LinkFrontAndBack.vcxproj", "{FB54DC06-789F-43EA-8598-4387A3CA40EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontEndTest", "..\front-end-test\FrontEndTest.csproj", "{B5049581-2280-4E48-AD3D-6BF0FDB542B8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LinkFrontAndBack", "..\link-front-and-back\LinkFrontAndBack.vcxproj", "{FB54DC06-789F-43EA-8598-4387A3CA40EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,6 +34,18 @@ Global
 		{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}.Release|x64.Build.0 = Release|Any CPU
 		{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}.Release|x86.ActiveCfg = Release|Any CPU
 		{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}.Release|x86.Build.0 = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|x64.Build.0 = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Debug|x86.Build.0 = Debug|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|x64.ActiveCfg = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|x64.Build.0 = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|x86.ActiveCfg = Release|Any CPU
+		{B5049581-2280-4E48-AD3D-6BF0FDB542B8}.Release|x86.Build.0 = Release|Any CPU
 		{FB54DC06-789F-43EA-8598-4387A3CA40EC}.Debug|Any CPU.ActiveCfg = Debug|x64
 		{FB54DC06-789F-43EA-8598-4387A3CA40EC}.Debug|Any CPU.Build.0 = Debug|x64
 		{FB54DC06-789F-43EA-8598-4387A3CA40EC}.Debug|x64.ActiveCfg = Debug|x64

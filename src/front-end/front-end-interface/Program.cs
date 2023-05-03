@@ -16,7 +16,7 @@ namespace Games_In_One_App
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GamesInOne());
+            Application.Run(new MainScreen());
         }
     }
 }

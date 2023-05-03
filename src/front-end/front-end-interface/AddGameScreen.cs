@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using static Games_In_One_App.GamesInOne;
+using static Games_In_One_App.MainScreen;
 
 namespace Games_In_One_App
 {
