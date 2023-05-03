@@ -18,11 +18,11 @@ Progress:
 
 High Level Goal: Create connection with the back end, create file explorer for the add game screen.
 ### Database:
-Last Week's Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
+Last Week's Goal: Finalize the database (deals with errors in saving robustly, stores data efficiently, etc). Also, any additional features needed for the front end get added.
 
-Progress: Got the database fully up and running, and merged it to main. Synced with the back-end to make sure everything was working properly, and they were able to use it.
+Progress: Revamped the database to deal with front-end needs better. Got it fully up and running, and merged with back-end again. Also worked on CI testing integration.
 
-High Level Goal: Finalize the database (deals with errors in saving robustly, stores data efficiently, etc). Also, any additional features needed for the front end get added.
+High Level Goal: Fix any errors that arise.
 
 ### Agenda for Project Meeting:
 - Discuss current progress
@@ -48,22 +48,19 @@ Goal for next week:
 
 ### Asa
 Last week's goal:
-- Sync with back-end. Get info as needed for the database.
-- Implement database to work with the back-end.
-- Merge with back-end.
-
-Progress:
-- Synced with the rest of team.
-- Got the database working with the needed pieces for back and front end.
-- Merged database to main.
-- Added a delete feature.
-
-Issues:
-- Not sure what needs to be done next, so blocked on what to do next in that regard.
-
-Goal for next week:
 - Deal with any errors that arise in database use.
 - Add features as needed for front end.
+
+Progress:
+- Refactored/revamped database.
+- Started working on unit testing and CI.
+
+Issues:
+- None
+
+Goal for next week:
+- Fix any bugs that show up.
+- Help other teams with unit testing.
 
 ### Steven
 Last week's goal:
