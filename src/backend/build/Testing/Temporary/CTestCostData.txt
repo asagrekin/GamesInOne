@@ -1,3 +1,0 @@
-HelloTest.BasicAssertions 6 0.00229863
-ExampleTests.EnhancePath_FileTypeTests 0 0
----

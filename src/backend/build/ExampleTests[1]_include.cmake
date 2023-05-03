@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/ExampleTests[1]_tests.cmake")
-  include("C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/ExampleTests[1]_tests.cmake")
-else()
-  add_test(ExampleTests_NOT_BUILT ExampleTests_NOT_BUILT)
-endif()
