@@ -1,0 +1,46 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/googletest-populate"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/cd7a7c79be129f26c7314d95188ec840/googletest-populate.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/893acdeb79257d252fc9e9193749ceff/googletest-populate-complete.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-build.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-configure.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-download.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-install.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-mkdir.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-patch.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-test.rule"
+		},
+		{
+			"file" : "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/build/_deps/googletest-subbuild/CMakeFiles/9ff298d6b496c47a6b13ba3721160efd/googletest-populate-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"googletest-populate"
+		],
+		"name" : "googletest-populate"
+	}
+}

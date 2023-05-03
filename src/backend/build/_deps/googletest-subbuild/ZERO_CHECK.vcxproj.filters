@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\kelby\OneDrive\Desktop\CSE 403\GamesInOne\src\backend\build\_deps\googletest-subbuild\CMakeFiles\556c3b637fa1bb3e55d02d4ed02b33dc\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B461225D-1E38-3BD6-991E-765279956E66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

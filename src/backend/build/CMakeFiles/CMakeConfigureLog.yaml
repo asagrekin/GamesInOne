@@ -1,0 +1,395 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      The system is: Windows - 10.0.22621 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 5/2/2023 5:46:50 PM.
+      Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:03.06
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/3.26.3/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:5 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+      Copyright (C) Microsoft Corporation. All rights reserved.
+      
+      Build started 5/2/2023 5:46:54 PM.
+      Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc142.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\3.26.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:02.11
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/3.26.3/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-n8myjp"
+      binary: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-n8myjp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-n8myjp
+        
+        Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_b6a73.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 5/2/2023 5:46:57 PM.
+        Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n8myjp\\cmTC_b6a73.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_b6a73.dir\\Debug\\".
+          Creating directory "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n8myjp\\Debug\\".
+          Creating directory "cmTC_b6a73.dir\\Debug\\cmTC_b6a73.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_b6a73.dir\\Debug\\cmTC_b6a73.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6a73.dir\\Debug\\\\" /Fd"cmTC_b6a73.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30145 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CMakeCCompilerABI.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b6a73.dir\\Debug\\\\" /Fd"cmTC_b6a73.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n8myjp\\Debug\\cmTC_b6a73.exe" /INCREMENTAL /ILK:"cmTC_b6a73.dir\\Debug\\cmTC_b6a73.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-n8myjp/Debug/cmTC_b6a73.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-n8myjp/Debug/cmTC_b6a73.lib" /MACHINE:X64  /machine:x64 cmTC_b6a73.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_b6a73.vcxproj -> C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n8myjp\\Debug\\cmTC_b6a73.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_b6a73.dir\\Debug\\cmTC_b6a73.tlog\\unsuccessfulbuild".
+          Touching "cmTC_b6a73.dir\\Debug\\cmTC_b6a73.tlog\\cmTC_b6a73.lastbuildstate".
+        Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-n8myjp\\cmTC_b6a73.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.19
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:5 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-z6y8ss"
+      binary: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-z6y8ss"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-z6y8ss
+        
+        Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_c3ec1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 5/2/2023 5:46:59 PM.
+        Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z6y8ss\\cmTC_c3ec1.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_c3ec1.dir\\Debug\\".
+          Creating directory "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z6y8ss\\Debug\\".
+          Creating directory "cmTC_c3ec1.dir\\Debug\\cmTC_c3ec1.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_c3ec1.dir\\Debug\\cmTC_c3ec1.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c3ec1.dir\\Debug\\\\" /Fd"cmTC_c3ec1.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30145 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CMakeCXXCompilerABI.cpp
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_c3ec1.dir\\Debug\\\\" /Fd"cmTC_c3ec1.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.26\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z6y8ss\\Debug\\cmTC_c3ec1.exe" /INCREMENTAL /ILK:"cmTC_c3ec1.dir\\Debug\\cmTC_c3ec1.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-z6y8ss/Debug/cmTC_c3ec1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-z6y8ss/Debug/cmTC_c3ec1.lib" /MACHINE:X64  /machine:x64 cmTC_c3ec1.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_c3ec1.vcxproj -> C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z6y8ss\\Debug\\cmTC_c3ec1.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_c3ec1.dir\\Debug\\cmTC_c3ec1.tlog\\unsuccessfulbuild".
+          Touching "cmTC_c3ec1.dir\\Debug\\cmTC_c3ec1.tlog\\cmTC_c3ec1.lastbuildstate".
+        Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-z6y8ss\\cmTC_c3ec1.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:01.27
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-nzzznu"
+      binary: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-nzzznu"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-nzzznu
+        
+        Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_5b4d4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 5/2/2023 5:47:11 PM.
+        Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\cmTC_5b4d4.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_5b4d4.dir\\Debug\\".
+          Creating directory "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\Debug\\".
+          Creating directory "cmTC_5b4d4.dir\\Debug\\cmTC_5b4d4.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_5b4d4.dir\\Debug\\cmTC_5b4d4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5b4d4.dir\\Debug\\\\" /Fd"cmTC_5b4d4.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\src.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30145 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          src.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CMAKE_HAVE_LIBC_PTHREAD /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5b4d4.dir\\Debug\\\\" /Fd"cmTC_5b4d4.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\src.c"
+        C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\cmTC_5b4d4.vcxproj]
+        Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\cmTC_5b4d4.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\cmTC_5b4d4.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\src.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-nzzznu\\cmTC_5b4d4.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.85
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:175 (_threads_check_lib)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Looking for pthread_create in pthreads"
+    directories:
+      source: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-jj6k9u"
+      binary: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-jj6k9u"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREADS_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-jj6k9u
+        
+        Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_10766.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 5/2/2023 5:47:13 PM.
+        Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\cmTC_10766.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_10766.dir\\Debug\\".
+          Creating directory "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\Debug\\".
+          Creating directory "cmTC_10766.dir\\Debug\\cmTC_10766.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_10766.dir\\Debug\\cmTC_10766.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10766.dir\\Debug\\\\" /Fd"cmTC_10766.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30145 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CheckFunctionExists.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10766.dir\\Debug\\\\" /Fd"cmTC_10766.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\Debug\\cmTC_10766.exe" /INCREMENTAL /ILK:"cmTC_10766.dir\\Debug\\cmTC_10766.ilk" /NOLOGO pthreads.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-jj6k9u/Debug/cmTC_10766.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-jj6k9u/Debug/cmTC_10766.lib" /MACHINE:X64  /machine:x64 cmTC_10766.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\cmTC_10766.vcxproj]
+        Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\cmTC_10766.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\cmTC_10766.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthreads.lib' [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-jj6k9u\\cmTC_10766.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.10
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/CheckLibraryExists.cmake:71 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:112 (CHECK_LIBRARY_EXISTS)"
+      - "C:/Program Files/CMake/share/cmake-3.26/Modules/FindThreads.cmake:176 (_threads_check_lib)"
+      - "build/_deps/googletest-src/googletest/cmake/internal_utils.cmake:70 (find_package)"
+      - "build/_deps/googletest-src/googletest/CMakeLists.txt:88 (config_compiler_and_linker)"
+    checks:
+      - "Looking for pthread_create in pthread"
+    directories:
+      source: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-g4axrf"
+      binary: "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-g4axrf"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_POSITION_INDEPENDENT_CODE: "ON"
+    buildResult:
+      variable: "CMAKE_HAVE_PTHREAD_CREATE"
+      cached: true
+      stdout: |
+        Change Dir: C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-g4axrf
+        
+        Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_10bee.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:n && Microsoft (R) Build Engine version 16.11.2+f32259642 for .NET Framework
+        Copyright (C) Microsoft Corporation. All rights reserved.
+        
+        Build started 5/2/2023 5:47:14 PM.
+        Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\cmTC_10bee.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_10bee.dir\\Debug\\".
+          Creating directory "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\Debug\\".
+          Creating directory "cmTC_10bee.dir\\Debug\\cmTC_10bee.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_10bee.dir\\Debug\\cmTC_10bee.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\CL.exe /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10bee.dir\\Debug\\\\" /Fd"cmTC_10bee.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30145 for x64
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          CheckFunctionExists.c
+          cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=pthread_create /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_10bee.dir\\Debug\\\\" /Fd"cmTC_10bee.dir\\Debug\\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\Debug\\cmTC_10bee.exe" /INCREMENTAL /ILK:"cmTC_10bee.dir\\Debug\\cmTC_10bee.ilk" /NOLOGO pthread.lib kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-g4axrf/Debug/cmTC_10bee.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/CMakeFiles/CMakeScratch/TryCompile-g4axrf/Debug/cmTC_10bee.lib" /MACHINE:X64  /machine:x64 cmTC_10bee.dir\\Debug\\CheckFunctionExists.obj
+        LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\cmTC_10bee.vcxproj]
+        Done Building Project "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\cmTC_10bee.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\cmTC_10bee.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          LINK : fatal error LNK1104: cannot open file 'pthread.lib' [C:\\Users\\kelby\\OneDrive\\Desktop\\CSE 403\\GamesInOne\\src\\backend\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g4axrf\\cmTC_10bee.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:01.01
+        
+      exitCode: 1
+...

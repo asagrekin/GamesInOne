@@ -1,0 +1,5 @@
+if(EXISTS "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/Example_Tests[1]_tests.cmake")
+  include("C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/Example_Tests[1]_tests.cmake")
+else()
+  add_test(Example_Tests_NOT_BUILT Example_Tests_NOT_BUILT)
+endif()

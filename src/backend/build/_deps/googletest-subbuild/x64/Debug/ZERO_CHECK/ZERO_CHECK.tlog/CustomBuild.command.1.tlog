@@ -1,0 +1,10 @@
+^C:\USERS\KELBY\ONEDRIVE\DESKTOP\CSE 403\GAMESINONE\SRC\BACKEND\BUILD\_DEPS\GOOGLETEST-SUBBUILD\CMAKEFILES\556C3B637FA1BB3E55D02D4ED02B33DC\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" "-SC:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/_deps/googletest-subbuild" "-BC:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/_deps/googletest-subbuild" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/kelby/OneDrive/Desktop/CSE 403/GamesInOne/src/backend/build/_deps/googletest-subbuild/googletest-populate.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

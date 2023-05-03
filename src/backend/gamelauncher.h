@@ -38,7 +38,7 @@ namespace launcher {
 
 
     // used for adding a game
-    // Inputs: 
+    // Inputs:
     // game_name: name of the game
     // game_path: path of the game
     // image_path: path of the image
