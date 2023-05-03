@@ -15,7 +15,7 @@ jobs:
       #- name: Run Test
       #  run: /home/runner/work/github_actions_gtest_example/github_actions_gtest_example/build/test/github_actions_gtest_example.test
       - name: CD to right directory
-        run: cd ~/src/backend/
+        run: cd ~/GamesInOne/src/backend/
         
       - name: CMake build
         run: cmake -S . -B build && cmake --build build
