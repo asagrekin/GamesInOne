@@ -5,7 +5,7 @@
 #ifndef _GAMELAUNCHER_H_
 #define _GAMELAUNCHER_H_
 
-#include <Windows.h>
+#include <Windows.h> 
 #include <iostream>
 #include <string>
 #include <sys/stat.h>
@@ -38,7 +38,7 @@ namespace launcher {
 
 
     // used for adding a game
-    // Inputs: 
+    // Inputs:
     // game_name: name of the game
     // game_path: path of the game
     // image_path: path of the image
