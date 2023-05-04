@@ -5,7 +5,7 @@
 #ifndef _GAMELAUNCHER_H_
 #define _GAMELAUNCHER_H_
 
-#include <Windows.h>
+// #include <Windows.h>  only comment for createProcess
 #include <iostream>
 #include <string>
 #include <sys/stat.h>
