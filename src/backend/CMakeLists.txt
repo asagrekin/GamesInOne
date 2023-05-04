@@ -29,7 +29,7 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(hello_test DISCOVERY_TIMEOUT)
 
 
 
