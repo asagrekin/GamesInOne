@@ -20,4 +20,4 @@ gamesDB.o: gamesDB.cpp gamesDB.h dbObjects.h
 	$(CPP) -c gamesDB.cpp
 
 clean:
-	$(RM) example.exe *.o
+	$(RM) example *.o
