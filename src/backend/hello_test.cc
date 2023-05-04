@@ -1,4 +1,4 @@
-//#include "gamelauncher.h"   // BackEnd Launcher
+#include "gamelauncher.h"   // BackEnd Launcher
 #include "gamesDB.h"        // DataBase
 #include "dbObjects.h"      // DataBase Object
 
@@ -7,89 +7,89 @@
 using namespace std;
 
 
-// Demonstrate some basic assertions.
-TEST(HelloTest, BasicAssertions) {
-  // Expect two strings not to be equal.
-  EXPECT_STRNE("hello", "world");
-  // Expect equality.
-  EXPECT_EQ(7 * 6, 42);
-}
+// // Demonstrate some basic assertions.
+// TEST(HelloTest, BasicAssertions) {
+//   // Expect two strings not to be equal.
+//   EXPECT_STRNE("hello", "world");
+//   // Expect equality.
+//   EXPECT_EQ(7 * 6, 42);
+// }
 
 
 
 
 // File Name, Test Name
-// TEST(ExampleTests, EnhancePath_FileTypeTests) {
-//    string exe = ".exe";
-//    string png = ".png";
-//    string jpeg = ".jpeg";
-//    string jpg = ".jpg";
-//    string ico = ".ico";
-//    string random = ".whatever";
+TEST(ExampleTests, EnhancePath_FileTypeTests) {
+   string exe = ".exe";
+   string png = ".png";
+   string jpeg = ".jpeg";
+   string jpg = ".jpg";
+   string ico = ".ico";
+   string random = ".whatever";
 
-//    string test = "testpath";
-//    string path1 = test + exe;
-//    string path2 = test + png;
-//    string path3 = test + jpeg;
-//    string path4 = test + jpg;
-//    string path5 = test + ico;
-//    string path6 = test + random;
-
-
-//    launcer::EnhancePath(path1, exe);
-//    launcer::EnhancePath(path2, png);
-//    launcer::EnhancePath(path3, jpeg);
-//    launcer::EnhancePath(path4, jpg);
-//    launcer::EnhancePath(path5, ico);
-//    launcer::EnhancePath(path6, random);
+   string test = "testpath";
+   string path1 = test + exe;
+   string path2 = test + png;
+   string path3 = test + jpeg;
+   string path4 = test + jpg;
+   string path5 = test + ico;
+   string path6 = test + random;
 
 
-//    EXPECT_EQ(path1, path1);
-//    EXPECT_EQ(path2, path2);
-//    EXPECT_EQ(path3, path3);
-//    EXPECT_EQ(path4, path4);
-//    EXPECT_EQ(path5, path5);
-//    EXPECT_EQ("", path6);
-// }
+   launcher::EnhancePath(path1, exe);
+   launcher::EnhancePath(path2, png);
+   launcher::EnhancePath(path3, jpeg);
+   launcher::EnhancePath(path4, jpg);
+   launcher::EnhancePath(path5, ico);
+   launcher::EnhancePath(path6, random);
 
 
-// TEST(ExampleTests, EnhancePath_FixSlash) {
-//    string exe = ".exe";
-//    string png = ".png";
-//    string jpeg = ".jpeg";
-//    string jpg = ".jpg";
-//    string ico = ".ico";
-//    string random = ".whatever";
+   EXPECT_EQ(path1, path1);
+   EXPECT_EQ(path2, path2);
+   EXPECT_EQ(path3, path3);
+   EXPECT_EQ(path4, path4);
+   EXPECT_EQ(path5, path5);
+   EXPECT_EQ("", path6);
+}
 
-//    string test = "test\\the\\path";
-//    string path1 = test + exe;
-//    string path2 = test + png;
-//    string path3 = test + jpeg;
-//    string path4 = test + jpg;
-//    string path5 = test + ico;
-//    string path6 = test + random;
 
-//    string fixed = "test/the/path";
-//    string fixed1 = fixed + exe;
-//    string fixed2 = fixed + png;
-//    string fixed3 = fixed + jpeg;
-//    string fixed4 = fixed + jpg;
-//    string fixed5 = fixed + ico;
+TEST(ExampleTests, EnhancePath_FixSlash) {
+   string exe = ".exe";
+   string png = ".png";
+   string jpeg = ".jpeg";
+   string jpg = ".jpg";
+   string ico = ".ico";
+   string random = ".whatever";
 
-//    launcer::EnhancePath(path1, exe);
-//    launcer::EnhancePath(path2, png);
-//    launcer::EnhancePath(path3, jpeg);
-//    launcer::EnhancePath(path4, jpg);
-//    launcer::EnhancePath(path5, ico);
-//    launcer::EnhancePath(path6, random);
+   string test = "test\\the\\path";
+   string path1 = test + exe;
+   string path2 = test + png;
+   string path3 = test + jpeg;
+   string path4 = test + jpg;
+   string path5 = test + ico;
+   string path6 = test + random;
 
-//    EXPECT_EQ(fixed1, path1);
-//    EXPECT_EQ(fixed2, path2);
-//    EXPECT_EQ(fixed3, path3);
-//    EXPECT_EQ(fixed4, path4);
-//    EXPECT_EQ(fixed5, path5);
-//    EXPECT_EQ("", EnhancePath(path6, random));
-// }
+   string fixed = "test/the/path";
+   string fixed1 = fixed + exe;
+   string fixed2 = fixed + png;
+   string fixed3 = fixed + jpeg;
+   string fixed4 = fixed + jpg;
+   string fixed5 = fixed + ico;
+
+   launcher::EnhancePath(path1, exe);
+   launcher::EnhancePath(path2, png);
+   launcher::EnhancePath(path3, jpeg);
+   launcher::EnhancePath(path4, jpg);
+   launcher::EnhancePath(path5, ico);
+   launcher::EnhancePath(path6, random);
+
+   EXPECT_EQ(fixed1, path1);
+   EXPECT_EQ(fixed2, path2);
+   EXPECT_EQ(fixed3, path3);
+   EXPECT_EQ(fixed4, path4);
+   EXPECT_EQ(fixed5, path5);
+  //  EXPECT_EQ("", launcher::EnhancePath(path6, random));
+}
 
 // TEST(ExampleTests, EnhancePath_BadInputs) {
 //    string exe = ".exe";
@@ -100,12 +100,12 @@ TEST(HelloTest, BasicAssertions) {
 //    string threeChars = "xxx";
 //    string fiveChars = "xxxxx";
 
-//    EXPECT_EQ("", launcer::EnhancePath(fiveChars, exe));
-//    EXPECT_EQ("", launcer::EnhancePath(slashes, ""));
-//    EXPECT_EQ("", launcer::EnhancePath(svFile, svFile));
-//    EXPECT_EQ("", launcer::EnhancePath(forwardSlash, fiveChars));
-//    EXPECT_EQ("", launcer::EnhancePath(dot, threeChars));
-//    EXPECT_EQ("", launcer::EnhancePath(threeChars, dot));
+//   //  EXPECT_EQ("", launcher::EnhancePath(fiveChars, exe));
+//   //  EXPECT_EQ("", launcher::EnhancePath(slashes, ""));
+//   //  EXPECT_EQ("", launcher::EnhancePath(svFile, svFile));
+//   //  EXPECT_EQ("", launcher::EnhancePath(forwardSlash, fiveChars));
+//   //  EXPECT_EQ("", launcher::EnhancePath(dot, threeChars));
+//   //  EXPECT_EQ("", launcher::EnhancePath(threeChars, dot));
 // }
 
 // "C:\Windows\System32\notepad.exe"
