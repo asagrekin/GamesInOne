@@ -2,29 +2,37 @@
 #
 ## Team Report
 ### Backend:
-Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
+Last Week's Goal: Be able to Anticipating and handle user errors.
+Begin setting up a larger system to function with the database and front end.
+
+Progress: Created a system to handle poor user inputs as well as a strong foundation to begin connecting to database and frontend.
 
 High Level Goal: Begin to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Frontend:
-Created a simple window that contains a row for a game, containing an image-holder, text-holder, and a button. On click, the button will indicate the game is running.
+Last Week's Goal: work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
 
-High Level Goal: Application is able to handle user interaction, and perform changes when trying to add a new game
+Progress: Created an add game screen to the UI, it is displayed when the user click on the "Add game" button.
+
+High Level Goal: Application is able to create a new game row based on what has been entered by the user in the add game screen.
 
 ### Database:
-Decided agaomst using a pre-built database API becuase they all use SQL which would overcomplicate things. Approach taken will be a simple text file databse, which will be easier to use, and can be taylored directly to the app's needs.
+Last Week's Goal: Initial database is working (can store platforms as objects in the database, and has a list of game and platform names).
 
-High Level Goal: Initial database is working (can store games and platforms as structs/objects in the database, and has a list of game and platform names).
+Progress: Got databse working as a proof of concept. Issue is: I don't know what the backend and front end need stored in the databse, so I'm blocked on that, until I get more information.
+
+High Level Goal: Get database working in context of app (i.e. meet requirements for what is stored based on back-end/front-end needs).
 
 ### Agenda for Project Meeting:
-- Discuss current porgress
+- Discuss current progress
 - Discuss individual contribution
 - Discuss about issues
 - Discuss goal for next week
+- Discuss revisions for Project Requirements (Living Doc) diliverable
 
 ## Contributions
 ### Leo & Kelby
-Last week's goal: 
+Last week's goal:
 - By April 19 we should be Anticipating and handling user errors.
 Begin setting up a larger system to function with the database and front end.
 
@@ -38,29 +46,36 @@ Goal for next week:
 - By April 26 we plan to have a functioning interaction with the database. Storing, deleting, and retrieving games that are within the database.
 
 ### Asa
-Last week's goal: N/A.
-
-Progress:
-- Created git repo.
-- Decided on route to take for implementing database.
-- Started playing aroun with txt file databases/reading writing to files in c++.
-
-Issues:
-- Going to have to figure out how best to store data/not much experience with this.
-
-Goal for next week:
+Last week's goal:
 - Keep up with the deadlines.
 - Get initial txt file database up and running so that it can store info.
 
-### Steven
-Last week's goal: N/A.
+Progress:
+- Got a working proof of concept for the databse up.
+- Added documentation to database.
+- Got example code of how to use databse runing.
+- Thought about next steps/ointigrating with back-end.
 
-Progress: 
-- Was into creating a windows application using C# through Visual Studio. Created a simple application for Games In One, which consists of title, add game button, and a row for game information.
+Issues:
+- Blocked by lack of info for what needs to be stored in database/how it should be stored.
+
+Goal for next week:
+- Sync with back-end. Get info as needed for the database.
+- Implement database to work with the back-end.
+- Merge with back-end.
+
+### Steven
+Last week's goal:
+- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. Complete by April 19.
+
+Progress:
+- Able to create multiple rows of game. Created an add game screen to the UI, looked into how to dispaly/remove new screen on the application based on button interactions. Look into how to communicate between C++ and C# code.
 
 
 Issue:
-- was figuring out how to populate multiple rows of game info. Currently, testing it out with creating a class, that contains the components of each row. Each time we add a new game, it will create that class and put those components into a new row.
+- Was encountering issue of the text box not reacting as expecting.
 
-Goal for next week: 
-- Continue to work on handling user interactions for the front end. Look into how to communicate between C++ and C# code. COmplete by April 19.
+Goal for next week: By April 26
+- Application is able to create new game rows based on the infromation entered by the user
+- Improve user interaction handling
+- Allow user to add an image path (for the image in a game row)

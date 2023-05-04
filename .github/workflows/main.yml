@@ -1,10 +1,5 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-name: MSBuild
-
+name: GitHub Actions
+run-name: CI Test
 on: [push]
 
 env:
@@ -21,9 +16,8 @@ env:
 
 permissions:
   contents: read
-
 jobs:
-  build:
+  Front-End-Test:
     runs-on: windows-latest
 
     steps:
@@ -48,3 +42,17 @@ jobs:
     - name: Test
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0/FrontEndTest.dll
+
+  Explore-GitHub-Actions:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: CMake build folder 
+        run: cd ./src/backend/ && cmake -S . -B build
+        
+      - name: CMake build
+        run: cd ./src/backend/ && cmake --build build
+
+      - name: Test
+        run: cd ./src/backend/build &&ctest

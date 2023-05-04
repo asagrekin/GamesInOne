@@ -1,4 +1,13 @@
 {
+
+    "files.associations": {
+        "list": "cpp",
+        "ios": "cpp",
+        "cstdlib": "cpp",
+        "iosfwd": "cpp",
+        "ostream": "cpp"
+    }
+
    "C_Cpp.errorSquiggles": "disabled",
    "files.associations": {
       "algorithm": "cpp",
