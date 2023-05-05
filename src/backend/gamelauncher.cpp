@@ -62,10 +62,10 @@ namespace launcher {
 
     void EnhancePath(string& path, string file_type) {
         path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
+        string type = path.substr(path.length() - 4);
         if (path.length() > 4) {
-            if ((file_type == ".exe" && path.substr(path.length() - 4) == ".exe")
-                || (path.substr(path.length() - 4) == ".png" || path.substr(path.length() - 4) == ".ico"   
-                || path.substr(path.length() - 4) == ".jpg" || path.substr(path.length() - 5) == ".jpeg")) {
+            if ((file_type == ".exe" & type == ".exe") || (file_type == "image" & 
+                (type == ".png" || type == ".ico" || type == ".jpg" || path.substr(path.length() - 5) == ".jpeg"))) {
                 size_t i = 0;
                 while ((i = path.find("\\", i)) != string::npos) {
                     path.replace(i, 1, "/");
@@ -92,7 +92,7 @@ namespace launcher {
         }
 
         // make sure path is readable
-        EnhancePath(image_path, "images");
+        EnhancePath(image_path, "image");
         if (image_path.length() == 0) {
             return "Not a valid .ico, png, or jpeg/jpg file!";
         }

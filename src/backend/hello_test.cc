@@ -37,18 +37,16 @@ TEST(ExampleTests, EnhancePath_FileTypeTests) {
 
 
    launcher::EnhancePath(path1, exe);
-   launcher::EnhancePath(path2, png);
-   launcher::EnhancePath(path3, jpeg);
-   launcher::EnhancePath(path4, jpg);
-   launcher::EnhancePath(path5, ico);
+   launcher::EnhancePath(path2, "image");
+   launcher::EnhancePath(path3, "image");
+   launcher::EnhancePath(path4, "image");
+   launcher::EnhancePath(path5, "image");
    launcher::EnhancePath(path6, random);
-
-
-   EXPECT_EQ(path1, path1);
-   EXPECT_EQ(path2, path2);
-   EXPECT_EQ(path3, path3);
-   EXPECT_EQ(path4, path4);
-   EXPECT_EQ(path5, path5);
+   EXPECT_EQ("testpath.exe", path1);
+   EXPECT_EQ("testpath.png", path2);
+   EXPECT_EQ("testpath.jpeg", path3);
+   EXPECT_EQ("testpath.jpg", path4);
+   EXPECT_EQ("testpath.ico", path5);
    EXPECT_EQ("", path6);
 }
 
@@ -77,10 +75,10 @@ TEST(ExampleTests, EnhancePath_FixSlash) {
    string fixed5 = fixed + ico;
 
    launcher::EnhancePath(path1, exe);
-   launcher::EnhancePath(path2, png);
-   launcher::EnhancePath(path3, jpeg);
-   launcher::EnhancePath(path4, jpg);
-   launcher::EnhancePath(path5, ico);
+   launcher::EnhancePath(path2, "image");
+   launcher::EnhancePath(path3, "image");
+   launcher::EnhancePath(path4, "image");
+   launcher::EnhancePath(path5, "image");
    launcher::EnhancePath(path6, random);
 
    EXPECT_EQ(fixed1, path1);
