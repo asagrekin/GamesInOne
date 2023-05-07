@@ -20,7 +20,7 @@ add_executable(
   hello_test
   hello_test.cc
   gamelauncher.cpp
-  gamesDB.cpp
+  ../database/gamesDB.cpp
 )
 
 target_link_libraries(

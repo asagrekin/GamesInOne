@@ -6,7 +6,9 @@ using namespace std;
 
 #include "gamelauncher.h"
 
+
 int main() {
+    // gamesDB::clearDB();
     // load the data when opening app
     list<gamesDB::dbObject*>* games = launcher::get_data();
     // front end needs to extract the game name, path, and image, ID
@@ -15,7 +17,6 @@ int main() {
         cout << "Name: " << (*it)->getName() << ",  Path: " << (*it)->getPath() << ",    Image: " 
         << (*it)->getImagePath() << ",  ID: " << (*it)->getID() << endl;
     }
-
     // how to add 
     string result = launcher::add("muck1", "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Muck\\Muck.exe", 
     "C:\\Program Files (x86)\\Steam\\steam\\games\\goose.ico");
@@ -26,14 +27,14 @@ int main() {
         return EXIT_FAILURE;
     }
 
-    string icoResult = launcher::add("game1", "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Muck\\Muck.exe", 
-    "C:\\Program Files (x86)\\Steam\\steam\\games\\goose.ico");
-    // checks if the item was added correctly
-    if (result != "success") {
-        // (frontend) check launcher::add for types of errors
-        cout << result << endl;
-        return EXIT_FAILURE;
-    }
+    // string icoResult = launcher::add("game1", "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Muck\\Muck.exe", 
+    // "C:\\Program Files (x86)\\Steam\\steam\\games\\goose.ico");
+    // // checks if the item was added correctly
+    // if (result != "success") {
+    //     // (frontend) check launcher::add for types of errors
+    //     cout << result << endl;
+    //     return EXIT_FAILURE;
+    // }
 
     string pngResult = launcher::add("game2", "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Crab Game\\Crab Game.exe", 
     "C:\\Users\\qazml\\Downloads\\jpeg image.jpg");
@@ -66,6 +67,7 @@ int main() {
             id = (*it)->getID();
         }
     }
+
     // how to launch
     if (!launcher::play(id)) {
         cout << "this game does not exist" << endl;
@@ -81,6 +83,6 @@ int main() {
 
     // print out game
     launcher::gameList();
-    
+    // gamesDB::clearDB();
     return 0;
 }

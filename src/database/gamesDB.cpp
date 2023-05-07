@@ -10,8 +10,8 @@
 #include "gamesDB.h"
 #include "dbObjects.h"
 
-#define INDEX_FILE "dbFiles/ind.dat"
-#define LIST_FILE  "dbFiles/lst.dat"
+#define INDEX_FILE "../database/dbFiles/ind.dat"
+#define LIST_FILE  "../database/dbFiles/lst.dat"
 
 namespace gamesDB {
     bool clearDB() {
