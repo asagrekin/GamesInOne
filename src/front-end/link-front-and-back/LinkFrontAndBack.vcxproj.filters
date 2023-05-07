@@ -24,6 +24,9 @@
     <ClInclude Include="LinkFrontAndBack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\backend\gamelauncher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -33,6 +36,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="LinkFrontAndBack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\backend\gamelauncher.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\backend\gamesDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

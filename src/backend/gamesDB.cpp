@@ -1,7 +1,7 @@
 /**
  * Implementation of the gamesDB namespace. Go to gamesDB.h for documentation.
 */
-
+#include "pch.h"
 #include <fstream>
 #include <iostream>
 #include <list>
