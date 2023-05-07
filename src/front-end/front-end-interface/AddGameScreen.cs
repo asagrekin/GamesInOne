@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using static Games_In_One_App.MainScreen;
 
 namespace Games_In_One_App
 {
     public partial class AddGameScreen : UserControl
-    {
+    {   
         private AddGameRowFunc addGameFunc;
 
+        [DllImport("LinkFrontAndBack.dll")]
+        public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
         public AddGameScreen(AddGameRowFunc addGameFunc)
         {
             InitializeComponent();
@@ -28,6 +31,7 @@ namespace Games_In_One_App
             //      - Path not to an executable file (if user is the one entering the path)
 
             // Currently assuming user inputed everything correctly.
+            add(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
             this.addGameFunc(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
             resetTextBox();
         }

@@ -133,4 +133,9 @@
     <None Include="Resources\file_explorer_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" mkdir "$(SolutionDir)bin\$(Configuration)\dbFiles" &amp;
+if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

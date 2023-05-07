@@ -27,6 +27,12 @@
     <ClInclude Include="..\..\backend\gamelauncher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\backend\dbObjects.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\backend\gamesDB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
