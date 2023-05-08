@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\..\..\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -138,8 +138,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" mkdir "$(SolutionDir)bin\$(Configuration)\dbFiles" &amp;
-if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" &amp;
-if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat"</PreBuildEvent>
+    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\dbFiles" mkdir "$(SolutionDir)..\..\..\dbFiles" &amp;
+if not exist "$(SolutionDir)..\..\..\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\dbFiles\lst.dat"</PreBuildEvent>
   </PropertyGroup>
 </Project>
