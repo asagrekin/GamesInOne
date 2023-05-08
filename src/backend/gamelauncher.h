@@ -13,8 +13,8 @@
 #include <fstream>
 #include <algorithm>
 #include <list>
-#include "gamesDB.h"
-#include "dbObjects.h"
+#include "..\database\gamesDB.h"
+#include "..\database\dbObjects.h"
 
 using namespace std;
 
