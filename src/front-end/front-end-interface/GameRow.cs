@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using static Games_In_One_App.MainScreen;
 
 namespace Games_In_One_App
 {
@@ -18,18 +19,21 @@ namespace Games_In_One_App
         private string path;
         private int id;
 
+        private RefreshListFunc refreshListFunc;
+
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void play(int id);
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void del(int id);
-        public GameRow(int id, string name, string path, string imagePath)
+        public GameRow(int id, string name, string path, string imagePath, RefreshListFunc refreshListFunc)
         {
             InitializeComponent();
             this.GameName.Text = name;
             this.path = path;
             this.id = id;
             this.GameImage.Image = Image.FromFile(imagePath);
+            this.refreshListFunc = refreshListFunc;
             Resize += GameRow_Resize;
             Invalidate();
         }
@@ -60,7 +64,9 @@ namespace Games_In_One_App
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Deleting " +  this.GameName.Text);
-        }
+            del(id);
+            refreshListFunc();
+    }
 
         protected override void OnPaint(PaintEventArgs e)
         {

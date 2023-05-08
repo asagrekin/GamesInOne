@@ -9,14 +9,15 @@ namespace Games_In_One_App
     public partial class AddGameScreen : UserControl
     {   
         private AddGameRowFunc addGameFunc;
-        //private RefreshListFunc refreshListFunc;
+        private RefreshListFunc refreshListFunc;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
-        public AddGameScreen(AddGameRowFunc addGameFunc)
+        public AddGameScreen(AddGameRowFunc addGameFunc, RefreshListFunc refreshListFunc)
         {
             InitializeComponent();
             this.addGameFunc = addGameFunc;
+            this.refreshListFunc = refreshListFunc;
         }
 
         private void ExitAddGameButton_Click(object sender, EventArgs e)
@@ -26,15 +27,8 @@ namespace Games_In_One_App
 
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
         {
-            // Check if it is valid to add the game
-            // Valid: Add the selected game, display "Game has been added text"
-            // Invalid: Display error message 
-            //      - Path not to an executable file (if user is the one entering the path)
-
-            // Currently assuming user inputed everything correctly.
             add(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
-            this.addGameFunc(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
-            //this.refreshListFunc();
+            this.refreshListFunc();
             resetTextBox();
         }
 

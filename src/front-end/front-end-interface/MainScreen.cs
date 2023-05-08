@@ -9,9 +9,6 @@ namespace Games_In_One_App
 
     public partial class MainScreen : Form
     {
-
-        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall)]
-        public static extern void GetGameList(ref GameInfo[] gameList, ref int size);
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void GetGame(ref int id, StringBuilder name, StringBuilder path, StringBuilder imagePath);
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
@@ -19,30 +16,9 @@ namespace Games_In_One_App
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern bool AtEndOfList();
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
-        public struct GameInfo
-        {
-            public int id;
-
-            [MarshalAs(UnmanagedType.LPStr)]
-            public string name;
-
-            [MarshalAs(UnmanagedType.LPStr)]
-            public string path;
-
-            [MarshalAs(UnmanagedType.LPStr)]
-            public string imagePath;
-        }
-
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
-        public struct StringListWrapper
-        {
-            [MarshalAs(UnmanagedType.ByValArray, SizeConst = 10)]
-            public string[] Strings;
-        }
 
         public delegate void AddGameRowFunc(String gameName, String gamePath, String imagePath);
-        public delegate void RefereshListFunc();
+        public delegate void RefreshListFunc();
 
         public MainScreen()
         {
@@ -55,10 +31,7 @@ namespace Games_In_One_App
             addGameScreen.Visible = false;
             LoadData();
         }
-        public void RefreshListFunc()
-        {
-            LoadData();
-        }
+
         private void AddGameButton_Click(object sender, EventArgs e)
         {
             addGameScreen.Visible = true;
@@ -68,15 +41,17 @@ namespace Games_In_One_App
         public void AddGameRow(String gameName, String gamePath, String imagePath)
         {
             addGameScreen.Visible = false;
-            GameRow gameRow = new GameRow(0,gameName, gamePath, imagePath);
+            /*GameRow gameRow = new GameRow(0,gameName, gamePath, imagePath, new RefreshListFunc(LoadData));
             gameRow.Dock = DockStyle.Fill;
             GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
-            GamesTable.RowCount++;
+            GamesTable.RowCount++;*/
         }
 
 
         public void LoadData()
         {
+            GamesTable.Controls.Clear();
+            GamesTable.RowCount = 0;
             Referesh();
             while (!AtEndOfList()) {
                 int id = 0;
@@ -85,7 +60,7 @@ namespace Games_In_One_App
                 StringBuilder imagePath = new StringBuilder(256);
                 GetGame(ref id, name, path,imagePath);
                 Console.WriteLine(id + " " + name.ToString() + " " + path.ToString() + " " + imagePath.ToString());
-                GameRow gameRow = new GameRow(id, name.ToString(), path.ToString(), imagePath.ToString());
+                GameRow gameRow = new GameRow(id, name.ToString(), path.ToString(), imagePath.ToString(), new RefreshListFunc(LoadData));
                 gameRow.Dock = DockStyle.Fill;
                 GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
                 GamesTable.RowCount++;
