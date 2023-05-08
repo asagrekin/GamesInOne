@@ -20,7 +20,7 @@ add_executable(
   hello_test
   hello_test.cc
   gamelauncher.cpp
-  gamesDB.cpp
+  ../database/gamesDB.cpp
 )
 
 target_link_libraries(
@@ -29,7 +29,7 @@ target_link_libraries(
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test DISCOVERY_TIMEOUT)
+gtest_discover_tests(hello_test DISCOVERY_TIMEOUT 600)
 
 
 

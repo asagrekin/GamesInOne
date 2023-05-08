@@ -8,8 +8,8 @@ endif
 CC = g++
 CFLAGS = -Wall -Wextra -std=c++11
 
-SOURCES = demo.cpp gamelauncher.cpp gamesDB.cpp
-HEADERS = gamelauncher.h gamesDB.h dbObjects.h
+SOURCES = demo.cpp gamelauncher.cpp ..\database\gamesDB.cpp
+HEADERS = gamelauncher.h ..\database\gamesDB.h ..\database\dbObjects.h
 
 OBJECTS = $(SOURCES:.cpp=.o)
 
