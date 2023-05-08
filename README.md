@@ -11,11 +11,11 @@ You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.mi
 To download the current version of the app, simply clone the repo git repo into the desired directory. (Must be on a Windows Computer in order for the app to work). Run:\
 `git clone https://github.com/asagrekin/GamesInOne.git`
 ### Installing GamesInOne
-To Install, clone the git repo and run the following command from the repo's root directory:\
+To compile, clone the git repo and run the following command from the repo's root directory:\
 `msbuild ./src/front-end/front-end-interface/GamesInOne.sln`
 ### Running GamesInOne
-For now, in order to run the app, run GamesInOne.exe in the git repo's root directory:\
-`start GamesInOne.exe`
+For now, in order to run the app, run the following command from the git repo's root directory:\
+`Start "Games In One App.exe"`
 ### Operational Use Cases
 The app allows for adding, deleting, and running games via the click of a button. This can be tested using any executable on your computer, it doesn't actually have to be games (essentially, the app will recognize any executable, even if it isn't a game).
 - Add a game (simply click the `Add Game` button, in the top right hand corner).
