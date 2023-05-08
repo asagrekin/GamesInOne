@@ -45,12 +45,12 @@
             this.GameRowContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.0625F));
             this.GameRowContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.GameRowContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 76F));
-            this.GameRowContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 83F));
+            this.GameRowContainer.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 88F));
             this.GameRowContainer.Controls.Add(this.DeleteButton, 4, 0);
             this.GameRowContainer.Controls.Add(this.StartGameButton, 2, 0);
-            this.GameRowContainer.Controls.Add(this.GameName, 1, 0);
             this.GameRowContainer.Controls.Add(this.GameStatus, 3, 0);
             this.GameRowContainer.Controls.Add(this.GameImage, 0, 0);
+            this.GameRowContainer.Controls.Add(this.GameName, 1, 0);
             this.GameRowContainer.Location = new System.Drawing.Point(3, 3);
             this.GameRowContainer.Name = "GameRowContainer";
             this.GameRowContainer.RowCount = 1;
@@ -61,7 +61,7 @@
             // DeleteButton
             // 
             this.DeleteButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.DeleteButton.Location = new System.Drawing.Point(526, 38);
+            this.DeleteButton.Location = new System.Drawing.Point(524, 38);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 4;
@@ -72,12 +72,16 @@
             // StartGameButton
             // 
             this.StartGameButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.StartGameButton.Location = new System.Drawing.Point(354, 38);
+            this.StartGameButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(177)))), ((int)(((byte)(76)))));
+            this.StartGameButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.StartGameButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StartGameButton.ForeColor = System.Drawing.Color.White;
+            this.StartGameButton.Location = new System.Drawing.Point(349, 38);
             this.StartGameButton.Name = "StartGameButton";
             this.StartGameButton.Size = new System.Drawing.Size(75, 23);
             this.StartGameButton.TabIndex = 0;
             this.StartGameButton.Text = "Start Game";
-            this.StartGameButton.UseVisualStyleBackColor = true;
+            this.StartGameButton.UseVisualStyleBackColor = false;
             this.StartGameButton.Click += new System.EventHandler(this.StartGameButton_Click);
             // 
             // GameName
@@ -85,7 +89,9 @@
             this.GameName.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GameName.AutoSize = true;
             this.GameName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GameName.Location = new System.Drawing.Point(170, 38);
+            this.GameName.ForeColor = System.Drawing.Color.Red;
+            this.GameName.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.GameName.Location = new System.Drawing.Point(167, 38);
             this.GameName.Name = "GameName";
             this.GameName.Size = new System.Drawing.Size(117, 24);
             this.GameName.TabIndex = 1;
@@ -96,7 +102,7 @@
             // 
             this.GameStatus.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.GameStatus.AutoSize = true;
-            this.GameStatus.Location = new System.Drawing.Point(484, 43);
+            this.GameStatus.Location = new System.Drawing.Point(479, 43);
             this.GameStatus.Name = "GameStatus";
             this.GameStatus.Size = new System.Drawing.Size(0, 13);
             this.GameStatus.TabIndex = 2;

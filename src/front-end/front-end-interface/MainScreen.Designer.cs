@@ -55,7 +55,7 @@ namespace Games_In_One_App
             this.GamesTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.GamesTable.ColumnCount = 1;
             this.GamesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GamesTable.Location = new System.Drawing.Point(27, 69);
+            this.GamesTable.Location = new System.Drawing.Point(27, 100);
             this.GamesTable.Name = "GamesTable";
             this.GamesTable.RowCount = 1;
             this.GamesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -68,7 +68,7 @@ namespace Games_In_One_App
             this.Logo.InitialImage = global::Games_In_One_App.Properties.Resources.Logo;
             this.Logo.Location = new System.Drawing.Point(12, 12);
             this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(146, 85);
+            this.Logo.Size = new System.Drawing.Size(117, 57);
             this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Logo.TabIndex = 11;
             this.Logo.TabStop = false;
