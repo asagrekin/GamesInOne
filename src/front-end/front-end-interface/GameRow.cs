@@ -26,6 +26,12 @@ namespace Games_In_One_App
             this.GameName.Text = name;
             this.path = path;
             this.GameImage.Image = Image.FromFile(imagePath);
+            Resize += GameRow_Resize;
+            Invalidate();
+        }
+        private void GameRow_Resize(object sender, EventArgs e)
+        {
+            Invalidate();
         }
 
         private void GameRow_Load(object sender, EventArgs e)
@@ -50,6 +56,23 @@ namespace Games_In_One_App
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Deleting " +  this.GameName.Text);
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Draw the top border
+            using (var pen = new Pen(Color.Black))
+            {
+                e.Graphics.DrawLine(pen, 0, 0, Width, 0);
+            }
+
+            // Draw the bottom border
+            using (var pen = new Pen(Color.Black))
+            {
+                e.Graphics.DrawLine(pen, 0, Height - 1, Width, Height - 1);
+            }
         }
     }
 }
