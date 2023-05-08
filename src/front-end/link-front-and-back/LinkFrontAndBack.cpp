@@ -3,7 +3,6 @@
 #include "LinkFrontAndBack.h"
 #include "../../backend/gamelauncher.h"
 #include "../../database/gamesDB.h"
-#include "GameInfo.h"
 using namespace std;
 
 static list<gamesDB::dbObject*>* gameList;

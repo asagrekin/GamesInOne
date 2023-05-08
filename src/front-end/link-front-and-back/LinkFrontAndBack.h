@@ -8,7 +8,6 @@
 #include <algorithm>
 #include <list>
 #include "../../database/gamesDB.h"
-#include "GameInfo.h"
 using namespace std;
 #pragma once
 
