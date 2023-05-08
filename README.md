@@ -10,13 +10,13 @@ To Install, clone the git repo and run the following command from the root direc
 For now, in order to run the app, run the created GamesInOne.exe in:\
 `./src/front-end/front-end/interface/bin/Release/GamesInOne.exe`\
 In order to use the app, instructions are provided once the app is started.
+### Operational Use Cases
+- Add Game
+- Remove Game
+- Launch Game
 ## Layout
 - Artifacts, members, roles and links are in the ORG file at the top level.
 - Weekly reports are located in the reports directory.
   - The report for week X is named WeekXReport.
 - Functional code is located in the src directory.
 - Issues list located here: https://github.com/users/asagrekin/projects/3
-## Operational Use Cases
--Add Game
--Remove Game
--Launch Game
