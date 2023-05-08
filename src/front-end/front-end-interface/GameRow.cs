@@ -42,23 +42,11 @@ namespace Games_In_One_App
             Invalidate();
         }
 
-        private void GameRow_Load(object sender, EventArgs e)
-        {
-            GameStatus.Text = "";
-        }
 
         private void StartGameButton_Click(object sender, EventArgs e)
         {
-            running = !running;
-            if (running)
-            {
-                this.GameStatus.Text = "Game Running...";
-                Console.WriteLine("Starting Game");
-                play(id);
-            } else
-            {
-                this.GameStatus.Text = "";
-            }
+            Console.WriteLine("Starting Game");
+            play(id);
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
