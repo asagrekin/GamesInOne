@@ -132,6 +132,9 @@
   <ItemGroup>
     <None Include="Resources\file_explorer_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" mkdir "$(SolutionDir)bin\$(Configuration)\dbFiles" &amp;

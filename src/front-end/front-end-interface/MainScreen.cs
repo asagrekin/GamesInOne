@@ -18,6 +18,7 @@ namespace Games_In_One_App
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             addGameScreen.Visible = false;
