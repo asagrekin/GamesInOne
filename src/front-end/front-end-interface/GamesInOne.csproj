@@ -38,9 +38,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -132,5 +133,13 @@
   <ItemGroup>
     <None Include="Resources\file_explorer_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Logo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" mkdir "$(SolutionDir)bin\$(Configuration)\dbFiles" &amp;
+if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)bin\$(Configuration)\dbFiles\lst.dat"</PreBuildEvent>
+  </PropertyGroup>
 </Project>

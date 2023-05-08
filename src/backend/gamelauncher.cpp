@@ -1,7 +1,7 @@
 // Kelby S. & Leonardo O.
 // File to Launch Games
 
-
+#include "../front-end/link-front-and-back/pch.h"
 #include "gamelauncher.h"
 using namespace std;
 
