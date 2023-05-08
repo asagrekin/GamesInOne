@@ -9,6 +9,7 @@ namespace Games_In_One_App
     public partial class AddGameScreen : UserControl
     {   
         private AddGameRowFunc addGameFunc;
+        //private RefreshListFunc refreshListFunc;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
@@ -33,6 +34,7 @@ namespace Games_In_One_App
             // Currently assuming user inputed everything correctly.
             add(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
             this.addGameFunc(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
+            //this.refreshListFunc();
             resetTextBox();
         }
 

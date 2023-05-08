@@ -16,15 +16,19 @@ namespace Games_In_One_App
         
         private bool running = false;
         private string path;
+        private int id;
 
         [DllImport("LinkFrontAndBack.dll")]
-        public static extern void launchGame(string path);
+        public static extern void play(int id);
 
-        public GameRow(string name, string path, string imagePath)
+        [DllImport("LinkFrontAndBack.dll")]
+        public static extern void del(int id);
+        public GameRow(int id, string name, string path, string imagePath)
         {
             InitializeComponent();
             this.GameName.Text = name;
             this.path = path;
+            this.id = id;
             this.GameImage.Image = Image.FromFile(imagePath);
             Resize += GameRow_Resize;
             Invalidate();
@@ -46,7 +50,7 @@ namespace Games_In_One_App
             {
                 this.GameStatus.Text = "Game Running...";
                 Console.WriteLine("Starting Game");
-                launchGame(path);
+                play(id);
             } else
             {
                 this.GameStatus.Text = "";

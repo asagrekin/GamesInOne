@@ -159,9 +159,9 @@
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\backend\dbObjects.h" />
     <ClInclude Include="..\..\backend\gamelauncher.h" />
-    <ClInclude Include="..\..\backend\gamesDB.h" />
+    <ClInclude Include="..\..\database\dbObjects.h" />
+    <ClInclude Include="..\..\database\gamesDB.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="LinkFrontAndBack.h" />
     <ClInclude Include="pch.h" />
@@ -173,11 +173,11 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
     </ClCompile>
-    <ClCompile Include="..\..\backend\gamesDB.cpp">
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
-      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
+    <ClCompile Include="..\..\database\gamesDB.cpp">
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">../front-end/link-front-and-back/pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">

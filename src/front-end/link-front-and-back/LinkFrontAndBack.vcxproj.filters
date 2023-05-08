@@ -27,10 +27,10 @@
     <ClInclude Include="..\..\backend\gamelauncher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\backend\dbObjects.h">
+    <ClInclude Include="..\..\database\dbObjects.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\backend\gamesDB.h">
+    <ClInclude Include="..\..\database\gamesDB.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -47,7 +47,7 @@
     <ClCompile Include="..\..\backend\gamelauncher.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\backend\gamesDB.cpp">
+    <ClCompile Include="..\..\database\gamesDB.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
