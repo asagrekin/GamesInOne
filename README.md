@@ -16,3 +16,7 @@ In order to use the app, instructions are provided once the app is started.
   - The report for week X is named WeekXReport.
 - Functional code is located in the src directory.
 - Issues list located here: https://github.com/users/asagrekin/projects/3
+## Operational Use Cases
+-Add Game
+-Remove Game
+-Launch Game
