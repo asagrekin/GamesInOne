@@ -11,9 +11,9 @@ For now, in order to run the app, run the created GamesInOne.exe in:\
 `./src/front-end/front-end/interface/bin/Release/GamesInOne.exe`\
 In order to use the app, instructions are provided once the app is started.
 ### Operational Use Cases
-- Add Game
-- Remove Game
-- Launch Game
+- Add a game (simply click the `Add Game` button, in the top right hand corner).
+- Remove a game (click the `Delete` button on the right side of the screen, for the desired app).
+- Launch a game (click the `Play` button on the right side of the screen, for the desired app).
 ## Layout
 - Artifacts, members, roles and links are in the ORG file at the top level.
 - Weekly reports are located in the reports directory.
