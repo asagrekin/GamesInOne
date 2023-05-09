@@ -15,7 +15,7 @@ When prompted to chose the version, pick runtime.
 To download the current version of the app, simply clone the repo git repo into the desired directory. (Must be on a Windows Computer in order for the app to work). Run:\
 `git clone https://github.com/asagrekin/GamesInOne.git`
 ### Installing GamesInOne
-To compile, clone the git repo and run the following two commands from the repo's root directory:\
+To compile, clone the git repo and run the following two commands from the repo's root directory (Yes, you need the `$` too!):\
 `$env:PATH += ";C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\"`\
 `msbuild ./src/front-end/front-end-interface/GamesInOne.sln`
 ### Running GamesInOne
