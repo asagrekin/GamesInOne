@@ -5,12 +5,12 @@ GamesInOne is a videogame catalog that keeps all of a person’s games in one pl
 In order to build the app and run it, you will need MSBuild and the .NET framework.
 #### Installing MSBuild
 MSBuild is included when downloading Visual Studio. If you do not have Visual Studio, you can download it here: [https://code.visualstudio.com/download](https://visualstudio.microsoft.com/vs/)\
-WHEN INSTALLING, MAKE SURE THAT THE `Development With C++` BOX IS CHECKED. (This contains MSBuild).\
+WHEN INSTALLING, MAKE SURE THAT THE `Desktop Development With C++` BOX IS CHECKED. (This contains MSBuild).\
 \
-If Visual Studio is already installed on your device, and you do not have MSBuild, you can get it by opening the Visual Studio installer, and clicking `Modify`, and checking the `Development With C++` box before confirming your edits.
+If Visual Studio is already installed on your device, and you do not have MSBuild, you can get it by opening the Visual Studio installer, and clicking `Modify`, and checking the `Desktop Development With C++` box before clicking `install`.
 #### Installing .NET
-You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
-After installing .NET, run the following command:
+You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472 \
+When prompted to chose the version, pick runtime.
 ### Download GamesInOne
 To download the current version of the app, simply clone the repo git repo into the desired directory. (Must be on a Windows Computer in order for the app to work). Run:\
 `git clone https://github.com/asagrekin/GamesInOne.git`
