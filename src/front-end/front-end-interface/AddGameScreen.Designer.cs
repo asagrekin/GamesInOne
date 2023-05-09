@@ -143,7 +143,7 @@ namespace Games_In_One_App
             this.AddGameImagePathLabel.Name = "AddGameImagePathLabel";
             this.AddGameImagePathLabel.Size = new System.Drawing.Size(115, 16);
             this.AddGameImagePathLabel.TabIndex = 9;
-            this.AddGameImagePathLabel.Text = "Game Image Path";
+            this.AddGameImagePathLabel.Text = "Image Path (Optional)";
             // 
             // GameImagePathTextBox
             // 
