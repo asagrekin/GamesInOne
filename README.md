@@ -5,6 +5,9 @@ GamesInOne is a videogame catalog that keeps all of a person’s games in one pl
 In order to build the app and run it, you will need MSBuild and the .NET framework.
 #### Installing MSBuild
 MSBuild is included when downloading Visual Studio, so if Visual Studio is already installed on your device, you do not need to do anything. If you do not have Visual Studio, you can download it here: [https://code.visualstudio.com/download](https://visualstudio.microsoft.com/vs/)
+
+After installation of Visual Studio, run the following command to add the bin to PATH. (Assuming the VS version is 2022 Community Edition)
+`$env:PATH += ";C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\"`
 #### Installing .NET
 You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472
 ### Download GamesInOne
