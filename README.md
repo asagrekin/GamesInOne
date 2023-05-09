@@ -1,8 +1,12 @@
 # GamesInOne
-GamesInOne is a videogame catalog that keeps all of a person’s games in one place. Users can launch their games via the click of a button, even if they belong to different digital gaming platforms, all from one centralized and easy-to-use location. All that is needed is to enter the login to all their different digital platforms and enter the games desired to be cataloged (and their address on the computer). The app aims to mitigate the struggle of trying to find games on different platforms and improve ease of use for gamers so that everything is all in one place.
+GamesInOne is a videogame catalog that keeps all of a person’s games in one place. Users can launch their games via the click of a button, even if they belong to different digital gaming platforms, all from one centralized and easy-to-use location. All that is needed is to enter the login to all their different digital platforms and enter the games desired to be cataloged (and their address on the computer). The app aims to mitigate the struggle of trying to find games on different platforms and improve ease of use for gamers so that everything is all in one place.\
+\
+DISCLAIMER - This app only runs on Windows machines.
 ## Dowloading, Installing, and Running
-### Installing MSBuild and .NET
-In order to build the app and run it, you will need MSBuild and the .NET framework.
+### Installing Git, MSBuild and .NET
+In order to build the app and run it, you will need Git, MSBuild, and the .NET framework.
+#### Installing Git
+You can download Git here: https://gitforwindows.org
 #### Installing MSBuild
 MSBuild is included when downloading Visual Studio. If you do not have Visual Studio, you can download it here: [https://code.visualstudio.com/download](https://visualstudio.microsoft.com/vs/)\
 \
