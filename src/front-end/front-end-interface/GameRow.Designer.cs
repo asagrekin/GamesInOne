@@ -87,8 +87,6 @@
             // 
             // GameImage
             // 
-            this.GameImage.Image = global::Games_In_One_App.Properties.Resources.game_placeholder;
-            this.GameImage.InitialImage = global::Games_In_One_App.Properties.Resources.game_placeholder;
             this.GameImage.Location = new System.Drawing.Point(4, 4);
             this.GameImage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.GameImage.Name = "GameImage";
