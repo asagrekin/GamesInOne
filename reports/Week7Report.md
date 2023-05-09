@@ -1,12 +1,12 @@
-# Weekly status reports (Week 6)
+# Weekly status reports (Week 7)
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
+Last Week's Goal: Add unit testing to all elements. Fix any issues that arise with the back end when testing.
 
-Progress: We now have a functioning interaction with the front end. We've also began next week's task of setting up proper unit testing for each component.
+Progress: We now have new unit testing for all elements. This new testing has shed light on some errors with existing methods which we have fixed.
 
-High Level Goal: Add unit testing to all elements. Fix any issues that arise with the back end when testing.
+High Level Goal: Make changes based on Alpha Release feedback.
 
 ### Frontend:
 Last Week's Goal: Create connection with the back end, create file explorer for the add game screen.
@@ -35,21 +35,18 @@ High Level Goal: Add more unit testing, and implement anything needed to respond
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- By May 3 we plan to have functioning interaction with the front end. Displaying, filtering, and sorting games based on user inputs.
+- By May 9 we plan to add unit testing to all elements. Fix any issues that arise with the back end when testing.
 
 Progress:
-- We now have a functioning integration and interactions with the front end. 
-- Front End can now call add function which adds path to game's executable, game's image path, and game's name.
-- Front End can now call delete function which deletes game's stored information in data base.
-- Front End can now call play which launches the selected game that is stored in the database.
-- Began next week's task of setting up proper unit testing for each component.
-- Created a new Cmake file and testing file using Google Tests for C++.
+- We now have new unit testing for all backend elements. 
+- This new testing has shed light on some errors with existing methods which we have fixed.
+- Biggest error came from our EnhancePath method where we made serious imporvements to the logic within it.
 
 Issue:
-- An issue we had was getting the cMakeLists file to properly call the header files we've created for this project. 
+- An issue we had was getting the Google Tests to recgonzie some of the work being conducted by the database such as the add functionality. 
 
 Goal for next week:
-- By May 9 we plan to add additional unit testing fixing any issues that arise with the back end. Plan to also improve code quality of previous implementations.
+- By May 16 we plan to make changes based on Alpha Release feedback.
 
 ### Asa
 Last week's goal:
