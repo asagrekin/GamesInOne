@@ -5,9 +5,10 @@ GamesInOne is a videogame catalog that keeps all of a person’s games in one pl
 In order to build the app and run it, you will need MSBuild and the .NET framework.
 #### Installing MSBuild
 MSBuild is included when downloading Visual Studio. If you do not have Visual Studio, you can download it here: [https://code.visualstudio.com/download](https://visualstudio.microsoft.com/vs/)\
-WHEN INSTALLING, MAKE SURE THAT THE `Desktop Development With C++` BOX IS CHECKED. (This contains MSBuild).\
 \
-If Visual Studio is already installed on your device, and you do not have MSBuild, you can get it by opening the Visual Studio installer, and clicking `Modify`, and checking the `Desktop Development With C++` box before clicking `install`.
+WHEN INSTALLING, MAKE SURE THAT THE `Desktop development With C++` BOX AND THE `.NET desktop development` BOX ARE BOTH CHECKED. (This contains MSBuild, and .NET build tools).\
+\
+If Visual Studio is already installed on your device, and you do not have MSBuild, you can get it by opening the Visual Studio installer, and clicking `Modify` by the 2022 community edition, and checking the `Desktop development With C++` and `.NET desktop development` boxes before clicking `Modify` again.
 #### Installing .NET
 You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472 \
 When prompted to chose the version, pick runtime.
