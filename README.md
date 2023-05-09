@@ -31,7 +31,8 @@ For now, in order to run the app, run the following command from the git repo's 
 ### Operational Use Cases
 The app allows for adding, deleting, and running games via the click of a button. This can be tested using any executable on your computer, it doesn't actually have to be games (essentially, the app will recognize any executable, even if it isn't a game).
 - Add a game (simply click the `Add Game` button, in the top right hand corner).
-  - All fields in the add game screen must be filled to add a game.
+  - All fields in the add game screen must be filled to add a game, with the excpetion of the image path.
+  - If the image path field is left blank, or has an invalid image path, a default image will be displayed.
 - Remove a game (click the `Delete` button on the right side of the screen, for the desired app).
 - Launch a game (click the `Play` button on the right side of the screen, for the desired app).
 ## Layout
