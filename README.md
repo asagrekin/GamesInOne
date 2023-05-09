@@ -19,7 +19,7 @@ To compile, clone the git repo and run the following two commands from the repo'
 `$env:PATH += ";C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\"`\
 `msbuild ./src/front-end/front-end-interface/GamesInOne.sln`
 ### Running GamesInOne
-For now, in order to run the app, run the following two commands from the git repo's root directory:\
+For now, in order to run the app, run the following command from the git repo's root directory:\
 `Start "Games In One App.exe"`
 ### Operational Use Cases
 The app allows for adding, deleting, and running games via the click of a button. This can be tested using any executable on your computer, it doesn't actually have to be games (essentially, the app will recognize any executable, even if it isn't a game).
