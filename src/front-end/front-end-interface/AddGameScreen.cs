@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.IO;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
 using static Games_In_One_App.MainScreen;
 
 namespace Games_In_One_App
@@ -27,9 +31,21 @@ namespace Games_In_One_App
 
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
         {
-            add(GameNameTextBox.Text, GamePathTextBox.Text, GameImagePathTextBox.Text);
+            Console.WriteLine("***********************");
+            string imagePath = GameImagePathTextBox.Text;
+            if (!(imagePath.EndsWith(".png") ||
+                imagePath.EndsWith(".ico") ||
+                imagePath.EndsWith(".jpg") ||
+                imagePath.EndsWith(".jpeg")))
+            {
+                imagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\src\\front-end\\front-end-interface\\Resources\\Logo.png";
+                Console.WriteLine("Using default image: " + imagePath);
+            }
+            Console.WriteLine("Using image: " + imagePath);
+            add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath);
             this.refreshListFunc();
             resetTextBox();
+            Console.WriteLine("***********************");
         }
 
         private void ClearAddGameButton_Click(object sender, EventArgs e)
