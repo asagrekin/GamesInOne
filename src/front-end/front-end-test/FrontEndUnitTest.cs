@@ -20,8 +20,7 @@ namespace FrontEndTest
             Assert.AreEqual("Name", gameNameTextBox.Text);
 
             MethodInfo enterMethod = typeof(AddGameScreen).GetMethod("GameNameTextBox_Enter", BindingFlags.Instance | BindingFlags.NonPublic);
-            //enterMethod.Invoke(addGameScreen, new object[] { clearAddGameButton, EventArgs.Empty });
-            gameNameTextBox.Focus();
+            enterMethod.Invoke(addGameScreen, new object[] { clearAddGameButton, EventArgs.Empty });
             Assert.AreEqual("", gameNameTextBox.Text);
 
             MethodInfo exitMethod = typeof(AddGameScreen).GetMethod("GameNameTextBox_Exit", BindingFlags.Instance | BindingFlags.NonPublic);
