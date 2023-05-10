@@ -46,7 +46,7 @@ Issue:
 - An issue we had was getting the Google Tests to recgonzie some of the work being conducted by the database such as the add functionality. 
 
 Goal for next week:
-- By May 16 we plan to make changes based on Alpha Release feedback.
+- By May 16 we plan to make changes based on Alpha Release feedback. We also plan to have handle the ability to order a list of games based on the users preference.
 
 ### Asa
 Last week's goal:
