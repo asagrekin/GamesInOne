@@ -41,7 +41,7 @@ jobs:
 
     - name: Test
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0/FrontEndTest.dll
+      run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0-windows/FrontEndTest.dll
 
   Beack-End-Test:
     runs-on: windows-latest

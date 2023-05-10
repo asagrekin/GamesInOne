@@ -6,7 +6,6 @@ using System.Windows.Forms;
 
 namespace Games_In_One_App
 {
-
     public partial class MainScreen : Form
     {
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
@@ -34,17 +33,13 @@ namespace Games_In_One_App
 
         private void AddGameButton_Click(object sender, EventArgs e)
         {
-            addGameScreen.Visible = true;
-            addGameScreen.BringToFront();
+            this.addGameScreen.Visible = true;
+            this.addGameScreen.BringToFront();
         }
 
         public void AddGameRow(String gameName, String gamePath, String imagePath)
         {
             addGameScreen.Visible = false;
-            /*GameRow gameRow = new GameRow(0,gameName, gamePath, imagePath, new RefreshListFunc(LoadData));
-            gameRow.Dock = DockStyle.Fill;
-            GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
-            GamesTable.RowCount++;*/
         }
 
 
@@ -71,6 +66,5 @@ namespace Games_In_One_App
         {
             addGameScreen.Visible = false;
         }
-
     }
 }

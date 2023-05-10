@@ -30,7 +30,6 @@ namespace Games_In_One_App
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button ClearAddGameButton;
             this.AddGameScreenLabel = new System.Windows.Forms.Label();
             this.GameNameTextBox = new System.Windows.Forms.TextBox();
             this.GamePathTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -44,7 +43,7 @@ namespace Games_In_One_App
             this.GamePathFileExplorerButton = new System.Windows.Forms.Button();
             this.GameImagePathFileExplorer = new System.Windows.Forms.OpenFileDialog();
             this.GameImagePathExplorerButton = new System.Windows.Forms.Button();
-            ClearAddGameButton = new System.Windows.Forms.Button();
+            this.ClearAddGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ClearAddGameButton
@@ -222,7 +221,7 @@ namespace Games_In_One_App
         }
 
         #endregion
-
+        private System.Windows.Forms.Button ClearAddGameButton;
         private System.Windows.Forms.Label AddGameScreenLabel;
         private System.Windows.Forms.TextBox GameNameTextBox;
         private System.Windows.Forms.MaskedTextBox GamePathTextBox;
