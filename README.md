@@ -18,7 +18,7 @@ You will need .NET 4.7.2 or later to run the app. To Download: https://dotnet.mi
 When prompted to chose the version, pick runtime.
 ### Download GamesInOne
 To download the current version of the app, simply clone the repo git repo into the desired directory. (Must be on a Windows Computer in order for the app to work). Run:\
-`git clone https://github.com/asagrekin/GamesInOne.git`
+`git clone https://github.com/asagrekin/GamesInOne.git --branch v1.0.1`
 ### Installing GamesInOne
 To compile, clone the git repo and run the following four commands from the repo's root directory (Yes, you need the `$` too!):\
 `$env:PATH += ";C:\Program Files\dotnet"`\
