@@ -12,15 +12,13 @@ namespace Games_In_One_App
 {
     public partial class AddGameScreen : UserControl
     {   
-        private AddGameRowFunc addGameFunc;
         private RefreshListFunc refreshListFunc;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
-        public AddGameScreen(AddGameRowFunc addGameFunc, RefreshListFunc refreshListFunc)
+        public AddGameScreen(RefreshListFunc refreshListFunc)
         {
             InitializeComponent();
-            this.addGameFunc = addGameFunc;
             this.refreshListFunc = refreshListFunc;
         }
 
