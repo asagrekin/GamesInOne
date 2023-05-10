@@ -9,14 +9,14 @@ Progress: We now have new unit testing for all elements. This new testing has sh
 High Level Goal: Make changes based on Alpha Release feedback.
 
 ### Frontend:
-Last Week's Goal: Create connection with the back end, create file explorer for the add game screen.
+Last Week's Goal: Fully integrate front and back end for Alpha release. Add more test cases.
 
 Progress:
-- Successfully added files explore for the user to locate game and image paths
-- Created test framework for the front end using MSBuild
-- Created a Github action for on push on my front-end branch
+- Successfully integrated the front and back-end for Alpha release.
+- Added test cases for the AddGameScreen.
+- Added a default iamge path (our Logo image) as a place holder if the user do not have a image at the moment.
 
-High Level Goal: Fully integrate front and back end for Alpha release. Add more test cases.
+High Level Goal: Work on the custom ordering of the game list, refine UI.
 
 ### Database:
 Last Week's Goal: Fix any errors that arise.
@@ -66,18 +66,19 @@ Goal for next week:
 - Respond to Alpha Release feedback.
 
 ### Steven
-Last week's goal: By May 3
-- Make connection with the back end, create the DLL project.
-- Add file explorer for the Add Game Screen so the user do not have to type the path.
-
-Progress:
-- Added File explorer to the add game screen
-- Researched on options of testing frameworks for front-end C#
-- DEcided on using MSTest, as it already included in VIsual Studio, allowing easier build and access. MSBuild allow easy reference of different components within my interface.
-
-Issue:
-- Was having difficulties setting up the CI for that framework. (Solved)
-
-Goal for next week: By May 9
+Last week's goal: By May 9
 - Fully integrate with backend for Alpha Release
 - Add more test cases
+
+Progress:
+- Successfully integrated the front and back end.
+- Image path is now optional, added default image path to our logo if not provided.
+- Tested the building/running instructions with different people to ensure it is working as expected.
+- Wrote AddScreen unit tests.
+
+Issue:
+- Was having trouble retrieving a list of dbObjects from backend due to struct and type differece. Solve by creating a functions to iterate through the list and returning it to front-end one by one.
+
+Goal for next week: By May 16
+- Add custom ordering of the list.
+- Improve UI.
