@@ -8,7 +8,7 @@ In order to build the app and run it, you will need Git, MSBuild, and the .NET f
 #### Installing Git
 You can download Git here: https://gitforwindows.org
 #### Installing MSBuild
-MSBuild is included when downloading Visual Studio. If you do not have Visual Studio, you can download it here: [https://code.visualstudio.com/download](https://visualstudio.microsoft.com/vs/)\
+MSBuild is included when downloading Visual Studio. If you do not have Visual Studio, you can download it here: [https://visualstudio.microsoft.com/vs/](https://visualstudio.microsoft.com/vs/)\
 \
 WHEN INSTALLING, MAKE SURE THAT THE `Desktop development With C++` BOX AND THE `.NET desktop development` BOX ARE BOTH CHECKED. (This contains MSBuild, and .NET build tools).\
 \
