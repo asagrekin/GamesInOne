@@ -14,26 +14,24 @@ namespace Games_In_One_App
 {
     public partial class GameRow : UserControl
     {
-        
-        private bool running = false;
+
+        private MainScreen main;
         private string path;
         private int id;
-
-        private RefreshListFunc refreshListFunc;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void play(int id);
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void del(int id);
-        public GameRow(int id, string name, string path, string imagePath, RefreshListFunc refreshListFunc)
+        public GameRow(MainScreen main, int id, string name, string path, string imagePath)
         {
             InitializeComponent();
             this.GameName.Text = name;
             this.path = path;
             this.id = id;
             this.GameImage.Image = Image.FromFile(imagePath);
-            this.refreshListFunc = refreshListFunc;
+            this.main = main;
             Resize += GameRow_Resize;
             Invalidate();
         }
@@ -51,10 +49,11 @@ namespace Games_In_One_App
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Deleting " +  this.GameName.Text);
+            Console.WriteLine("Deleting " + this.GameName.Text);
             del(id);
-            refreshListFunc();
-    }
+            main.LoadData();
+        }
+    
 
         protected override void OnPaint(PaintEventArgs e)
         {

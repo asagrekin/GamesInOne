@@ -15,15 +15,11 @@ namespace Games_In_One_App
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern bool AtEndOfList();
 
-
-        public delegate void AddGameRowFunc(String gameName, String gamePath, String imagePath);
-        public delegate void RefreshListFunc();
-
         public MainScreen()
         {
+            this.addGameScreen = new AddGameScreen(this);
             InitializeComponent();
         }
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -55,7 +51,7 @@ namespace Games_In_One_App
                 StringBuilder imagePath = new StringBuilder(256);
                 GetGame(ref id, name, path,imagePath);
                 Console.WriteLine(id + " " + name.ToString() + " " + path.ToString() + " " + imagePath.ToString());
-                GameRow gameRow = new GameRow(id, name.ToString(), path.ToString(), imagePath.ToString(), new RefreshListFunc(LoadData));
+                GameRow gameRow = new GameRow(this, id, name.ToString(), path.ToString(), imagePath.ToString());
                 gameRow.Dock = DockStyle.Fill;
                 GamesTable.Controls.Add(gameRow, 0, GamesTable.RowCount);
                 GamesTable.RowCount++;

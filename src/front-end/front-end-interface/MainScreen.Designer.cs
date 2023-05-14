@@ -35,7 +35,8 @@ namespace Games_In_One_App
             this.AddGameButton = new System.Windows.Forms.Button();
             this.GamesTable = new System.Windows.Forms.TableLayoutPanel();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.addGameScreen = new Games_In_One_App.AddGameScreen(new RefreshListFunc(LoadData));
+            //this.addGameScreen = new Games_In_One_App.AddGameScreen(new RefreshListFunc(LoadData));
+            
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.SuspendLayout();
             // 

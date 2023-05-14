@@ -11,15 +11,15 @@ using static Games_In_One_App.MainScreen;
 namespace Games_In_One_App
 {
     public partial class AddGameScreen : UserControl
-    {   
-        private RefreshListFunc refreshListFunc;
+    {
+        private MainScreen main;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
-        public AddGameScreen(RefreshListFunc refreshListFunc)
+        public AddGameScreen(MainScreen main)
         {
             InitializeComponent();
-            this.refreshListFunc = refreshListFunc;
+            this.main = main;
         }
 
         private void ExitAddGameButton_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Games_In_One_App
             }
             Console.WriteLine("Using image: " + imagePath);
             add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath);
-            this.refreshListFunc();
+            main.LoadData();
             resetTextBox();
             Console.WriteLine("***********************");
         }

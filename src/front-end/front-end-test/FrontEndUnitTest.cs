@@ -14,7 +14,7 @@ namespace FrontEndTest
         public void TestAddGameTextBox()
         {
             MainScreen main = new MainScreen();
-            AddGameScreen addGameScreen = new AddGameScreen(main.Refresh);
+            AddGameScreen addGameScreen = new AddGameScreen(main);
             TextBox gameNameTextBox = addGameScreen.GetType().GetField("GameNameTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as TextBox;
             Button clearAddGameButton = addGameScreen.GetType().GetField("ClearAddGameButton", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as Button;
             Assert.AreEqual("Name", gameNameTextBox.Text);
@@ -37,7 +37,7 @@ namespace FrontEndTest
         public void TestClearAddGameButton()
         {
             MainScreen main = new MainScreen();
-            AddGameScreen addGameScreen = new AddGameScreen(main.Refresh);
+            AddGameScreen addGameScreen = new AddGameScreen(main);
             TextBox gameNameTextBox = addGameScreen.GetType().GetField("GameNameTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as TextBox;
             MaskedTextBox gamePathTextBox = addGameScreen.GetType().GetField("GamePathTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as MaskedTextBox;
             MaskedTextBox gameimagePathTextBox = addGameScreen.GetType().GetField("GameImagePathTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as MaskedTextBox;
