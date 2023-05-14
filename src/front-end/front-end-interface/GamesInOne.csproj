@@ -63,7 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameInfoList.cs">
+    <Compile Include="GamesEditList.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="MainScreen.cs">

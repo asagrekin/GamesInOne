@@ -16,6 +16,11 @@ namespace Games_In_One_App
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
+        public AddGameScreen()
+        {
+            InitializeComponent();
+        }
+
         public AddGameScreen(MainScreen main)
         {
             InitializeComponent();
@@ -25,6 +30,7 @@ namespace Games_In_One_App
         private void ExitAddGameButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            main.initialButtonsState();
         }
 
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
@@ -41,9 +47,11 @@ namespace Games_In_One_App
             }
             Console.WriteLine("Using image: " + imagePath);
             add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath);
+            this.Visible = false;
             main.LoadData();
             resetTextBox();
             Console.WriteLine("***********************");
+
         }
 
         private void ClearAddGameButton_Click(object sender, EventArgs e)
