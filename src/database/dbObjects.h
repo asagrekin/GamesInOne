@@ -29,10 +29,17 @@ namespace gamesDB{
                 ID_ = hasher(path);
 
                 // Copy name, path, and image path.
-                strncpy_s(name_, name.c_str(), NAME_SIZE);
-                strncpy_s(path_, path.c_str(), PATH_SIZE);
-                strncpy_s(image_path_, image_path.c_str(), PATH_SIZE);
-            }
+                // strncpy_s(name_, name.c_str(), NAME_SIZE);
+                // strncpy_s(path_, path.c_str(), PATH_SIZE);
+                // strncpy_s(image_path_, image_path.c_str(), PATH_SIZE);
+                strncpy(name_, name.c_str(), NAME_SIZE);
+                                name_[NAME_SIZE - 1] = '\0';
+                                strncpy(path_, path.c_str(), PATH_SIZE);
+                                path_[PATH_SIZE - 1] = '\0';
+                                strncpy(image_path_, image_path.c_str(), PATH_SIZE);
+                                image_path_[PATH_SIZE - 1] = '\0';
+
+                            }
 
             // Deletes the object instance.
             ~dbObject() {}

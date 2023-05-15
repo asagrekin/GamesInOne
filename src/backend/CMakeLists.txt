@@ -17,19 +17,19 @@ FetchContent_MakeAvailable(googletest)
 enable_testing()
 
 add_executable(
-  hello_test
-  hello_test.cc
+  backend_testing
+  backend_testing.cc
   gamelauncher.cpp
   ../database/gamesDB.cpp
 )
 
 target_link_libraries(
-  hello_test
+  backend_testing
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test DISCOVERY_TIMEOUT 600)
+gtest_discover_tests(backend_testing DISCOVERY_TIMEOUT 600)
 
 
 
