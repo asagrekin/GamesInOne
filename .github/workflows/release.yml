@@ -43,6 +43,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - uses: vimtor/action-zip@v1
-        with:
-          files: Release/
-          dest: Release.zip
+      with:
+        files: Release/
+        dest: Release.zip
