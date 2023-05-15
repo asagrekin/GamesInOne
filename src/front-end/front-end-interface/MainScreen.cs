@@ -101,7 +101,6 @@ namespace Games_In_One_App
 
         public void LoadData()
         {
-            initialButtonsState();
             gamesTable.Controls.Clear();
             gamesTable.RowCount = 0;
             Referesh();
@@ -125,7 +124,8 @@ namespace Games_In_One_App
                 this.gamesScrollPanel.MinimumSize = new Size(this.gamesTable.Width, ClientSize.Height - 2 * this.logo.Height);
                 this.gamesScrollPanel.BringToFront();
             }
-        
+            initialButtonsState();
+
         }
 
         private void ShowEditScreen()
@@ -149,6 +149,7 @@ namespace Games_In_One_App
             }
             this.gamesEditList.Anchor = AnchorStyles.Top;
             this.editScrollPanel.Location = new Point((ClientSize.Width - gamesEditList.Width) / 2, 2 * this.logo.Height - 25);
+            this.editScrollPanel.Visible = true;
             if (gamesEditList.RowCount != 0)
             {
                 this.editScrollPanel.Size = new Size(this.gamesEditList.Width, ClientSize.Height - 2 * this.logo.Height);
@@ -179,7 +180,6 @@ namespace Games_In_One_App
 
         private void saveOrderButton_Click(object sender, EventArgs e)
         {
-            // TODO: Perform actual save of order
             Console.WriteLine("New Order:");
             for (int i = 0; i < this.gamesEditList.RowCount; i++)
             {
@@ -188,16 +188,16 @@ namespace Games_In_One_App
                 gameRow.removeFromDB();
                 gameRow.addToDB();
             }
-
+            this.editScrollPanel.Visible = false;
             LoadData();
         }
 
         public void initialButtonsState()
         {
-            this.editOrderButton.Visible = true;
             this.addGameButton.Visible = true;
-            this.editOrderButton.Enabled = true;
             this.addGameButton.Enabled = true;
+            this.editOrderButton.Visible = this.gamesTable.Controls.Count > 0;
+            this.editOrderButton.Enabled = this.gamesTable.Controls.Count > 0;
             this.saveOrderButton.Visible = false;
         }
     }

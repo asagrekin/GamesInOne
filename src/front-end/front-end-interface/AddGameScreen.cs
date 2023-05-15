@@ -42,7 +42,8 @@ namespace Games_In_One_App
                 imagePath.EndsWith(".jpg") ||
                 imagePath.EndsWith(".jpeg")))
             {
-                imagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\src\\front-end\\front-end-interface\\Resources\\Logo.png";
+                imagePath = "Resources/Logo.png";
+                //imagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\src\\front-end\\front-end-interface\\Resources\\Logo.png";
                 Console.WriteLine("Using default image: " + imagePath);
             }
             Console.WriteLine("Using image: " + imagePath);

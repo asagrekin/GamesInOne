@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\</OutputPath>
+    <OutputPath>..\..\..\Release\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -134,12 +134,15 @@
     <None Include="Resources\file_explorer_icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\Logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\dbFiles" mkdir "$(SolutionDir)..\..\..\dbFiles" &amp;
-if not exist "$(SolutionDir)..\..\..\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\dbFiles\ind.dat" &amp;
-if not exist "$(SolutionDir)..\..\..\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\dbFiles\lst.dat"</PreBuildEvent>
+    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\Release" mkdir "$(SolutionDir)..\..\..\Release" &amp;
+if not exist "$(SolutionDir)..\..\..\Release\dbFiles" mkdir "$(SolutionDir)..\..\..\Release\dbFiles" &amp;
+if not exist "$(SolutionDir)..\..\..\Release\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\Release\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\Release\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\Release\dbFiles\lst.dat"</PreBuildEvent>
   </PropertyGroup>
 </Project>
