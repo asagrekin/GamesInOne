@@ -35,7 +35,7 @@ namespace gamesDB {
         return true;
     }
 
-    // Returns the list all dbObjects in the database. The user 
+    // Returns the list all dbObjects in the database. The user
     // is responsible for cleaning up when they are done with it.
     // Returns nullptr if an error occurs.
     std::list<dbObject*>* getGames() {

@@ -1,5 +1,5 @@
 // Kelby S. & Leonardo O.
-// File to Launch Games
+// Backend core, responsable for all internal functionality.
 
 #include "../front-end/link-front-and-back/pch.h"
 #include "gamelauncher.h"
@@ -30,15 +30,11 @@ namespace launcher {
 
         // Error handling
         if(bScucces == FALSE) {
-            cout<<"Create Process Failed & Error No - "<<GetLastError()<<endl;
+            // UNCOMMENT THE ERROR ADDITION IF WISHED TO BE SEEN
+            cout<<"Create Process Failed" /*& Error No - "<<GetLastError()*/<<endl;
+        } else {
+            cout<<"Create Process Success"<<endl;
         }
-        cout<<"Create Process Success"<<endl;
-
-        // Terminal will help us track the proccess and thread
-        cout<<"Process ID ->"<<processinfo.dwProcessId<<endl;
-        cout<<"Thread ID ->"<<processinfo.dwThreadId<<endl;
-        // cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
-        // cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
 
         // Wait for process to go down then close when finished
         WaitForSingleObject(processinfo.hProcess, INFINITE);
@@ -64,7 +60,7 @@ namespace launcher {
         path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
         string type = path.substr(path.length() - 4);
         if (path.length() > 4) {
-            if (((file_type == ".exe") & (type == ".exe")) || ((file_type == "image") & 
+            if (((file_type == ".exe") & (type == ".exe")) || ((file_type == "image") &
                 (type == ".png" || type == ".ico" || type == ".jpg" || path.substr(path.length() - 5) == ".jpeg"))) {
                 size_t i = 0;
                 while ((i = path.find("\\", i)) != string::npos) {
@@ -164,6 +160,6 @@ namespace launcher {
             }
         }
         return false;
-    } 
+    }
 }
 
