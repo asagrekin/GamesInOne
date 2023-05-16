@@ -19,11 +19,11 @@ Progress:
 High Level Goal: Work on the custom ordering of the game list, refine UI.
 
 ### Database:
-Last Week's Goal: Fix any errors that arise.
+Last Week's Goal: Add more unit testing, and implement anything needed to respond to Alpha Release feedback.
 
-Progress: No bugs arose, foused energy on other areas that needed more attention beofre Alpha Release. A couple of CI tests have been added for testing.
+Progress: More unit testing was added. Nothing new needed to be implemented based on the feedback.
 
-High Level Goal: Add more unit testing, and implement anything needed to respond to Alpha Release feedback.
+High Level Goal: Respond to feedback from Beta Release.
 
 ### Agenda for Project Meeting:
 - Discuss current progress
@@ -50,20 +50,21 @@ Goal for next week:
 
 ### Asa
 Last week's goal:
-- Fix any bugs that show up.
-- Help other teams with unit testing.
+- Work on more CI tests.
+- Work on a proper installer for the app.
+- Respond to Alpha Release feedback.
 
 Progress:
-- No bugs showed up with the database, so nothing needed to be done there.
-- Worked a lot on the documentation for downloading and installing the app.
+- Helped out with CI tests
+- Got the executable easily downloadable as a zip file wiht Steven.
+- Added user docs to the 
 
 Issues:
 - None
 
 Goal for next week:
-- Work on more CI tests.
-- Work on a proper installer for the app.
-- Respond to Alpha Release feedback.
+- Support other teams, and help out with their needs
+- Respond to feedback
 
 ### Steven
 Last week's goal: By May 9
