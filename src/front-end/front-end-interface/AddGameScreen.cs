@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using static Games_In_One_App.MainScreen;
+using static Games_In_One.MainScreen;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     public partial class AddGameScreen : UserControl
     {

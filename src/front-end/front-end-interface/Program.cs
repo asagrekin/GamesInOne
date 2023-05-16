@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     internal static class Program
     {

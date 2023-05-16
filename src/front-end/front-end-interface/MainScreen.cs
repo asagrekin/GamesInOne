@@ -1,4 +1,4 @@
-﻿using Games_In_One_App.Games_In_One_App;
+﻿using Games_In_One.Games_In_One;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     public partial class MainScreen : Form
     {

@@ -2,14 +2,14 @@
 using System.Drawing;
 using System;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     using System.Drawing;
     using System;
     using System.Windows.Forms;
     using System.Collections.Generic;
 
-    namespace Games_In_One_App
+    namespace Games_In_One
     {
         public class GamesEditList : TableLayoutPanel
         {

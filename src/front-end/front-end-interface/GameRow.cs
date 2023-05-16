@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using static Games_In_One_App.MainScreen;
+using static Games_In_One.MainScreen;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     public partial class GameRow : UserControl
     {

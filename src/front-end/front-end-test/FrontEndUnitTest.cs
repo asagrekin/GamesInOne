@@ -1,5 +1,5 @@
 #pragma warning disable
-using Games_In_One_App;
+using Games_In_One;
 using Moq;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;

@@ -1,4 +1,4 @@
-﻿namespace Games_In_One_App
+﻿namespace Games_In_One
 {
     partial class GameRow
     {
