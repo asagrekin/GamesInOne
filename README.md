@@ -36,9 +36,28 @@ The app allows for adding, deleting, and running games via the click of a button
   - If the image path field is left blank, or has an invalid image path, a default image will be displayed.
 - Remove a game (click the `Delete` button on the right side of the screen, for the desired app).
 - Launch a game (click the `Play` button on the right side of the screen, for the desired app).
+### Running BackEnd & Database Tests
+In order to make use of the Google Test Suite for C++ you will need to have CMake installed on your device which you can do here: https://cmake.org/. For additional information on the proccess of setting up CMAKE you may find it useful to reference the Google Test homepage which can be found here: https://google.github.io/googletest/quickstart-cmake.html.
+
+Once CMAKE is installed please start by reading the guiding comments within the backend_testing.cc file, This file can be located within the backend folder inside the main source code. The reason for reading and understand these tests is that the tests themselves rely on certain file paths to exist which may not exist on your local computer and will require some small changes to be made. Once you're done reading, cd into the backend folder. Then run the following commands to do an initial test that contains setup commands.\
+`cmake -S . -B build`                                                                      
+`cmake --build build`\
+`cd build`\
+`mkdir dbFiles`\
+`New-Item -ItemType File -Path "dbFiles\ind.dat"`\
+`New-Item -ItemType File -Path "dbFiles\lst.dat"`\
+`ctest`
+
+After this is completed you can just run the following commands below to continue testing in the future. Keep in mind that after every testing run you execute you will be put into the build folder so you will need to cd out of this back into the backend folder before testing again.\
+`cmake -S . -B build`                                                                      
+`cmake --build build`\
+`cd build`\
+`ctest`
+
 ## Layout
 - Artifacts, members, roles and links are in the ORG file at the top level.
 - Weekly reports are located in the reports directory.
   - The report for week X is named WeekXReport.
 - Functional code is located in the src directory.
 - Issues list located here: https://github.com/users/asagrekin/projects/3
+
