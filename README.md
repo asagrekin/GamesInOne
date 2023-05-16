@@ -50,6 +50,8 @@ If you want to obtain and/or make edits to the source code, you may fork the rep
 - The Back-end and database directories should have makefiles to build the code they contain
 - The front-end is more complicated, please follow the instructions in the top-level README of this commit: https://github.com/asagrekin/GamesInOne/tree/9fca9944dbe4927c8893490538dae5db12fd53aa
   - Follow the instructions under `Downloading, Installing, and Running`
+  - If you prefer using the Visual Studio IDE, you can open up the solution file located at `/src/front-end/front-end-interface/GamesInOne.sln` using Visual Studio IDE.\
+    Right click the solution and hit `Build` to build the solution, and click `Start` at the top of the IDE to start the app for debugging.
   - Ignore the part about cloning the repo (you should already have it cloned anyways)
 
 ### Running Back-End & Database Tests
@@ -73,6 +75,18 @@ After this is completed you can just run the following commands below to continu
 ### Adding Back-End and Database Tests
 The tests are located in `src/backend/backend_testing.cc`.\
 Read the Google Test documentation for more detail on implementing tests here: https://google.github.io/googletest/
+
+### Running Front-End Tests
+The best way to test the front end is using the Visual Studio IDE. \
+Opening the solution file (`/src/front-end/front-end-interface/GamesInOne.sln`) in Visual Studio, you will see that the FrontEndTest project is listed in the Solution Explorer.\
+After building the solution, right click the FrontEndTest project and click `Run Tests`.
+
+### Adding Front-End Tests
+The tests are located in `src/front-end/front-end-test/FrontEndUnitTest.cs`.\
+In the case where you want to refer to specific private components within a User Control, to test their state, you can use Reflection.\
+For example getting the GameNameTextBox from the AddGameScreen:\
+`AddGameScreen addGameScreen = new AddGameScreen(main);`\
+`TextBox gameNameTextBox = addGameScreen.GetType().GetField("GameNameTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as TextBox;`
 
 ### Creating a New Release
 In order to create a new release, simply push **new** a tag to the main repository (tag must start with v, eg: v1.0.1). This should automatically create a new release, with a `GamesInOne.zip` included. This `GamesInOne.zip` will included a runnable executable of the app, once downloaded and extracted.
