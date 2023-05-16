@@ -9,14 +9,13 @@ Progress: We now have new unit testing for all elements. This new testing has sh
 High Level Goal: Make changes based on Alpha Release feedback.
 
 ### Frontend:
-Last Week's Goal: Fully integrate front and back end for Alpha release. Add more test cases.
+Last Week's Goal: Work on custom ordering.ss
 
 Progress:
-- Successfully integrated the front and back-end for Alpha release.
-- Added test cases for the AddGameScreen.
-- Added a default iamge path (our Logo image) as a place holder if the user do not have a image at the moment.
+- Added edit order functionality
+- Improved User interface 
 
-High Level Goal: Work on the custom ordering of the game list, refine UI.
+High Level Goal: Improve based on beta release feedbacks and get ready for frinal release.
 
 ### Database:
 Last Week's Goal: Add more unit testing, and implement anything needed to respond to Alpha Release feedback.
@@ -67,19 +66,18 @@ Goal for next week:
 - Respond to feedback
 
 ### Steven
-Last week's goal: By May 9
-- Fully integrate with backend for Alpha Release
-- Add more test cases
-
-Progress:
-- Successfully integrated the front and back end.
-- Image path is now optional, added default image path to our logo if not provided.
-- Tested the building/running instructions with different people to ensure it is working as expected.
-- Wrote AddScreen unit tests.
-
-Issue:
-- Was having trouble retrieving a list of dbObjects from backend due to struct and type differece. Solve by creating a functions to iterate through the list and returning it to front-end one by one.
-
-Goal for next week: By May 16
+Last week's goal: By May 16
 - Add custom ordering of the list.
 - Improve UI.
+
+Progress:
+- Successfully added edit order list function
+- Improved the user interface to allow adaptive resizing
+- Fuigured out a way to create a release based on a tag
+
+Issue:
+- Was having some issues with the UI component's positionings, got it resolved
+
+Goal for next week: 
+- Get ready for final release
+- Make changes based on beta release feedbacks
