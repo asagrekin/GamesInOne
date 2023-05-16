@@ -39,7 +39,7 @@ namespace gamesDB{
                 //                 strncpy(image_path_, image_path.c_str(), PATH_SIZE);
                 //                 image_path_[PATH_SIZE - 1] = '\0';
 
-                //             }
+            }
 
             // Deletes the object instance.
             ~dbObject() {}
