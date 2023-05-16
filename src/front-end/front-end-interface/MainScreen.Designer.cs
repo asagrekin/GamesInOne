@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     partial class MainScreen
     {
@@ -32,84 +32,84 @@ namespace Games_In_One_App
         /// </summary>
         private void InitializeComponent()
         {
-            this.AddGameButton = new System.Windows.Forms.Button();
-            this.GamesTable = new System.Windows.Forms.TableLayoutPanel();
-            this.Logo = new System.Windows.Forms.PictureBox();
-            this.addGameScreen = new Games_In_One_App.AddGameScreen(new RefreshListFunc(LoadData));
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.addGameButton = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.editOrderButton = new System.Windows.Forms.Button();
+            this.saveOrderButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
-            // AddGameButton
+            // addGameButton
             // 
-            this.AddGameButton.Location = new System.Drawing.Point(603, 29);
-            this.AddGameButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddGameButton.Name = "AddGameButton";
-            this.AddGameButton.Size = new System.Drawing.Size(80, 19);
-            this.AddGameButton.TabIndex = 8;
-            this.AddGameButton.Text = "Add Game";
-            this.AddGameButton.UseVisualStyleBackColor = true;
-            this.AddGameButton.Click += new System.EventHandler(this.AddGameButton_Click);
+            this.addGameButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addGameButton.Location = new System.Drawing.Point(393, 31);
+            this.addGameButton.Margin = new System.Windows.Forms.Padding(20);
+            this.addGameButton.Name = "addGameButton";
+            this.addGameButton.Size = new System.Drawing.Size(75, 23);
+            this.addGameButton.TabIndex = 8;
+            this.addGameButton.Text = "Add Game";
+            this.addGameButton.UseVisualStyleBackColor = true;
+            this.addGameButton.Click += new System.EventHandler(this.AddGameButton_Click);
             // 
-            // GamesTable
+            // logo
             // 
-            this.GamesTable.AutoSize = true;
-            this.GamesTable.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.GamesTable.ColumnCount = 1;
-            this.GamesTable.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GamesTable.Location = new System.Drawing.Point(27, 100);
-            this.GamesTable.Name = "GamesTable";
-            this.GamesTable.RowCount = 1;
-            this.GamesTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.GamesTable.Size = new System.Drawing.Size(0, 0);
-            this.GamesTable.TabIndex = 9;
+            this.logo.Image = global::Games_In_One.Properties.Resources.Logo;
+            this.logo.InitialImage = global::Games_In_One.Properties.Resources.Logo;
+            this.logo.Location = new System.Drawing.Point(12, 12);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(117, 57);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.logo.TabIndex = 11;
+            this.logo.TabStop = false;
             // 
-            // Logo
+            // editOrderButton
             // 
-            this.Logo.Image = global::Games_In_One_App.Properties.Resources.Logo;
-            this.Logo.InitialImage = global::Games_In_One_App.Properties.Resources.Logo;
-            this.Logo.Location = new System.Drawing.Point(12, 12);
-            this.Logo.Name = "Logo";
-            this.Logo.Size = new System.Drawing.Size(117, 57);
-            this.Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Logo.TabIndex = 11;
-            this.Logo.TabStop = false;
+            this.editOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.editOrderButton.Location = new System.Drawing.Point(509, 29);
+            this.editOrderButton.Name = "editOrderButton";
+            this.editOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.editOrderButton.TabIndex = 12;
+            this.editOrderButton.Text = "Edit Order";
+            this.editOrderButton.UseVisualStyleBackColor = true;
+            this.editOrderButton.Click += new System.EventHandler(this.EditGameButton_Click);
             // 
-            // addGameScreen
+            // saveOrderButton
             // 
-            this.addGameScreen.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.addGameScreen.Location = new System.Drawing.Point(194, 80);
-            this.addGameScreen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.addGameScreen.Name = "addGameScreen";
-            this.addGameScreen.Size = new System.Drawing.Size(341, 342);
-            this.addGameScreen.TabIndex = 10;
-            this.addGameScreen.Load += new System.EventHandler(this.addGameScreen_Load);
+            this.saveOrderButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.saveOrderButton.Location = new System.Drawing.Point(612, 31);
+            this.saveOrderButton.Name = "saveOrderButton";
+            this.saveOrderButton.Size = new System.Drawing.Size(75, 23);
+            this.saveOrderButton.TabIndex = 13;
+            this.saveOrderButton.Text = "Save Order";
+            this.saveOrderButton.UseVisualStyleBackColor = true;
+            this.saveOrderButton.Click += new System.EventHandler(this.SaveOrderButton_Click);
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightGray;
-            this.ClientSize = new System.Drawing.Size(752, 492);
-            this.Controls.Add(this.Logo);
-            this.Controls.Add(this.addGameScreen);
-            this.Controls.Add(this.GamesTable);
-            this.Controls.Add(this.AddGameButton);
+            this.ClientSize = new System.Drawing.Size(734, 461);
+            this.Controls.Add(this.saveOrderButton);
+            this.Controls.Add(this.editOrderButton);
+            this.Controls.Add(this.logo);
+            this.Controls.Add(this.addGameButton);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(750, 500);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Games In One";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.Load += new System.EventHandler(this.MainScreen_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Button AddGameButton;
-        private System.Windows.Forms.TableLayoutPanel GamesTable;
-        private AddGameScreen addGameScreen;
-        private PictureBox Logo;
+        private System.Windows.Forms.Button addGameButton;
+        private PictureBox logo;
+        private Button editOrderButton;
+        private Button saveOrderButton;
     }
 
 }

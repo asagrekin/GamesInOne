@@ -5,6 +5,7 @@ on:
     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
 
 name: Upload Release Asset
+run-name: Create Release Zip
 
 env:
   # Path to the solution file relative to the root of the project.
@@ -38,11 +39,29 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-  zip-files:
-    runs-on: windows-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: vimtor/action-zip@v1
+    - name: Create Zip
+      uses: vimtor/action-zip@v1
       with:
-        files: Release/
-        dest: Release.zip
+        files: GamesInOne/
+        dest: GamesInOne.zip
+
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: GamesInOne Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+
+    - name: Upload Release Asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./GamesInOne.zip
+        asset_name: GamesInOne.zip
+        asset_content_type: application/zip

@@ -6,25 +6,31 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
-using static Games_In_One_App.MainScreen;
+using static Games_In_One.MainScreen;
 
-namespace Games_In_One_App
+namespace Games_In_One
 {
     public partial class AddGameScreen : UserControl
-    {   
-        private RefreshListFunc refreshListFunc;
+    {
+        private MainScreen main;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
-        public AddGameScreen(RefreshListFunc refreshListFunc)
+        public AddGameScreen()
         {
             InitializeComponent();
-            this.refreshListFunc = refreshListFunc;
+        }
+
+        public AddGameScreen(MainScreen main)
+        {
+            InitializeComponent();
+            this.main = main;
         }
 
         private void ExitAddGameButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            main.InitialButtonsState();
         }
 
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
@@ -36,14 +42,16 @@ namespace Games_In_One_App
                 imagePath.EndsWith(".jpg") ||
                 imagePath.EndsWith(".jpeg")))
             {
-                imagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\src\\front-end\\front-end-interface\\Resources\\Logo.png";
+                imagePath = "Resources/Logo.png";
                 Console.WriteLine("Using default image: " + imagePath);
             }
             Console.WriteLine("Using image: " + imagePath);
             add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath);
-            this.refreshListFunc();
+            this.Visible = false;
+            main.LoadData();
             resetTextBox();
             Console.WriteLine("***********************");
+
         }
 
         private void ClearAddGameButton_Click(object sender, EventArgs e)
@@ -130,7 +138,6 @@ namespace Games_In_One_App
         }
 
 
-
         private void GamePathFileExplorerButton_Click(object sender, EventArgs e)
         {
             this.GamePathFileExplorer.ShowDialog();
@@ -140,5 +147,14 @@ namespace Games_In_One_App
         {
             this.GameImagePathFileExplorer.ShowDialog();
         }
+        private void GameNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (this.GameNameTextBox.Text.Length > 16)
+            {
+                GameNameTextBox.Text = GameNameTextBox.Text.Substring(0, 16);
+                GameNameTextBox.SelectionStart = 16;
+            }
+        }
+
     }
 }
