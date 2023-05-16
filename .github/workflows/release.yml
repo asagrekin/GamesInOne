@@ -42,8 +42,8 @@ jobs:
     - name: Create Zip
       uses: vimtor/action-zip@v1
       with:
-        files: Release/
-        dest: Release.zip
+        files: GamesInOne/
+        dest: GamesInOne.zip
 
     - name: Create Release
       id: create_release
@@ -52,7 +52,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: GamesInOne ${{ github.ref }}
+        release_name: GamesInOne Release ${{ github.ref }}
         draft: false
         prerelease: false
 
