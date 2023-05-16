@@ -1,5 +1,5 @@
 // Kelby S. & Leonardo O.
-// File to Launch Games
+// Backend core, responsable for all internal functionality.
 
 #include "../front-end/link-front-and-back/pch.h"
 #include "gamelauncher.h"
@@ -30,10 +30,14 @@ namespace launcher {
 
         // Error handling
         if(bScucces == FALSE) {
+            // UNCOMMENT THE ERROR ADDITION IF WISHED TO BE SEEN
             cout<<"Create Process Failed" /*& Error No - "<<GetLastError()*/<<endl;
         } else {
             cout<<"Create Process Success"<<endl;
         }
+
+        // IF PROCCESS ID OR THREAD ID IS WANTED UNCOMMENT THE FOLLOWING LINES
+
         // Terminal will help us track the proccess and thread
         // cout<<"Process ID ->"<<processinfo.dwProcessId<<endl;
         // cout<<"Thread ID ->"<<processinfo.dwThreadId<<endl;
