@@ -36,14 +36,6 @@ namespace launcher {
             cout<<"Create Process Success"<<endl;
         }
 
-        // IF PROCCESS ID OR THREAD ID IS WANTED UNCOMMENT THE FOLLOWING LINES
-
-        // Terminal will help us track the proccess and thread
-        // cout<<"Process ID ->"<<processinfo.dwProcessId<<endl;
-        // cout<<"Thread ID ->"<<processinfo.dwThreadId<<endl;
-        // cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
-        // cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
-
         // Wait for process to go down then close when finished
         WaitForSingleObject(processinfo.hProcess, INFINITE);
         CloseHandle(processinfo.hThread);
