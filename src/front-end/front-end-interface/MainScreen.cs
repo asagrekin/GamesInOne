@@ -115,6 +115,8 @@ namespace Games_In_One
                 scrollPanel.BringToFront();
             }
         }
+        
+        // Loads the data to the game table in the main screen
         public void LoadData()
         {
             LoadDataToPanel(this.gamesScrollPanel, this.gamesList, true);
@@ -151,7 +153,8 @@ namespace Games_In_One
             this.editScrollPanel.Visible = false;
             LoadData();
         }
-
+        
+        // Set the buttons to their initial states
         public void InitialButtonsState()
         {
             this.addGameButton.Visible = true;
