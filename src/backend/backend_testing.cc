@@ -188,65 +188,110 @@ TEST(ExampleTests, AddGame) {
    gamesDB::clearDB();
    launcher::get_data();
    string output = launcher::add(game_name, game_path, image_path);
-
    EXPECT_EQ(output, "success");
 }
 
 
 TEST(ExampleTests, DeleteGame) {
-
-   // string add(string game_name, string game_path, string image_path)
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Windows/System32/OneDrive.ico";
+   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   // Add a game
+   gamesDB::clearDB();
+   list<gamesDB::dbObject*>* games = launcher::get_data();
    launcher::add(game_name, game_path, image_path);
 
-   // What is id?
-   //string output = launcher::del(int id);
-   //EXPECT_EQ(output, "success");
+   games = launcher::get_data();
+   int id;
+   list<gamesDB::dbObject*>::iterator it;
+   for (it = games->begin(); it != games->end(); it++) {
+      string game = (*it)->getName();
+      if (game == "notepad") {
+         id = (*it)->getID();
+      }
+   }
+
+    string del_result = launcher::del(id);
+   EXPECT_EQ(del_result, "success");
 }
 
 
 TEST(ExampleTests, GameList) {
-
-   // string add(string game_name, string game_path, string image_path)
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Windows/System32/OneDrive.ico";
+   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+
+
+   gamesDB::clearDB();
+   list<gamesDB::dbObject*>* games = launcher::get_data();
    launcher::add(game_name, game_path, image_path);
 
-
-
+   games = launcher::get_data();
+   int id;
+   list<gamesDB::dbObject*>::iterator it;
+   for (it = games->begin(); it != games->end(); it++) {
+      string game = (*it)->getName();
+      if (game == "notepad") {
+         id = (*it)->getID();
+      }
+   }
+   string expected = "Name: notepad,  ID: " + to_string(id) + "\n";
+   cout<<expected<<endl;
    testing::internal::CaptureStdout();
    launcher::gameList();
    std::string output = testing::internal::GetCapturedStdout();
 
-   // What is id?
-   EXPECT_EQ(output, "Name: notepad,  ID: ");
+   EXPECT_EQ(output, expected);
 }
 
 
 TEST(ExampleTests, Play) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Windows/System32/OneDrive.ico";
+   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+
+   gamesDB::clearDB();
+   list<gamesDB::dbObject*>* games = launcher::get_data();
    launcher::add(game_name, game_path, image_path);
 
-   // WHAT IS ID?
+   games = launcher::get_data();
+   int id;
+   list<gamesDB::dbObject*>::iterator it;
+   for (it = games->begin(); it != games->end(); it++) {
+      string game = (*it)->getName();
+      if (game == "notepad") {
+         id = (*it)->getID();
+      }
+   }
 
+   boolean output = launcher::play(id);
+   EXPECT_EQ(output, true);
 }
 
 TEST(ExampleTests, GetData) {
-// What is get data doing?
+   string game_name = "notepad";
+   string game_path = "C:/Windows/System32/notepad.exe";
+   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
 
+   gamesDB::clearDB();
+   list<gamesDB::dbObject*>* games = launcher::get_data();
+   launcher::add(game_name, game_path, image_path);
+   games = launcher::get_data();
+   SUCCEED()<< "Invokes succeed if successful";
 }
 
 
 TEST(ExampleTests, HasPath) {
+   string game_name = "notepad";
+   string game_path = "C:/Windows/System32/notepad.exe";
+   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+
+   gamesDB::clearDB();
+   launcher::get_data();
+   launcher::add(game_name, game_path, image_path);
+
+   boolean output = launcher::hasPath(game_path);
+   cout<<output<<endl;
+   EXPECT_TRUE(output);
 
 }
-
-
-// // MORE TESTS - ASA?
-
-// Reference Video: https://www.youtube.com/watch?v=Lp1ifh9TuFI
