@@ -2,11 +2,11 @@
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Add unit testing to all elements. Fix any issues that arise with the back end when testing.
+Last Week's Goal: Make changes based on Alpha Release feedback.
 
-Progress: We now have new unit testing for all elements. This new testing has shed light on some errors with existing methods which we have fixed.
+Progress: We now have new unit testing for all elements within the Beta Release for both the Backend and Database. Additionally, we've removed unnecessary files in the backend folder and enhanced the code quality of existing files.
 
-High Level Goal: Make changes based on Alpha Release feedback.
+High Level Goal: Make changes based on Beta Release feedback.
 
 ### Frontend:
 Last Week's Goal: Work on custom ordering.ss
@@ -34,18 +34,19 @@ High Level Goal: Respond to feedback from Beta Release.
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- By May 9 we plan to add unit testing to all elements. Fix any issues that arise with the back end when testing.
+- By May 16 we plan to make changes based on Alpha Release feedback. We also plan to have handle the ability to order a list of games based on the users preference.
 
 Progress:
-- We now have new unit testing for all backend elements. 
-- This new testing has shed light on some errors with existing methods which we have fixed.
-- Biggest error came from our EnhancePath method where we made serious imporvements to the logic within it.
+- We now have new unit testing for all backend and database elements that are up to date with the Beta release. 
+- We removed unnecessary files in the backend folder and enhanced the code quality of existing files.
+- Added testing instructions to the top-level READ.ME so that others may test the functionality of the backend and database.
+- Enhanced the CI .YAML file to cover be capable of running new tests.
 
 Issue:
-- An issue we had was getting the Google Tests to recgonzie some of the work being conducted by the database such as the add functionality. 
+- A re-occuring issue we had was getting the Google Tests to recgonzie some of the files within our source code. We eventually learned that we needed to pre-build some of the database files by running additional terminal commands. We then added these to our CI .YAML file to enhance the tests our commits run through.  
 
 Goal for next week:
-- By May 16 we plan to make changes based on Alpha Release feedback. We also plan to have handle the ability to order a list of games based on the users preference.
+- By May 23 we plan to make changes based on Beta Release feedback.
 
 ### Asa
 Last week's goal:
