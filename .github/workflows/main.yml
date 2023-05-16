@@ -43,7 +43,7 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0-windows/FrontEndTest.dll
 
-  Beack-End-Test:
+  Back-End-Test:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v1
@@ -54,5 +54,11 @@ jobs:
       - name: CMake build
         run: cd ./src/backend/ && cmake --build build
 
-      - name: Test
-        run: cd ./src/backend/build &&ctest
+      - name: Move to build folder
+        run: cd ./src/backend/build
+
+      - name: Setup dbfiles
+        run: mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
+
+      - name: Run the test
+        run: ctest
