@@ -40,11 +40,17 @@ namespace Games_In_One_App
             this.imagePath = imagePath;
             this.GameImage.Image = Image.FromFile(imagePath);
             this.main = main;
-            this.showButton = showButton;
-            this.StartGameButton.Visible = showButton;
-            this.DeleteButton.Visible = showButton; 
+            SetButtons(showButton);
             Resize += GameRow_Resize;
             Invalidate();
+        }
+
+        private void SetButtons(bool showButton)
+        {
+            this.StartGameButton.Visible = showButton;
+            this.StartGameButton.Enabled = showButton;
+            this.DeleteButton.Visible = showButton;
+            this.DeleteButton.Enabled = showButton;
         }
         private void GameRow_Resize(object sender, EventArgs e)
         {

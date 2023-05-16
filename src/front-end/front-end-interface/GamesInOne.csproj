@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{27944CE8-7BC9-4B8F-A38C-DAA4B03E163D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Games_In_One_App</RootNamespace>
-    <AssemblyName>Games In One App</AssemblyName>
+    <RootNamespace>Games_In_One</RootNamespace>
+    <AssemblyName>GamesInOne</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\Release\</OutputPath>
+    <OutputPath>..\..\..\GamesInOne\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -140,9 +140,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\Release" mkdir "$(SolutionDir)..\..\..\Release" &amp;
-if not exist "$(SolutionDir)..\..\..\Release\dbFiles" mkdir "$(SolutionDir)..\..\..\Release\dbFiles" &amp;
-if not exist "$(SolutionDir)..\..\..\Release\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\Release\dbFiles\ind.dat" &amp;
-if not exist "$(SolutionDir)..\..\..\Release\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\Release\dbFiles\lst.dat"</PreBuildEvent>
+    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\GamesInOne" mkdir "$(SolutionDir)..\..\..\GamesInOne" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles" mkdir "$(SolutionDir)..\..\..\GamesInOne\dbFiles" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne\dbFiles\lst.dat"</PreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -53,8 +53,8 @@ namespace Games_In_One_App
             // 
             // logo
             // 
-            this.logo.Image = global::Games_In_One_App.Properties.Resources.Logo;
-            this.logo.InitialImage = global::Games_In_One_App.Properties.Resources.Logo;
+            this.logo.Image = Games_In_One.Properties.Resources.Logo;
+            this.logo.InitialImage = Games_In_One.Properties.Resources.Logo;
             this.logo.Location = new System.Drawing.Point(12, 12);
             this.logo.Name = "logo";
             this.logo.Size = new System.Drawing.Size(117, 57);
@@ -82,7 +82,7 @@ namespace Games_In_One_App
             this.saveOrderButton.TabIndex = 13;
             this.saveOrderButton.Text = "Save Order";
             this.saveOrderButton.UseVisualStyleBackColor = true;
-            this.saveOrderButton.Click += new System.EventHandler(this.saveOrderButton_Click);
+            this.saveOrderButton.Click += new System.EventHandler(this.SaveOrderButton_Click);
             // 
             // MainScreen
             // 

@@ -30,7 +30,7 @@ namespace Games_In_One_App
         private void ExitAddGameButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
-            main.initialButtonsState();
+            main.InitialButtonsState();
         }
 
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
@@ -43,7 +43,6 @@ namespace Games_In_One_App
                 imagePath.EndsWith(".jpeg")))
             {
                 imagePath = "Resources/Logo.png";
-                //imagePath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "\\src\\front-end\\front-end-interface\\Resources\\Logo.png";
                 Console.WriteLine("Using default image: " + imagePath);
             }
             Console.WriteLine("Using image: " + imagePath);
@@ -139,7 +138,6 @@ namespace Games_In_One_App
         }
 
 
-
         private void GamePathFileExplorerButton_Click(object sender, EventArgs e)
         {
             this.GamePathFileExplorer.ShowDialog();
@@ -149,5 +147,14 @@ namespace Games_In_One_App
         {
             this.GameImagePathFileExplorer.ShowDialog();
         }
+        private void GameNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (this.GameNameTextBox.Text.Length > 16)
+            {
+                GameNameTextBox.Text = GameNameTextBox.Text.Substring(0, 16);
+                GameNameTextBox.SelectionStart = 16;
+            }
+        }
+
     }
 }
