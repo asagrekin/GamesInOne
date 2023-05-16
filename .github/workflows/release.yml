@@ -1,6 +1,10 @@
-name: GitHub Actions
-run-name: CI Test
-on: [push]
+on:
+  push:
+    # Sequence of patterns matched against refs/tags
+    tags:
+    - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
+name: Upload Release Asset
 
 env:
   # Path to the solution file relative to the root of the project.
@@ -10,14 +14,9 @@ env:
   # You can convert this to a build matrix if you need coverage of multiple configuration types.
   # https://docs.github.com/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
   BUILD_CONFIGURATION: Debug
-  
-  # Path to the test .dll
-  TEST_BIN_PATH: ./src/front-end/front-end-test/bin
 
-permissions:
-  contents: read
 jobs:
-  Front-End-Test:
+  build:
     runs-on: windows-latest
 
     steps:
@@ -39,29 +38,11 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Test
-      working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0-windows/FrontEndTest.dll
-
-  Back-End-Test:
+  zip-files:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v1
-
-      - name: CMake build folder 
-        run: cd ./src/backend/ && cmake -S . -B build
-        
-      - name: CMake build
-        run: cd ./src/backend/ && cmake --build build
-
-      - name: Move to build folder
-        run: cd ./src/backend/build
-
-      - name: Setup dbfiles
-        run: mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
-        
-      - name: Setup dbfiles
-        run: mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
-      
-      - name: Run the test
-        run: ctest
+    - uses: actions/checkout@v2
+    - uses: vimtor/action-zip@v1
+      with:
+        files: Release/
+        dest: Release.zip
