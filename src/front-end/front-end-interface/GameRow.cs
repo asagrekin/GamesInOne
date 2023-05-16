@@ -30,6 +30,7 @@ namespace Games_In_One
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
+        
         public GameRow(MainScreen main, int id, string name, string path, string imagePath, bool showButton)
         {
             InitializeComponent();
@@ -52,6 +53,7 @@ namespace Games_In_One
             this.DeleteButton.Visible = showButton;
             this.DeleteButton.Enabled = showButton;
         }
+        
         private void GameRow_Resize(object sender, EventArgs e)
         {
             Invalidate();
@@ -61,6 +63,7 @@ namespace Games_In_One
         {
             return GameName.Text;
         }
+        
         private void StartGameButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Starting Game");
@@ -91,12 +94,14 @@ namespace Games_In_One
                 e.Graphics.DrawLine(pen, 0, Height - 1, Width, Height - 1);
             }
         }
-
+        
+        // Delete this game's information from the database
         public void removeFromDB()
         {
             del(id);
         }
-
+        
+        // Add this game's infromation to the database
         public void addToDB()
         {
             add(name, path, imagePath);
