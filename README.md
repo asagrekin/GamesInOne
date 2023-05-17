@@ -48,11 +48,14 @@ If you want to obtain and/or make edits to the source code, you may fork the rep
 
 ### Building the Software
 - The Back-end and database directories should have makefiles to build the code they contain
-- The front-end is more complicated, please follow the instructions in the top-level README of this commit: https://github.com/asagrekin/GamesInOne/tree/9fca9944dbe4927c8893490538dae5db12fd53aa
-  - Follow the instructions under `Downloading, Installing, and Running`
-  - If you prefer using the Visual Studio IDE, you can open up the solution file located at `/src/front-end/front-end-interface/GamesInOne.sln` using Visual Studio IDE.\
-    Right click the solution and hit `Build` to build the solution, and click `Start` at the top of the IDE to start the app for debugging.
-  - Ignore the part about cloning the repo (you should already have it cloned anyways)
+- The front-end is more complicated, please follow the following steps:
+  - Download Visual Studio IDE https://visualstudio.microsoft.com/vs/ 
+  - WHEN INSTALLING, MAKE SURE THAT THE `Desktop development With C++` BOX AND THE `.NET desktop development` BOX ARE BOTH CHECKED. (This contains MSBuild, and .NET build tools).
+  - If you already of Visual Studio installed, in the Visual Studio installer, click `Modify` by the 2022 community edition, and checking the `Desktop development With C++` and `.NET desktop development` boxes before clicking `Modify` again.
+  - Open up the solution file located at `/src/front-end/front-end-interface/GamesInOne.sln` using Visual Studio IDE.
+  - Right click the solution and hit `Build` to build the solution, and click `Start` at the top of the IDE to start the app for debugging.
+
+
 
 ### Running Back-End & Database Tests
 In order to make use of the Google Test Suite for C++ you will need to have CMake installed on your device which you can do here: https://cmake.org/. For additional information on the proccess of setting up CMAKE you may find it useful to reference the Google Test homepage which can be found here: https://google.github.io/googletest/quickstart-cmake.html.
