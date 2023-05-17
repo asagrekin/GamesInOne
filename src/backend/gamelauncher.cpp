@@ -27,11 +27,9 @@ namespace launcher {
         BOOL bScucces = CreateProcess(NULL, game_path,
                 NULL, NULL, FALSE, 0, NULL, NULL, &startinfo, &processinfo);
 
-
         // Error handling
         if(bScucces == FALSE) {
-            // UNCOMMENT THE ERROR ADDITION IF WISHED TO BE SEEN
-            cout<<"Create Process Failed" /*& Error No - "<<GetLastError()*/<<endl;
+            cout<<"Create Process Failed"<<endl;
         } else {
             cout<<"Create Process Success"<<endl;
         }
@@ -40,7 +38,6 @@ namespace launcher {
         WaitForSingleObject(processinfo.hProcess, INFINITE);
         CloseHandle(processinfo.hThread);
         CloseHandle(processinfo.hProcess);
-        //system("PAUSE");
     }
 
 
@@ -76,28 +73,29 @@ namespace launcher {
     }
 
     string add(string game_name, string game_path, string image_path) {
-        // make sure path for game is readable
+        // Make sure path for game is readable
         EnhancePath(game_path, ".exe");
         if (game_path.length() == 0) {
             return "Not a valid .exe file!";
         }
 
-        // check valid path for game
+        // Check valid path for game
         if (!checkPath(game_path)) {
             return "The game path is not valid!";
         }
 
-        // make sure path is readable
+        // Make sure path is readable
         EnhancePath(image_path, "image");
         if (image_path.length() == 0) {
             return "Not a valid .ico, png, or jpeg/jpg file!";
         }
 
-        // check valid path
+        // Check valid path
         if (!checkPath(image_path)) {
             return "The image path is not valid!";
         }
 
+        // Check to see if the game path already exists.
         if (hasPath(game_path)) {
             return "this path already exists!";
         }

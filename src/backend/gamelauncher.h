@@ -35,8 +35,8 @@ namespace launcher {
 
 
     // Validates game is an exe file and fixes escape characters in the path.
-    // Inputs:   A string address representing game's path (path) and a string
-    //           to represent the file type (file_type).
+    // Inputs: A string address representing game's path (path) and a string
+    //         to represent the file type (file_type).
     void EnhancePath(string& path, string file_type) ;
 
 
