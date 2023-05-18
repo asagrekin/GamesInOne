@@ -28,10 +28,10 @@ To run GamesInOne, click on the `GamesInOne.exe` executable to launch the app. Y
 - To delete and executable, click the `Delete` button next to the desired executable
 
 ### Reporting Bugs
-To report a bug or issue, please, by all means, do email us at `GamesInOneBugs@gmail.com`. We will be checking the inbox, and will use your feadback to improve user experience for all members of our community.
+To report a bug or issue, navigate to the `Issues` tab of this repo, and click `New Issue`. Please be as descriptive as possible when reporting bugs. If applicable, please provide an image that shows the issue in your bug description.
 
 ### Known Bugs
-There are currently no known bugs, as of the Beta Release of the app.
+To see a list of known bugs, navigate to the `Issues` tab, which has an up-to-date list of all reported bugs in the app.
 
 ## Developer Guide
 Want to contribute to the project? Here's a guide on how you can:
