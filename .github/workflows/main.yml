@@ -54,11 +54,8 @@ jobs:
       - name: CMake build
         run: cd ./src/backend/ && cmake --build build
 
-      - name: Move to build folder
-        run: cd ./src/backend/build
-
       - name: Setup dbfiles
-        run: mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
+        run: cd ./src/backend/build && mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
         
       - name: Run the test
-        run: ctest
+        run: cd ./src/backend/build && ctest
