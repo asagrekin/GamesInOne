@@ -4,7 +4,7 @@
 ### Backend:
 Last Week's Goal: Make changes based on Alpha Release feedback.
 
-Progress: We now have new unit testing for all elements within the Beta Release for both the Backend and Database. Additionally, we've removed unnecessary files in the backend folder and enhanced the code quality of existing files.
+Progress: Fixed the tests not running in the CI. Added images to the testing directory and made sure the tests were able to run automatically without having to close any apps manually.
 
 High Level Goal: Make changes based on Beta Release feedback.
 
@@ -34,19 +34,18 @@ High Level Goal: Respond to feedback from peer reviews.
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- By May 16 we plan to make changes based on Alpha Release feedback. We also plan to have handle the ability to order a list of games based on the users preference.
+- Fix any issues found by peer review. 
 
 Progress:
-- We now have new unit testing for all backend and database elements that are up to date with the Beta release. 
-- We removed unnecessary files in the backend folder and enhanced the code quality of existing files.
-- Added testing instructions to the top-level READ.ME so that others may test the functionality of the backend and database.
-- Enhanced the CI .YAML file to cover be capable of running new tests.
+- Added image files to the testing directory so they can be tested. 
+- Removed having to wait for an app to close to test the launching functionality.
+- We have the unit testing for all backend and database elements up to date.
 
 Issue:
-- A re-occuring issue we had was getting the Google Tests to recgonzie some of the files within our source code. We eventually learned that we needed to pre-build some of the database files by running additional terminal commands. We then added these to our CI .YAML file to enhance the tests our commits run through.  
+- An issue we were experiencing is figuring out how to close an already-opened app to let our tests run. Since this was usually done manually it would keep the CI running forever. We ended up just removing having to wait for the file to get manually closed. 
 
 Goal for next week:
-- By May 23 we plan to make changes based on Beta Release feedback.
+- Fix any bug and issues privide by the feedback. 
 
 ### Asa
 Last week's goal:
