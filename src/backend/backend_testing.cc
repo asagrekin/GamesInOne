@@ -176,7 +176,7 @@ TEST(ExampleTests, LaunchGameBad) {
 TEST(ExampleTests, AddGame) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/png_Image.png";
 
    // Clear database and get the data before beginning.
    gamesDB::clearDB();
@@ -255,7 +255,7 @@ TEST(ExampleTests, AddGameInvalidImagePath) {
 TEST(ExampleTests, AddGameAlreadyExists) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    // Clear database and get the data before beginning.
    gamesDB::clearDB();
@@ -271,7 +271,7 @@ TEST(ExampleTests, AddGameAlreadyExists) {
 TEST(ExampleTests, DeleteGame) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    // Add a game before deleting
    gamesDB::clearDB();
@@ -308,7 +308,7 @@ TEST(ExampleTests, DeleteGameBad) {
 
    // Aquire the id to use for the delete
    games = launcher::get_data();
-   int id;
+   int id = 0;
    list<gamesDB::dbObject*>::iterator it;
    for (it = games->begin(); it != games->end(); it++) {
       string game = (*it)->getName();
@@ -328,7 +328,7 @@ TEST(ExampleTests, DeleteGameBad) {
 TEST(ExampleTests, GameList) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    string game_name_2 = "calculator";
    string game_path_2 = "C:/Windows/System32/calc.exe";
@@ -383,7 +383,7 @@ TEST(ExampleTests, GameListEmpty) {
 TEST(ExampleTests, GameListAddDeleteGame) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    string game_name_2 = "calculator";
    string game_path_2 = "C:/Windows/System32/calc.exe";
@@ -425,7 +425,7 @@ TEST(ExampleTests, GameListAddDeleteGame) {
 TEST(ExampleTests, PlayGood) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    // Setup and add a game to the database.
    gamesDB::clearDB();
@@ -487,7 +487,7 @@ TEST(ExampleTests, GetData) {
 TEST(ExampleTests, HasPathGood) {
    string game_name = "notepad";
    string game_path = "C:/Windows/System32/notepad.exe";
-   string image_path = "C:/Users/kelby/OneDrive/Desktop/uw.jpg";
+   string image_path = "../testing_files/jpg_Image.jpg";
 
    // Setup database and add a game to it.
    gamesDB::clearDB();
