@@ -9,13 +9,12 @@ Progress: Fixed the tests not running in the CI. Added images to the testing dir
 High Level Goal: Make changes based on Beta Release feedback.
 
 ### Frontend:
-Last Week's Goal: Work on custom ordering.ss
+Last Week's Goal:  Improve based on beta release feedbacks and get ready for frinal release.
 
 Progress:
-- Added edit order functionality
-- Improved User interface 
+- Minor improvements to the UI
 
-High Level Goal: Improve based on beta release feedbacks and get ready for frinal release.
+High Level Goal: Get ready for final release.
 
 ### Database:
 Last Week's Goal: Respond to feedback from Beta Release.
@@ -64,17 +63,14 @@ Goal for next week:
 
 ### Steven
 Last week's goal: By May 16
-- Add custom ordering of the list.
-- Improve UI.
-
-Progress:
-- Successfully added edit order list function
-- Improved the user interface to allow adaptive resizing
-- Fuigured out a way to create a release based on a tag
-
-Issue:
-- Was having some issues with the UI component's positionings, got it resolved
-
-Goal for next week: 
 - Get ready for final release
 - Make changes based on beta release feedbacks
+
+Progress:
+- Minor UI improvements.
+
+Issue:
+- None.
+
+Goal for next week: 
+- Get ready for final release.
