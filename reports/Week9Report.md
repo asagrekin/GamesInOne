@@ -2,11 +2,11 @@
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Make changes based on Alpha Release feedback.
+Last Week's Goal: Make changes based on Beta Release feedback.
 
 Progress: Fixed the tests not running in the CI. Added images to the testing directory and made sure the tests were able to run automatically without having to close any apps manually.
 
-High Level Goal: Make changes based on Beta Release feedback.
+High Level Goal: Make changes based on Peer Review feedback.
 
 ### Frontend:
 Last Week's Goal:  Improve based on beta release feedbacks and get ready for frinal release.
@@ -33,7 +33,7 @@ High Level Goal: Respond to feedback from peer reviews.
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- Fix any issues found by peer review. 
+- Make changes based on Beta Release feedback.
 
 Progress:
 - Added image files to the testing directory so they can be tested. 
@@ -44,7 +44,7 @@ Issue:
 - An issue we were experiencing is figuring out how to close an already-opened app to let our tests run. Since this was usually done manually it would keep the CI running forever. We ended up just removing having to wait for the file to get manually closed. 
 
 Goal for next week:
-- Fix any bug and issues privide by the feedback. 
+- Make changes based on Peer Review feedback.
 
 ### Asa
 Last week's goal:
