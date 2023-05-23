@@ -35,7 +35,7 @@ namespace launcher {
         }
 
         // Wait for process to go down then close when finished
-        WaitForSingleObject(processinfo.hProcess, INFINITE);
+        WaitForSingleObject(processinfo.hProcess, 5);
         CloseHandle(processinfo.hThread);
         CloseHandle(processinfo.hProcess);
     }

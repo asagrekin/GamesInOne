@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main() {
-    // gamesDB::clearDB();
+    gamesDB::clearDB();
     // load the data when opening app
     list<gamesDB::dbObject*>* games = launcher::get_data();
     // front end needs to extract the game name, path, and image, ID
