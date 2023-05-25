@@ -14,7 +14,7 @@ namespace Games_In_One
     {
         private MainScreen main;
 
-        [DllImport("LinkFrontAndBack.dll")]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
         public AddGameScreen()
         {

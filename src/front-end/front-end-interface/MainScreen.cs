@@ -14,7 +14,7 @@ namespace Games_In_One
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void GetGame(ref int id, StringBuilder name, StringBuilder path, StringBuilder imagePath);
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern void Referesh();
+        public static extern void RefreshList();
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern bool AtEndOfList();
 
@@ -92,7 +92,7 @@ namespace Games_In_One
         {
             gamesListPanel.Controls.Clear();
             gamesListPanel.RowCount = 0;
-            Referesh();
+            RefreshList();
             while (!AtEndOfList())
             {
                 int id = 0;

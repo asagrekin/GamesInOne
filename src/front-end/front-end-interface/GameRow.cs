@@ -20,15 +20,14 @@ namespace Games_In_One
         private string path;
         private string imagePath;
         private int id;
-        private bool showButton;
 
-        [DllImport("LinkFrontAndBack.dll")]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void play(int id);
 
-        [DllImport("LinkFrontAndBack.dll")]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void del(int id);
 
-        [DllImport("LinkFrontAndBack.dll")]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
         
         public GameRow(MainScreen main, int id, string name, string path, string imagePath, bool showButton)
