@@ -92,9 +92,7 @@ namespace Games_In_One
         {
             gamesListPanel.Controls.Clear();
             gamesListPanel.RowCount = 0;
-            Console.WriteLine("About to Refersh()");
             RefreshList();
-            Console.WriteLine(AtEndOfList());
             while (!AtEndOfList())
             {
                 int id = 0;
