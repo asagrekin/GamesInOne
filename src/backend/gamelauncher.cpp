@@ -1,5 +1,5 @@
 // Kelby S. & Leonardo O.
-// File to Launch Games
+// Backend core, responsable for all internal functionality.
 
 #include "../front-end/link-front-and-back/pch.h"
 #include "gamelauncher.h"
@@ -27,24 +27,17 @@ namespace launcher {
         BOOL bScucces = CreateProcess(NULL, game_path,
                 NULL, NULL, FALSE, 0, NULL, NULL, &startinfo, &processinfo);
 
-
         // Error handling
         if(bScucces == FALSE) {
-            cout<<"Create Process Failed & Error No - "<<GetLastError()<<endl;
+            cout<<"Create Process Failed"<<endl;
+        } else {
+            cout<<"Create Process Success"<<endl;
         }
-        cout<<"Create Process Success"<<endl;
-
-        // Terminal will help us track the proccess and thread
-        cout<<"Process ID ->"<<processinfo.dwProcessId<<endl;
-        cout<<"Thread ID ->"<<processinfo.dwThreadId<<endl;
-        // cout<<"GetProcessID ->"<<GetProcessId(processinfo.hProcess)<<endl;
-        // cout<<"GetThreadID _> ->"<<GetThreadId(processinfo.hThread)<<endl;
 
         // Wait for process to go down then close when finished
-        WaitForSingleObject(processinfo.hProcess, INFINITE);
+        WaitForSingleObject(processinfo.hProcess, 5);
         CloseHandle(processinfo.hThread);
         CloseHandle(processinfo.hProcess);
-        //system("PAUSE");
     }
 
 
@@ -64,7 +57,7 @@ namespace launcher {
         path.erase(std::remove(path.begin(), path.end(), '\"'), path.end());
         string type = path.substr(path.length() - 4);
         if (path.length() > 4) {
-            if (((file_type == ".exe") & (type == ".exe")) || ((file_type == "image") & 
+            if (((file_type == ".exe") & (type == ".exe")) || ((file_type == "image") &
                 (type == ".png" || type == ".ico" || type == ".jpg" || path.substr(path.length() - 5) == ".jpeg"))) {
                 size_t i = 0;
                 while ((i = path.find("\\", i)) != string::npos) {
@@ -80,28 +73,29 @@ namespace launcher {
     }
 
     string add(string game_name, string game_path, string image_path) {
-        // make sure path for game is readable
+        // Make sure path for game is readable
         EnhancePath(game_path, ".exe");
         if (game_path.length() == 0) {
             return "Not a valid .exe file!";
         }
 
-        // check valid path for game
+        // Check valid path for game
         if (!checkPath(game_path)) {
             return "The game path is not valid!";
         }
 
-        // make sure path is readable
+        // Make sure path is readable
         EnhancePath(image_path, "image");
         if (image_path.length() == 0) {
             return "Not a valid .ico, png, or jpeg/jpg file!";
         }
 
-        // check valid path
+        // Check valid path
         if (!checkPath(image_path)) {
             return "The image path is not valid!";
         }
 
+        // Check to see if the game path already exists.
         if (hasPath(game_path)) {
             return "this path already exists!";
         }
@@ -164,6 +158,6 @@ namespace launcher {
             }
         }
         return false;
-    } 
+    }
 }
 
