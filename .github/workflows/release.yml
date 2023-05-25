@@ -30,17 +30,25 @@ jobs:
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: nuget restore ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Build
+    - name: Build x64
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      # Add additional options to the MSBuild command line here (like platform or verbosity level).
-      # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
-      run: msbuild /m /p:Configuration=${{env.BUILD_CONFIGURATION}} ${{env.SOLUTION_FILE_PATH}}
+      run: msbuild /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=x64 ${{env.SOLUTION_FILE_PATH}}
 
-    - name: Create Zip
+    - name: Build x86
+      working-directory: ${{env.GITHUB_WORKSPACE}}
+      run: msbuild /p:Configuration=${{env.BUILD_CONFIGURATION}} /p:Platform=x86 ${{env.SOLUTION_FILE_PATH}}
+
+    - name: Create Zip x64
       uses: vimtor/action-zip@v1
       with:
-        files: GamesInOne-Release/
-        dest: GamesInOne.zip
+        files: GamesInOne-Release/x64/
+        dest: GamesInOne_x64.zip
+    
+    - name: Create Zip x86
+      uses: vimtor/action-zip@v1
+      with:
+        files: GamesInOne-Release/x84/
+        dest: GamesInOne_x86.zip
 
     - name: Create Release
       id: create_release
@@ -53,12 +61,22 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload Release Asset
+    - name: Upload Release Asset x64
       uses: actions/upload-release-asset@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./GamesInOne.zip
-        asset_name: GamesInOne.zip
+        asset_path: ./GamesInOne_64.zip
+        asset_name: GamesInOne_x64.zip
+        asset_content_type: application/zip
+    
+    - name: Upload Release Asset x86
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./GamesInOne_x86.zip
+        asset_name: GamesInOne_x86.zip
         asset_content_type: application/zip
