@@ -33,7 +33,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\GamesInOne\</OutputPath>
+    <OutputPath>..\..\..\GamesInOne-Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -44,7 +44,7 @@
     <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\GamesInOne-Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -140,9 +140,13 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\GamesInOne" mkdir "$(SolutionDir)..\..\..\GamesInOne" &amp;
-if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles" mkdir "$(SolutionDir)..\..\..\GamesInOne\dbFiles" &amp;
-if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne\dbFiles\ind.dat" &amp;
-if not exist "$(SolutionDir)..\..\..\GamesInOne\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne\dbFiles\lst.dat"</PreBuildEvent>
+    <PreBuildEvent>if not exist "$(SolutionDir)..\..\..\GamesInOne-Debug" mkdir "$(SolutionDir)..\..\..\GamesInOne-Debug" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles" mkdir "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne-Debug\dbFiles\lst.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Release" mkdir "$(SolutionDir)..\..\..\GamesInOne-Release" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles" mkdir "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles\ind.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles\ind.dat" &amp;
+if not exist "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles\lst.dat" type NUL &gt; "$(SolutionDir)..\..\..\GamesInOne-Release\dbFiles\lst.dat"</PreBuildEvent>
   </PropertyGroup>
 </Project>

@@ -35,14 +35,18 @@ void  __stdcall GetGame(int* id, char* name, char* path, char* imagePath)
 	
 }
 
-void __stdcall Referesh() {
+void __stdcall RefreshList() {
 	gameList = launcher::get_data();
 	it = gameList->begin();
 }
 
+// Need to ensure that the boolean 
+#pragma optimize("", off)
 bool __stdcall AtEndOfList() {
-	return  it == gameList->end();
+	bool atEnd = (it == gameList->end());
+	return  atEnd;
 }
+#pragma optimize("", on)
 
 void __stdcall del(int id) {
 	launcher::del(id);

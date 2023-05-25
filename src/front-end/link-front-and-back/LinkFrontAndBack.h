@@ -13,8 +13,7 @@ using namespace std;
 
 extern "C" __declspec(dllexport) void launchGame(const char* path);
 extern "C" __declspec(dllexport) void __stdcall GetGame(int* id, char* name, char* path, char* imagePath);
-extern "C" __declspec(dllexport) void __stdcall Referesh();
-extern "C" __declspec(dllexport) void __stdcall Referesh();
+extern "C" __declspec(dllexport) void __stdcall RefreshList();
 extern "C" __declspec(dllexport) void __stdcall del(int id);
 extern "C" __declspec(dllexport) void __stdcall play(int id);
 extern "C" __declspec(dllexport) bool __stdcall AtEndOfList();

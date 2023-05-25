@@ -20,7 +20,6 @@ namespace Games_In_One
         private string path;
         private string imagePath;
         private int id;
-        private bool showButton;
 
         [DllImport("LinkFrontAndBack.dll")]
         public static extern void play(int id);
