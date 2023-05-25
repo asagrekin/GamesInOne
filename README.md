@@ -26,6 +26,26 @@ To run GamesInOne, click on the `GamesInOne.exe` executable to launch the app. Y
   - Click and drag executables to reorder the list
   - Click `Save Order` button to save the order and exit editing mode
 - To delete and executable, click the `Delete` button next to the desired executable
+\
+\
+This is the main page:
+![Alt text](resources/change_order_page.png)
+- The `Add Game` button is located in the top left
+- The `Edit Order` button is also located in the top left
+- `Start Game` and `Delete` are to the left of the game they belong to
+\
+\
+This is the add game page:
+![Alt text](resources/add_game_page.png)
+- All fields that can be filled are located in the pop-up window
+- The `Exit` button is located in the top left of the pop-up window
+- The `Clear` and `Add` buttons are located at the bottom of the pop-up
+\
+\
+This is the change order page:
+![Alt text](resources/main_page.png)
+- The game is highlighted blue, indicating that it can be clicked and dragged
+- The `Save Order` button is located at the top left
 
 ### Reporting Bugs
 To report a bug or issue, navigate to the `Issues` tab of this repo, and click `New Issue`. Please be as descriptive as possible when reporting bugs. If applicable, please provide an image that shows the issue in your bug description.
