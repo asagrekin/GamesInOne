@@ -8,7 +8,7 @@ using namespace std;
 static list<gamesDB::dbObject*>* gameList;
 static list<gamesDB::dbObject*>::iterator it;
 
-void launchGame(const char* path) {
+void __stdcall launchGame(const char* path) {
 	cout << "Calling Launch Game" << endl;
 	string pathRef(path);
 	launcher::launchGame(pathRef);
@@ -56,7 +56,7 @@ void __stdcall play(int id) {
 	launcher::play(id);
 }
 
-void add(char* game_name, char* game_path, char* image_path) {
+void __stdcall add(char* game_name, char* game_path, char* image_path) {
 	list<gamesDB::dbObject*>* currentGames = launcher::get_data();
 	cout << "Adding " << game_name << endl;
 	string status = launcher::add(game_name, game_path, image_path);
