@@ -22,7 +22,9 @@ To run the front-end, complete the following steps:
 ***Steven this part is for you to do. Input format requiremnets, etc.***
 
 ## Linking Code Between the Front and Back Ends
-***TODO***
+The interface between the front and back ends is located in the `link-front-and-back` directory. The method calls that link the two are coded in C++.\
+The source code for the method calls is located in `LinkFrontAndBack.cpp`.\
+The documentation for the method calls is located in `LinkFrontAndBack.h`.
 
 ## Adding Tests
 The front-end testing uses the MSTest framework. Documentation [here](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest).\
