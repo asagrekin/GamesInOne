@@ -10,8 +10,19 @@ This is the implementation of the front-end for the GamesInOne app.
 - link-front-and-back
   - Contains the code linking the C# GUI to the C++ backend
 
+## Running the Code
+To run the front-end, complete the following steps:
+- Download Visual Studio IDE https://visualstudio.microsoft.com/vs/
+- WHEN INSTALLING, MAKE SURE THAT THE Desktop `development With C++` BOX AND THE `.NET desktop development` BOX ARE BOTH CHECKED. (This contains MSBuild, and .NET build tools).
+- If you already of Visual Studio installed, in the Visual Studio installer, click Modify by the 2022 community edition, and checking the Desktop development With C++ and .NET desktop development boxes before clicking Modify again.
+- Open up the solution file located at /src/front-end/front-end-interface/GamesInOne.sln using Visual Studio IDE.
+- Right click the solution and hit Build to build the solution, and click Start at the top of the IDE to start the app for debugging.
+
 ## Adding Code
-***Steven this part is for you to do***
+***Steven this part is for you to do. Input format requiremnets, etc.***
+
+## Linking Code Between the Front and Back Ends
+***TODO***
 
 ## Adding Tests
 The front-end testing uses the MSTest framework. Documentation [here](https://learn.microsoft.com/en-us/dotnet/core/testing/unit-testing-with-mstest).\
