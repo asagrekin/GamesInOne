@@ -14,11 +14,8 @@ void __stdcall launchGame(const char* path) {
 	launcher::launchGame(pathRef);
 }
 
-
-
 void  __stdcall GetGame(int* id, char* name, char* path, char* imagePath)
 {
-	cout << "Trying to copy: " << (*it)->getName()  << endl;
 	*id = (*it)->getID();
 
 	const char* name_src = (*it)->getName();
@@ -29,37 +26,31 @@ void  __stdcall GetGame(int* id, char* name, char* path, char* imagePath)
 
 	const char* image_src = (*it)->getImagePath();
 	strcpy_s(imagePath, strlen(image_src) + 1, image_src);
-
-	cout << "Successfuly copied: " << (*it)->getName() << endl;
 	it++;
-	
 }
 
 void __stdcall RefreshList() {
 	gameList = launcher::get_data();
 	it = gameList->begin();
 }
-
-// Need to ensure that the boolean 
+ 
+// Ensure boolean stays the same after build optimization for release
 #pragma optimize("", off)
 bool __stdcall AtEndOfList() {
 	bool atEnd = (it == gameList->end());
-	return  atEnd;
+	return atEnd;
 }
 #pragma optimize("", on)
 
-void __stdcall del(int id) {
+void __stdcall Del(int id) {
 	launcher::del(id);
 }
 
-void __stdcall play(int id) {
+void __stdcall Play(int id) {
 	launcher::play(id);
 }
 
-void __stdcall add(char* game_name, char* game_path, char* image_path) {
-	list<gamesDB::dbObject*>* currentGames = launcher::get_data();
-	cout << "Adding " << game_name << endl;
-	string status = launcher::add(game_name, game_path, image_path);
-	cout << "status: " << status << endl;
-	launcher::gameList();
+void __stdcall Add(char* game_name, char* game_path, char* image_path, char* status) {
+	string status_ret = launcher::add(game_name, game_path, image_path);
+	strcpy_s(status, strlen(status_ret.c_str())+1, status_ret.c_str());
 }
