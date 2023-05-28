@@ -26,6 +26,26 @@ To run GamesInOne, click on the `GamesInOne.exe` executable to launch the app. Y
   - Click and drag executables to reorder the list
   - Click `Save Order` button to save the order and exit editing mode
 - To delete and executable, click the `Delete` button next to the desired executable
+\
+\
+This is the main page:
+![Alt text](resources/change_order_page.png)
+- The `Add Game` button is located in the top left
+- The `Edit Order` button is also located in the top left
+- `Start Game` and `Delete` are to the left of the game they belong to
+\
+\
+This is the add game page:
+![Alt text](resources/add_game_page.png)
+- All fields that can be filled are located in the pop-up window
+- The `Exit` button is located in the top left of the pop-up window
+- The `Clear` and `Add` buttons are located at the bottom of the pop-up
+\
+\
+This is the change order page:
+![Alt text](resources/main_page.png)
+- The game is highlighted blue, indicating that it can be clicked and dragged
+- The `Save Order` button is located at the top left
 
 ### Reporting Bugs
 To report a bug or issue, navigate to the `Issues` tab of this repo, and click `New Issue`. Please be as descriptive as possible when reporting bugs. If applicable, please provide an image that shows the issue in your bug description.
@@ -74,7 +94,9 @@ After this is completed you can just run the following commands below to continu
 `cmake -S . -B build`                                                                      
 `cmake --build build`\
 `cd build`\
-`ctest`
+`ctest`\
+\
+***If you do not wish to manually run the tests, they will automatically be run by the CI whenever a push is made.***
 
 ### Adding Back-End and Database Tests
 The tests are located in `src/backend/backend_testing.cc`.\
@@ -83,7 +105,9 @@ Read the Google Test documentation for more detail on implementing tests here: h
 ### Running Front-End Tests
 The best way to test the front end is using the Visual Studio IDE. \
 Opening the solution file (`/src/front-end/front-end-interface/GamesInOne.sln`) in Visual Studio, you will see that the FrontEndTest project is listed in the Solution Explorer.\
-After building the solution, right click the FrontEndTest project and click `Run Tests`.
+After building the solution, right click the FrontEndTest project and click `Run Tests`.\
+\
+***If you do not wish to manually run the tests, they will automatically be run by the CI whenever a push is made.***
 
 ### Adding Front-End Tests
 The tests are located in `src/front-end/front-end-test/FrontEndUnitTest.cs`.\
@@ -91,6 +115,13 @@ In the case where you want to refer to specific private components within a User
 For example getting the GameNameTextBox from the AddGameScreen:\
 `AddGameScreen addGameScreen = new AddGameScreen(main);`\
 `TextBox gameNameTextBox = addGameScreen.GetType().GetField("GameNameTextBox", BindingFlags.Instance | BindingFlags.NonPublic).GetValue(addGameScreen) as TextBox;`
+
+### Continuous Integration
+There is CI in all functioning branches of the repository, which runs all of the tests for both the front and back ends. Any push will trigger the CI to run on the GitHub repo. This may take some minutes (usually about 3-4).\
+\
+If tests are added following the instructions under "Adding Back-End and Database Tests" or "Adding Fornt-End Tests", they will automatically be tested by the CI whenever a push is made.\
+\
+To add more jobs, see documentation on adding GitHub actions. The yaml files are located in `.github/workflows`. Please add any new jobs you wish to run in `main.yml`.
 
 ### Creating a New Release
 In order to create a new release, simply push **new** a tag to the main repository (tag must start with v, eg: v1.0.1). This should automatically create a new release, with a `GamesInOne.zip` included. This `GamesInOne.zip` will included a runnable executable of the app, once downloaded and extracted.
