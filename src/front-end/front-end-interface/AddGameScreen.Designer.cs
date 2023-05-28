@@ -30,7 +30,6 @@ namespace Games_In_One
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button ClearAddGameButton;
             this.AddGameScreenLabel = new System.Windows.Forms.Label();
             this.GameNameTextBox = new System.Windows.Forms.TextBox();
             this.GamePathTextBox = new System.Windows.Forms.MaskedTextBox();
@@ -45,8 +44,19 @@ namespace Games_In_One
             this.GameImagePathFileExplorer = new System.Windows.Forms.OpenFileDialog();
             this.GameImagePathExplorerButton = new System.Windows.Forms.Button();
             this.AddStatusLabel = new System.Windows.Forms.Label();
-            ClearAddGameButton = new System.Windows.Forms.Button();
+            this.ClearAddGameButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // ClearAddGameButton
+            // 
+            this.ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
+            this.ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ClearAddGameButton.Name = "ClearAddGameButton";
+            this.ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
+            this.ClearAddGameButton.TabIndex = 4;
+            this.ClearAddGameButton.Text = "Clear";
+            this.ClearAddGameButton.UseVisualStyleBackColor = true;
+            this.ClearAddGameButton.Click += new System.EventHandler(this.ClearAddGameButton_Click);
             // 
             // AddGameScreenLabel
             // 
@@ -161,7 +171,7 @@ namespace Games_In_One
             this.GamePathFileExplorerButton.BackgroundImage = global::Games_In_One.Properties.Resources.file_explorer_icon;
             this.GamePathFileExplorerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GamePathFileExplorerButton.Location = new System.Drawing.Point(355, 177);
-            this.GamePathFileExplorerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GamePathFileExplorerButton.Margin = new System.Windows.Forms.Padding(4);
             this.GamePathFileExplorerButton.Name = "GamePathFileExplorerButton";
             this.GamePathFileExplorerButton.Size = new System.Drawing.Size(37, 39);
             this.GamePathFileExplorerButton.TabIndex = 10;
@@ -180,23 +190,12 @@ namespace Games_In_One
             this.GameImagePathExplorerButton.BackgroundImage = global::Games_In_One.Properties.Resources.file_explorer_icon;
             this.GameImagePathExplorerButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.GameImagePathExplorerButton.Location = new System.Drawing.Point(355, 244);
-            this.GameImagePathExplorerButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.GameImagePathExplorerButton.Margin = new System.Windows.Forms.Padding(4);
             this.GameImagePathExplorerButton.Name = "GameImagePathExplorerButton";
             this.GameImagePathExplorerButton.Size = new System.Drawing.Size(37, 39);
             this.GameImagePathExplorerButton.TabIndex = 11;
             this.GameImagePathExplorerButton.UseVisualStyleBackColor = true;
             this.GameImagePathExplorerButton.Click += new System.EventHandler(this.GameImagePathExplorerButton_Click);
-            // 
-            // ClearAddGameButton
-            // 
-            ClearAddGameButton.Location = new System.Drawing.Point(107, 318);
-            ClearAddGameButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            ClearAddGameButton.Name = "ClearAddGameButton";
-            ClearAddGameButton.Size = new System.Drawing.Size(75, 23);
-            ClearAddGameButton.TabIndex = 4;
-            ClearAddGameButton.Text = "Clear";
-            ClearAddGameButton.UseVisualStyleBackColor = true;
-            ClearAddGameButton.Click += new System.EventHandler(this.ClearAddGameButton_Click);
             // 
             // AddStatusLabel
             // 
@@ -239,6 +238,7 @@ namespace Games_In_One
         private System.Windows.Forms.MaskedTextBox GamePathTextBox;
         private System.Windows.Forms.Button ConfirmAddGameButton;
         private System.Windows.Forms.Button ExitAddGameButton;
+        private System.Windows.Forms.Button ClearAddGameButton;
         private System.Windows.Forms.Label AddGameNameLabel;
         private System.Windows.Forms.Label AddGamePathLabel;
         private System.Windows.Forms.Label AddGameImagePathLabel;
