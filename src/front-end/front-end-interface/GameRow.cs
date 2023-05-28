@@ -1,39 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using static Games_In_One.MainScreen;
+using System.Text;
+using System.Windows.Forms;
 
 namespace Games_In_One
 {
     public partial class GameRow : UserControl
     {
 
-        private MainScreen main;
-        private string name;
-        private string path;
-        private string imagePath;
-        private int id;
+        private readonly MainScreen main;
+        private readonly string name;
+        private readonly string path;
+        private readonly string imagePath;
+        private readonly int id;
 
         // Imports the play() function from LinkedFrontAndBack DLL
         // Calls the backend function to launch the specified game.
         // Inputs:
         //  id: (int) the unique id of the game to be launched.
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern void play(int id);
+        public static extern void Play(int id);
 
         // Imports the del() function from LinkedFrontAndBack DLL
         // Deletes the specified game from the overall list, and subsequently the database.
         // Inputs:
         //  id: (int) the unique id of the game to be deleted.
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern void del(int id);
+        public static extern void Del(int id);
         
         // Imports the add() function from LinkedFrontAndBack DLL
         // Adds a new game with the specified info to the overall list, and subsequently the database.
@@ -45,7 +40,7 @@ namespace Games_In_One
         //  game_path: string representing the exectuable path of the game.
         //  image_path: string representing the image path of the game.
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
+        public static extern string Add(string game_name, string game_path, string image_path, StringBuilder status);
         
         public GameRow(MainScreen main, int id, string name, string path, string imagePath, bool showButton)
         {
@@ -89,15 +84,15 @@ namespace Games_In_One
         // Tells backend to launch the game when `Start` is clicked.
         private void StartGameButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Starting Game");
-            play(id);
+            Debug.WriteLine("Starting Game");
+            Play(id);
         }
 
         // Tells backend to delete the game when `Delete` is clicked.
         private void DeleteButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("Deleting " + this.GameName.Text);
-            del(id);
+            Debug.WriteLine("Deleting " + this.GameName.Text);
+            Del(id);
             main.LoadData();
         }
   
@@ -120,15 +115,17 @@ namespace Games_In_One
         }
         
         // Delete this game's information from the database
-        public void removeFromDB()
+        public void RemoveFromDB()
         {
-            del(id);
+            Del(id);
         }
         
         // Add this game's infromation to the database
-        public void addToDB()
+        public void AddToDB()
         {
-            add(name, path, imagePath);
+            StringBuilder status = new StringBuilder(256);
+            Add(name, path, imagePath, status);
+            Debug.WriteLine("Reorder add status: " + status.ToString());
         }
 
     }

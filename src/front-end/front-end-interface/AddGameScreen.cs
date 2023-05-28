@@ -1,18 +1,15 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.IO;
-using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using static Games_In_One.MainScreen;
 
 namespace Games_In_One
 {
     public partial class AddGameScreen : UserControl
     {
-        private MainScreen main;
+        private readonly MainScreen main;
 
         // Imports the add() function from LinkedFrontAndBack DLL.
         // Adds a new game with the specified info to the overall list, and subsequently the database.
@@ -21,8 +18,9 @@ namespace Games_In_One
         //  game_name: string representing the name of the game.
         //  game_path: string representing the exectuable path of the game.
         //  image_path: string representing the image path of the game.
+        //  status: the c string that will recieve the status of the adding game
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern void add([In] string game_name, [In] string game_path, [In] string image_path);
+        public static extern void Add(string game_name, string game_path, string image_path, StringBuilder status);
 
         public AddGameScreen()
         {
@@ -40,6 +38,8 @@ namespace Games_In_One
         private void ExitAddGameButton_Click(object sender, EventArgs e)
         {
             this.Visible = false;
+            AddStatusLabel.Text = "";
+            ResetTextBox();
             main.InitialButtonsState();
         }
 
@@ -47,7 +47,7 @@ namespace Games_In_One
         // if not pass in the GamesInOne logo as the path.
         private void ConfirmAddGameButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("***********************");
+            Debug.WriteLine("***********************");
             string imagePath = GameImagePathTextBox.Text;
             if (!(imagePath.EndsWith(".png") ||
                 imagePath.EndsWith(".ico") ||
@@ -55,21 +55,31 @@ namespace Games_In_One
                 imagePath.EndsWith(".jpeg")))
             {
                 imagePath = "Resources/Logo.png";
-                Console.WriteLine("Using default image: " + imagePath);
+                Debug.WriteLine("Using default image: " + imagePath);
             }
-            Console.WriteLine("Using image: " + imagePath);
-            add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath);
-            this.Visible = false;
-            main.LoadData();
-            resetTextBox();
-            Console.WriteLine("***********************");
+            Debug.WriteLine("Using image: " + imagePath);
+            StringBuilder status = new StringBuilder(256);
+            Add(GameNameTextBox.Text, GamePathTextBox.Text, imagePath, status);
+            if (status.ToString().Equals("success"))
+            {
+                AddStatusLabel.Text = "";
+                this.Visible = false;
+                main.LoadData();
+                ResetTextBox();
+            }
+            else
+            {
+                AddStatusLabel.Text = status.ToString();
+            }
+            Debug.WriteLine("***********************");
 
         }
 
         // When `Clear` is clicked, reset the textboxes to inital state.
         private void ClearAddGameButton_Click(object sender, EventArgs e)
         {
-            resetTextBox();
+            AddStatusLabel.Text = "";
+            ResetTextBox();
         }
 
         // Clicking into the GameName textbox for the first time will 
@@ -140,7 +150,7 @@ namespace Games_In_One
 
         // Reseting the textbox to their initial state with
         // placeholder texts and gray font color.
-        private void resetTextBox()
+        private void ResetTextBox()
         {
             GameNameTextBox.Text = "Name";
             GameNameTextBox.ForeColor = Color.Gray;

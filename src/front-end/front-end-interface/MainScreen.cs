@@ -1,8 +1,6 @@
-﻿using Games_In_One.Games_In_One;
-using System;
-using System.Collections.Generic;
+﻿using System;
+using System.Diagnostics;
 using System.Drawing;
-using System.Net.NetworkInformation;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
@@ -25,17 +23,18 @@ namespace Games_In_One
         //  name: StringBuilder  that will recieve the name of the current game.
         //  path: StringBuilder  that will recieve the executable path of the current game.
         //  imagePath: StringBuilder  that will recieve the image path of the current game.
+        //  status: the c string that will recieve the status of the adding game
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
         public static extern void GetGame(ref int id, StringBuilder name, StringBuilder path, StringBuilder imagePath);
         
         // Imports the RefreshList() function from LinkedFrontAndBack DLL.
         // Gets the current list of games stored in the database, and sends its iterator to the beginning.
-        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern void RefreshList();
 
         // Imports the AtEndOfList() function from LinkedFrontAndBack DLL.
         // Returns true if the iterator is at the end of the overall games list, or false otherwise.
-        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
+        [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall)]
         public static extern bool AtEndOfList();
 
         public MainScreen()
@@ -55,15 +54,19 @@ namespace Games_In_One
             addGameScreen.Location = new Point((ClientSize.Width - addGameScreen.Width) / 2, (ClientSize.Height - addGameScreen.Height) / 2);
 
             // Games Table
-            this.gamesList = new TableLayoutPanel();
-            this.gamesList.AutoSize = true;
-            this.gamesList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.gamesList = new TableLayoutPanel
+            {
+                AutoSize = true,
+                AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+            };
 
             //  GameEditList
-            this.gamesEditList = new GamesEditList();
-            this.gamesEditList.AutoSize = true;
-            this.gamesEditList.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.gamesEditList.BackColor = Color.Aqua;
+            this.gamesEditList = new GamesEditList
+            {
+                AutoSize = true,
+                AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink,
+                BackColor = Color.Aqua
+            };
 
             // Button locations
             this.saveOrderButton.Location = new Point(this.ClientSize.Width - this.saveOrderButton.Width - 20, 20);
@@ -85,10 +88,12 @@ namespace Games_In_One
         //  tablePanel: TableLayoutPanel that consists of the game rows
         private Panel CreateScrollPanel(TableLayoutPanel tablePanel)
         {
-            Panel scrollPanel = new Panel();
-            scrollPanel.Anchor = AnchorStyles.Top;
-            scrollPanel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            scrollPanel.AutoScroll = true;
+            Panel scrollPanel = new Panel
+            {
+                Anchor = AnchorStyles.Top,
+                AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink,
+                AutoScroll = true
+            };
             scrollPanel.HorizontalScroll.Enabled = false;
             scrollPanel.Controls.Add(tablePanel);
             return scrollPanel;
@@ -129,10 +134,12 @@ namespace Games_In_One
                 StringBuilder path = new StringBuilder(256);
                 StringBuilder imagePath = new StringBuilder(256);
                 GetGame(ref id, name, path, imagePath);
-                Console.WriteLine(id + " " + name.ToString() + " " + path.ToString() + " " + imagePath.ToString());
-                GameRow gameRow = new GameRow(this, id, name.ToString(), path.ToString(), imagePath.ToString(), showRowButtons);
-                gameRow.Dock = DockStyle.Fill;
-                gameRow.Enabled = showRowButtons;
+                Debug.WriteLine(id + " " + name.ToString() + " " + path.ToString() + " " + imagePath.ToString());
+                GameRow gameRow = new GameRow(this, id, name.ToString(), path.ToString(), imagePath.ToString(), showRowButtons)
+                {
+                    Dock = DockStyle.Fill,
+                    Enabled = showRowButtons
+                };
                 gamesListPanel.Controls.Add(gameRow, 0, gamesListPanel.RowCount);
                 gamesListPanel.RowCount++;
             }
@@ -177,13 +184,13 @@ namespace Games_In_One
         // save the new order to database.
         private void SaveOrderButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("New Order:");
+            Debug.WriteLine("New Order:");
             for (int i = 0; i < this.gamesEditList.RowCount; i++)
             {
                 GameRow gameRow = (GameRow)(this.gamesEditList.GetControlFromPosition(0, i));
-                Console.WriteLine(gameRow.GetName());
-                gameRow.removeFromDB();
-                gameRow.addToDB();
+                Debug.WriteLine(gameRow.GetName());
+                gameRow.RemoveFromDB();
+                gameRow.AddToDB();
             }
             this.editScrollPanel.Visible = false;
             LoadData();
