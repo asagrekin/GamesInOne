@@ -16,6 +16,7 @@ namespace Games_In_One
             private Point mouseDownLocation;
             private Control prev;
             private Control selected; 
+
             public GamesEditList()
             {
                 this.MouseDown += gamesEditList_MouseDown;
@@ -24,7 +25,7 @@ namespace Games_In_One
                 DoubleBuffered = true;
             }
 
-
+            // Highlight the selected game row to be white.
             private void gamesEditList_MouseDown(object sender, MouseEventArgs e)
             {
                 Console.WriteLine("In gamesEditList : Mouse down");
@@ -39,6 +40,7 @@ namespace Games_In_One
                 }
             }
 
+            // Highlights the current game hovered over by the mouse to be gray.
             private void gamesEditList_MouseMove(object sender, MouseEventArgs e)
             {
                 if (prev == null)
@@ -58,6 +60,9 @@ namespace Games_In_One
                     }
                 }
             }
+
+            // After Mousedown on a row, and MouseUp is at a different row
+            // swap the locations of the two game rows.
             private void gamesEditList_MouseUp(object sender, MouseEventArgs e)
             {
                 Console.WriteLine("In gamesEditList : Mouse up");
@@ -120,7 +125,6 @@ namespace Games_In_One
 
                             this.SetCellPosition(controls[lo], new TableLayoutPanelCellPosition(0, lo));
                             this.SetCellPosition(controls[hi], new TableLayoutPanelCellPosition(0, hi));
-
 
                             // Remove all controls from the table
                             this.Controls.Clear();
