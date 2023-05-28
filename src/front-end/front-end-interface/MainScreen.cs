@@ -162,7 +162,7 @@ namespace Games_In_One
 
         // When `Edit Order` button is clicked, disable `Add Game` button,
         // and make `Save Order` to be visible and enabled.
-        private void EditGameButton_Click(object sender, EventArgs e)
+        private void EditOrderButton_Click(object sender, EventArgs e)
         {
             this.addGameButton.Enabled = false;
             this.saveOrderButton.Enabled = true;

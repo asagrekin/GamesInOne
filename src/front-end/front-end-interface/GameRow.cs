@@ -40,7 +40,7 @@ namespace Games_In_One
         //  game_path: string representing the exectuable path of the game.
         //  image_path: string representing the image path of the game.
         [DllImport("LinkFrontAndBack.dll", CallingConvention = CallingConvention.StdCall, CharSet = CharSet.Ansi)]
-        public static extern string Add(string game_name, string game_path, string image_path, StringBuilder status);
+        public static extern void Add(string game_name, string game_path, string image_path, StringBuilder status);
         
         public GameRow(MainScreen main, int id, string name, string path, string imagePath, bool showButton)
         {
