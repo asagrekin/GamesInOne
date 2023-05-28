@@ -65,10 +65,11 @@ If you want to obtain and/or make edits to the source code, you may fork the rep
   - The report for week X is named WeekXReport.
 - Functional code is located in the src directory.
 - Issues list located here: https://github.com/users/asagrekin/projects/3
+- READMEs with more information are located in each directory
 
 ### Building the Software
 - The Back-end and database directories should have makefiles to build the code they contain
-- The front-end is more complicated, please follow the following steps:
+- The front-end is more complicated, please adhere to the following steps:
   - Download Visual Studio IDE https://visualstudio.microsoft.com/vs/ 
   - WHEN INSTALLING, MAKE SURE THAT THE `Desktop development With C++` BOX AND THE `.NET desktop development` BOX ARE BOTH CHECKED. (This contains MSBuild, and .NET build tools).
   - If you already of Visual Studio installed, in the Visual Studio installer, click `Modify` by the 2022 community edition, and checking the `Desktop development With C++` and `.NET desktop development` boxes before clicking `Modify` again.

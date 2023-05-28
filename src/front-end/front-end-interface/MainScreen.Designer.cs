@@ -71,7 +71,7 @@ namespace Games_In_One
             this.editOrderButton.TabIndex = 12;
             this.editOrderButton.Text = "Edit Order";
             this.editOrderButton.UseVisualStyleBackColor = true;
-            this.editOrderButton.Click += new System.EventHandler(this.EditGameButton_Click);
+            this.editOrderButton.Click += new System.EventHandler(this.EditOrderButton_Click);
             // 
             // saveOrderButton
             // 
