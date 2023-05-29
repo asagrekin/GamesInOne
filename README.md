@@ -121,7 +121,9 @@ There is CI in all functioning branches of the repository, which runs all of the
 \
 If tests are added following the instructions under "Adding Back-End and Database Tests" or "Adding Fornt-End Tests", they will automatically be tested by the CI whenever a push is made.\
 \
-To add more jobs, see documentation on adding GitHub actions. The yaml files are located in `.github/workflows`. Please add any new jobs you wish to run in `main.yml`.
+To add more jobs, see [documentation on adding GitHub actions](https://docs.github.com/en/actions). The yaml files are located in `.github/workflows`. Please add any new jobs you wish to run in `front-end-test.yml` or `backend-test`.\
+\
+The workflow that creates a release with a zip of GamesInOne upon a tag being pushed is located in `.github/workflows/release.yml`.
 
 ### Creating a New Release
 In order to create a new release, simply push **new** a tag to the main repository (tag must start with v, eg: v1.0.1). This should automatically create a new release, with a `GamesInOne.zip` included. This `GamesInOne.zip` will included a runnable executable of the app, once downloaded and extracted.
