@@ -3,7 +3,7 @@ on:
     paths: ['src/backend/**', 'src/database/**']
 
 name: Backend Tests
-run-name: Run Backed Tests
+run-name: Run Backend Tests
 
 jobs:
   Back-End-Test:
