@@ -7,6 +7,8 @@ DISCLAIMER - This app only runs on Windows machines.
 GamesInOne allows you to add and launch executables from the convenience of one screen. As of the current release, users can add, launch, and delete executables, as well as reorder the list of added executables via the app. Users can increase productivity with this quality of life improvement to organzing and cataloging apps on their computers.
 
 ### Downloading and Installing
+- You will need the .NET framework, version 4.7.2 to run the app.
+  - If you do not already have it installed, download it [here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
 - To download the latest release of Games In One, click on the latest release in the GitHub home page for the app
   - The current latest release is named: `Beta Release`
 - Once you've been redirected to the release page, navigate to the `Assets` section, and download the zip of the executable
