@@ -10,7 +10,7 @@ GamesInOne allows you to add and launch executables from the convenience of one 
 - You will need the .NET framework, version 4.7.2 to run the app.
   - If you do not already have it installed, download it [here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
 - To download the latest release of Games In One, click on the latest release in the GitHub home page for the app
-  - The current latest release is named: `Beta Release`
+  - The current latest release is named: `Version 1.1`
 - Once you've been redirected to the release page, navigate to the `Assets` section, and download the zip of the executable
   - The zip you want is: `GamesInOne.zip`
 - Once the zip has been downloaded, make sure to extract the package before running
