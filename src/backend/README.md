@@ -73,6 +73,7 @@ This file builds the program to be able to run the overall functionality of the 
   
 ## CMakeLists.txt
 This file builds the program's tests to be able to test the overall funtionality of the backend.
+- CI workflow yml for backend is located in `.github/workflows/backend-test`.
 
 ## Demo
 A working example of the game launcher in use is implemented for you in demo.cpp to be used as reference. To compile, run make, and then run the executable to launch.
