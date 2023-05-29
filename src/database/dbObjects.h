@@ -32,9 +32,6 @@ namespace gamesDB{
                 strncpy_s(name_, name.c_str(), NAME_SIZE);
                 strncpy_s(path_, path.c_str(), PATH_SIZE);
                 strncpy_s(image_path_, image_path.c_str(), PATH_SIZE);
-                // strncpy(name_, name.c_str(), NAME_SIZE);
-                // strncpy(path_, path.c_str(), PATH_SIZE);
-                // strncpy(image_path_, image_path.c_str(), PATH_SIZE);
             }
 
             // Deletes the object instance.
