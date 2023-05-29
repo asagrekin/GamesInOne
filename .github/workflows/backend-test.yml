@@ -1,0 +1,24 @@
+on:
+  push:
+    paths: ['src/backend/**', 'src/database/**']
+
+name: Backend Tests
+run-name: Run Backed Tests
+
+jobs:
+  Back-End-Test:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+
+      - name: CMake build folder 
+        run: cd ./src/backend/ && cmake -S . -B build
+        
+      - name: CMake build
+        run: cd ./src/backend/ && cmake --build build
+
+      - name: Setup dbfiles
+        run: cd ./src/backend/build && mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
+        
+      - name: Run the test
+        run: cd ./src/backend/build && ctest
