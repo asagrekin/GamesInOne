@@ -7,6 +7,8 @@ DISCLAIMER - This app only runs on Windows machines.
 GamesInOne allows you to add and launch executables from the convenience of one screen. As of the current release, users can add, launch, and delete executables, as well as reorder the list of added executables via the app. Users can increase productivity with this quality of life improvement to organzing and cataloging apps on their computers.
 
 ### Downloading and Installing
+- You will need the .NET framework, version 4.7.2 to run the app.
+  - If you do not already have it installed, download it [here](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net472).
 - To download the latest release of Games In One, click on the latest release in the GitHub home page for the app
   - The current latest release is named: `Beta Release`
 - Once you've been redirected to the release page, navigate to the `Assets` section, and download the zip of the executable
@@ -121,7 +123,9 @@ There is CI in all functioning branches of the repository, which runs all of the
 \
 If tests are added following the instructions under "Adding Back-End and Database Tests" or "Adding Fornt-End Tests", they will automatically be tested by the CI whenever a push is made.\
 \
-To add more jobs, see documentation on adding GitHub actions. The yaml files are located in `.github/workflows`. Please add any new jobs you wish to run in `main.yml`.
+To add more jobs, see [documentation on adding GitHub actions](https://docs.github.com/en/actions). The yaml files are located in `.github/workflows`. Please add any new jobs you wish to run in `front-end-test.yml` or `backend-test`.\
+\
+The workflow that creates a release with a zip of GamesInOne upon a tag being pushed is located in `.github/workflows/release.yml`.
 
 ### Creating a New Release
 In order to create a new release, simply push **new** a tag to the main repository (tag must start with v, eg: v1.0.1). This should automatically create a new release, with a `GamesInOne.zip` included. This `GamesInOne.zip` will included a runnable executable of the app, once downloaded and extracted.

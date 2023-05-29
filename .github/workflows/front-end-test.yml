@@ -1,6 +1,9 @@
-name: GitHub Actions
-run-name: CI Test
-on: [push]
+on:
+  push:
+    paths: ['src/front-end/**']
+
+name: Front-End Tests
+run-name: Run Front-End Tests
 
 env:
   # Path to the solution file relative to the root of the project.
@@ -42,20 +45,3 @@ jobs:
     - name: Test
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: VSTest.Console.exe ${{env.TEST_BIN_PATH}}/${{env.BUILD_CONFIGURATION}}/net6.0-windows/FrontEndTest.dll
-
-  Back-End-Test:
-    runs-on: windows-latest
-    steps:
-      - uses: actions/checkout@v1
-
-      - name: CMake build folder 
-        run: cd ./src/backend/ && cmake -S . -B build
-        
-      - name: CMake build
-        run: cd ./src/backend/ && cmake --build build
-
-      - name: Setup dbfiles
-        run: cd ./src/backend/build && mkdir dbFiles && New-Item -ItemType File -Path "dbFiles\ind.dat" && New-Item -ItemType File -Path "dbFiles\lst.dat"
-        
-      - name: Run the test
-        run: cd ./src/backend/build && ctest

@@ -11,7 +11,7 @@ This is the implementation of the front-end for the GamesInOne app.
     - AddGameScreen: allows user to enter the game's infromation and add it to the database.
 - front-end-test
   - Contains the testing files for the front-end
-  - CI config settings are located in: `.github/workflows/main.yml`, under the "Front-End-Test" job
+  - CI config settings are located in: `.github/workflows/front-end-test.yml`, under the "Front-End-Test" job
 - link-front-and-back
   - Contains the code linking the C# GUI to the C++ backend
 
