@@ -9,12 +9,14 @@ Progress: Fixed minor issues given through the Peer Review Feedback. Cleaned up 
 High Level Goal: Make changes based on Final Release feedback if needed.
 
 ### Frontend:
-Last Week's Goal: Improve based on beta release feedbacks and get ready for frinal release.
+Last Week's Goal: Get ready for final release.
 
 Progress:
-- Minor improvements to the UI
+- Added more documentation and comments
+- Final release is ready
+- Added add status to AddGameScreen
 
-High Level Goal: Get ready for final release.
+High Level Goal: Finish up Final Release.
 
 ### Database:
 Last Week's Goal: Respond to feedback from peer reviews.
@@ -62,15 +64,15 @@ Goal for next week:
 - Finish Individual Reflection
 
 ### Steven
-Last week's goal: By May 16
-- Get ready for final release
-- Make changes based on beta release feedbacks
+Last week's goal:
+- Get ready for final release.
 
 Progress:
-- Minor UI improvements.
+- Ensured that the final release is working
+- Added add game status to AddGameScreen
 
 Issue:
 - None.
 
 Goal for next week: 
-- Get ready for final release.
+-  Finish Individual Reflection
