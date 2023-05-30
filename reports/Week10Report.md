@@ -17,11 +17,11 @@ Progress:
 High Level Goal: Get ready for final release.
 
 ### Database:
-Last Week's Goal: Respond to feedback from Beta Release.
+Last Week's Goal: Respond to feedback from peer reviews.
 
 Progress: Nothing new needed to be implemented based on the feedback.
 
-High Level Goal: Respond to feedback from peer reviews.
+High Level Goal: Finish up Final Release.
 
 ### Agenda for Project Meeting:
 - Discuss current progress
@@ -49,18 +49,17 @@ Goal for next week:
 
 ### Asa
 Last week's goal:
-- Support other teams, and help out with their needs
-- Respond to feedback
+- Respond to peer review feedback
 
 Progress:
-- Updated bug reporting in user documentation
-- Helped work through error that a user reported
+- Updated user documentation.
+- Added stuff from peer review (like bug report template, etc.)
 
 Issues:
 - None
 
 Goal for next week:
-- Respond to peer review feedback
+- Finish Individual Reflection
 
 ### Steven
 Last week's goal: By May 16
