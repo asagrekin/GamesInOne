@@ -2,14 +2,14 @@
 #
 ## Team Report
 ### Backend:
-Last Week's Goal: Make changes based on Beta Release feedback.
+Last Week's Goal: Make changes based on Peer Review feedback.
 
-Progress: Fixed the tests not running in the CI. Added images to the testing directory and made sure the tests were able to run automatically without having to close any apps manually.
+Progress: Fixed minor issues given through the Peer Review Feedback. Cleaned up the demo code within the backend. Added a READ.me file to the backend for user clarity. Cleaned up the backend work on the GitHub Project.
 
-High Level Goal: Make changes based on Peer Review feedback.
+High Level Goal: Make changes based on Final Release feedback if needed.
 
 ### Frontend:
-Last Week's Goal:  Improve based on beta release feedbacks and get ready for frinal release.
+Last Week's Goal: Improve based on beta release feedbacks and get ready for frinal release.
 
 Progress:
 - Minor improvements to the UI
@@ -33,18 +33,19 @@ High Level Goal: Respond to feedback from peer reviews.
 ## Contributions
 ### Leo & Kelby
 Last week's goal:
-- Make changes based on Beta Release feedback.
+- Make changes based on Peer Review feedback.
 
 Progress:
-- Added image files to the testing directory so they can be tested. 
-- Removed having to wait for an app to close to test the launching functionality.
-- We have the unit testing for all backend and database elements up to date.
+- Fixed minor issues given through the Peer Review Feedback. 
+- Cleaned up the demo code within the backend. 
+- Added a READ.me file to the backend for user clarity. 
+- Cleaned up the backend work on the GitHub Project.
 
 Issue:
-- An issue we were experiencing is figuring out how to close an already-opened app to let our tests run. Since this was usually done manually it would keep the CI running forever. We ended up just removing having to wait for the file to get manually closed. 
+- None
 
 Goal for next week:
-- Make changes based on Peer Review feedback.
+-  Make changes based on Final Release feedback if needed.
 
 ### Asa
 Last week's goal:
